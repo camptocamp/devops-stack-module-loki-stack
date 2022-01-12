@@ -1,0 +1,3 @@
+variable "minio" {
+  type = any
+}
