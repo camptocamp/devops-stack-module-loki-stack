@@ -11,7 +11,7 @@ module "loki-stack" {
   extra_yaml = [ templatefile("${path.module}/values.yaml", {
     cluster_name     = var.cluster_name,
     base_domain      = var.base_domain,
-    minio_access_key = minio.access_key,
-    minio_secret_key = minio.secret_key,
+    minio_access_key = var.minio.access_key,
+    minio_secret_key = var.minio.secret_key,
   }) ]
 }
