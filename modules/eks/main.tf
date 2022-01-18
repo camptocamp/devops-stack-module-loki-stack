@@ -22,7 +22,7 @@ module "iam_assumable_role_loki" {
 
 resource "aws_iam_policy" "loki" {
   name_prefix = "loki"
-  description = "EKS loki policy for cluster ${var.cluster_id}"
+  description = "EKS loki policy for cluster ${var.cluster_name}"
   policy      = data.aws_iam_policy_document.loki.json
 }
 
