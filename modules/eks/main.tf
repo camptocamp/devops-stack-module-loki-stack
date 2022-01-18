@@ -57,7 +57,7 @@ module "loki-stack" {
   profiles       = var.profiles
 
   extra_yaml = [ templatefile("${path.module}/values.yaml", {
-    aws_default_region = data.aws_region.current_name,
+    aws_default_region = data.aws_region.current.name,
     bucket_name        = aws_s3_bucket.loki.id,
     assumable_role_arn = module.iam_assumable_role_loki.iam_role_arn,
   }) ]
