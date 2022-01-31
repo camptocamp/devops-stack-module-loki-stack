@@ -34,11 +34,10 @@ module "loki-stack" {
   argocd_namespace = var.argocd_namespace
 
   namespace = var.namespace
-  profiles  = var.profiles
 
-  extra_yaml = [templatefile("${path.module}/values.yaml", {
+  extra_yaml = concat([templatefile("${path.module}/values.tmpl.yaml", {
     loki_container_name = azurerm_storage_container.loki.name,
     loki_account_name   = azurerm_storage_account.this.name,
     loki_account_key    = azurerm_storage_account.this.primary_access_key,
-  })]
+  })], var.extra_yaml)
 }
