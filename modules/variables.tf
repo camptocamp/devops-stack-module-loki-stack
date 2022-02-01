@@ -2,16 +2,12 @@
 ## Standard variables
 #######################
 
-variable "cluster_name" {
-  type = string
-}
-
-variable "base_domain" {
-  type = string
-}
-
-variable "argocd_namespace" {
-  type = string
+variable "cluster_info" {
+  type = object({
+    cluster_name     = string
+    base_domain      = string
+    argocd_namespace = string
+  })
 }
 
 variable "namespace" {
