@@ -49,9 +49,7 @@ data "aws_iam_policy_document" "loki" {
 module "loki-stack" {
   source = "../"
 
-  cluster_name     = var.cluster_name
-  base_domain      = var.base_domain
-  argocd_namespace = var.argocd_namespace
+  cluster_info = var.cluster_info
 
   namespace      = var.namespace
 

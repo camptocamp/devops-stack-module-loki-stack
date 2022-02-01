@@ -1,15 +1,12 @@
 module "loki-stack" {
   source = "../"
 
-  cluster_name     = var.cluster_name
-  base_domain      = var.base_domain
-  argocd_namespace = var.argocd_namespace
+  cluster_info = var.cluster_info
 
   namespace      = var.namespace
 
   extra_yaml = concat([templatefile("${path.module}/values.tmpl.yaml", {
-    cluster_name     = var.cluster_name,
-    base_domain      = var.base_domain,
+    cluster_info     = var.cluster_info,
     minio_access_key = var.minio.access_key,
     minio_secret_key = var.minio.secret_key,
   })], var.extra_yaml)
