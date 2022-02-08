@@ -11,7 +11,9 @@ A [DevOps Stack](https://devops-stack.io) module to deploy and configure [Loki](
 module "storage" {
   source = "git::https://github.com/camptocamp/devops-stack-module-minio.git//modules"
 
-  cluster_info     = module.cluster.info
+  cluster_name     = var.cluster_name
+  argocd_namespace = module.cluster.argocd_namespace
+  base_domain      = module.cluster.base_domain
   cluster_issuer   = "ca-issuer"
 
   minio = {
@@ -27,7 +29,9 @@ module "storage" {
 module "loki-stack" {
   source = "git::https://github.com/camptocamp/devops-stack-module-loki-stack.git//modules/k3s"
 
-  cluster_info     = module.cluster.info
+  cluster_name     = var.cluster_name
+  argocd_namespace = module.cluster.argocd_namespace
+  base_domain      = module.cluster.base_domain
 
   minio = {
     access_key = module.storage.access_key

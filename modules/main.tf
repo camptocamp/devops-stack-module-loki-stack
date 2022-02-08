@@ -1,7 +1,10 @@
 resource "argocd_project" "this" {
   metadata {
     name      = "loki-stack"
-    namespace = var.cluster_info.argocd_namespace
+    namespace = var.argocd_namespace
+    annotations = {
+      "devops-stack.io/argocd_namespace" = var.argocd_namespace
+    }
   }
  
   spec {
@@ -31,7 +34,7 @@ data "utils_deep_merge_yaml" "values" {
 resource "argocd_application" "this" {
   metadata {
     name      = "loki-stack"
-    namespace = var.cluster_info.argocd_namespace
+    namespace = var.argocd_namespace
   }
 
   spec {
