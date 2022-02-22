@@ -36,7 +36,9 @@ resource "argocd_application" "this" {
     name      = "loki-stack"
     namespace = var.argocd_namespace
   }
-
+  
+  wait = true
+  
   spec {
     project = argocd_project.this.metadata.0.name
 
