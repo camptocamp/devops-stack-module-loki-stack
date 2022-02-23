@@ -9,7 +9,7 @@ A [DevOps Stack](https://devops-stack.io) module to deploy and configure [Loki](
 
 ```hcl
 module "storage" {
-  source = "git::https://github.com/camptocamp/devops-stack-module-minio.git//modules"
+  source = "git::https://github.com/camptocamp/devops-stack-module-minio.git/"
 
   cluster_name     = var.cluster_name
   argocd_namespace = module.cluster.argocd_namespace
@@ -27,7 +27,7 @@ module "storage" {
 }
 
 module "loki-stack" {
-  source = "git::https://github.com/camptocamp/devops-stack-module-loki-stack.git//modules/k3s"
+  source = "git::https://github.com/camptocamp/devops-stack-module-loki-stack.git//k3s"
 
   cluster_name     = var.cluster_name
   argocd_namespace = module.cluster.argocd_namespace
@@ -47,7 +47,7 @@ module "loki-stack" {
 
 ```hcl
 module "loki-stack" {
-  source = "git::https://github.com/camptocamp/devops-stack-module-loki-stack.git//modules/eks"
+  source = "git::https://github.com/camptocamp/devops-stack-module-loki-stack.git//eks"
 
   cluster_name     = var.cluster_name
   argocd_namespace = module.cluster.argocd_namespace
