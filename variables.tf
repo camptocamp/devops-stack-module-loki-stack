@@ -19,9 +19,10 @@ variable "namespace" {
   default = "loki-stack"
 }
 
-variable "extra_yaml" {
-  type    = list(string)
-  default = []
+variable "helm_values" {
+  description = "Helm values, passed as a list of HCL structures."
+  type        = any
+  default     = []
 }
 
 #######################
