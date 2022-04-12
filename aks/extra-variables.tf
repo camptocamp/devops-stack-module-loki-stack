@@ -6,7 +6,7 @@ variable "storage_account_tier" {
 
 variable "storage_account_replication_type" {
   description = "Storage account replication type for storing loki logs"
-  default     = "GRS"
+  default     = "LRS"
   type        = string
 }
 
