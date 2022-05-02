@@ -60,4 +60,6 @@ module "loki-stack" {
     bucket_name        = aws_s3_bucket.loki.id,
     assumable_role_arn = module.iam_assumable_role_loki.iam_role_arn,
   })], var.extra_yaml)
+
+  dependency_ids = var.dependency_ids
 }
