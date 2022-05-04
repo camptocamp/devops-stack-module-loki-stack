@@ -13,4 +13,6 @@ module "loki-stack" {
     minio_access_key = var.minio.access_key,
     minio_secret_key = var.minio.secret_key,
   })], var.extra_yaml)
+
+  dependency_ids = var.dependency_ids
 }
