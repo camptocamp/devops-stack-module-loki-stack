@@ -56,4 +56,7 @@ module "loki-stack" {
   namespace = var.namespace
 
   helm_values = concat(local.helm_values, var.helm_values)
+
+  dependency_ids = var.dependency_ids
+
 }
