@@ -55,11 +55,8 @@ module "loki-stack" {
 
   namespace = var.namespace
 
-  extra_yaml = concat([templatefile("${path.module}/values.tmpl.yaml", {
-    aws_default_region = data.aws_region.current.name,
-    bucket_name        = aws_s3_bucket.loki.id,
-    assumable_role_arn = module.iam_assumable_role_loki.iam_role_arn,
-  })], var.extra_yaml)
+  helm_values = concat(local.helm_values, var.helm_values)
 
   dependency_ids = var.dependency_ids
+
 }
