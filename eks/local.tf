@@ -30,7 +30,7 @@ locals {
         }
         serviceAccount = {
           annotations = {
-            eks.amazonaws.com/role-arn = module.iam_assumable_role_loki.iam_role_arn
+            "eks.amazonaws.com/role-arn" = module.iam_assumable_role_loki.iam_role_arn
           }
         }
       }
