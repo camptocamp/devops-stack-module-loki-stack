@@ -26,7 +26,7 @@ variable "namespace" {
 }
 
 variable "helm_values" {
-  description = "Helm values, passed as a list of HCL structures."
+  description = "Helm chart value overrides. They should be passed as a list of HCL structures."
   type        = any
   default     = []
 }
@@ -40,3 +40,9 @@ variable "dependency_ids" {
 #######################
 ## Module variables
 #######################
+
+variable "loki" {
+  description = "Most frequently used Loki settings. This variable is merged with the local value `loki_defaults`, which contains some sensible defaults. You can check the default values on the link:./local.tf[`local.tf`] file. If there still is anything other that needs to be customized, you can always pass on configuration values using the variable `helm_values`."
+  type        = any
+  default     = {}
+}

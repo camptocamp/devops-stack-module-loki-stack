@@ -28,4 +28,10 @@ locals {
     }
   }]
 
+  loki_defaults = {}
+
+  loki = merge(
+    local.loki_defaults,
+    var.loki,
+  )
 }
