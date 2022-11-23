@@ -4,15 +4,9 @@ module "loki-stack" {
   cluster_name     = var.cluster_name
   base_domain      = var.base_domain
   argocd_namespace = var.argocd_namespace
+  target_revision  = var.target_revision
+  namespace        = var.namespace
+  dependency_ids   = var.dependency_ids
 
-  namespace = var.namespace
-
-  extra_yaml = concat([templatefile("${path.module}/values.tmpl.yaml", {
-    cluster_name     = var.cluster_name,
-    base_domain      = var.base_domain,
-    minio_access_key = var.minio.access_key,
-    minio_secret_key = var.minio.secret_key,
-  })], var.extra_yaml)
-
-  dependency_ids = var.dependency_ids
+  helm_values = concat(local.helm_values, var.helm_values)
 }
