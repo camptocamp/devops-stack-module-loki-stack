@@ -32,10 +32,10 @@ locals {
           }
           storage_config = {
             aws = {
-              bucketnames       = "${var.log_storage.bucket_name}"
-              endpoint          = "${var.log_storage.endpoint}"
-              access_key_id     = "${var.log_storage.access_key}"
-              secret_access_key = "${var.log_storage.secret_access_key}"
+              bucketnames       = "${var.logs_storage.bucket_name}"
+              endpoint          = "${var.logs_storage.endpoint}"
+              access_key_id     = "${var.logs_storage.access_key}"
+              secret_access_key = "${var.logs_storage.secret_access_key}"
               s3forcepathstyle  = true
               insecure          = true
               http_config = {

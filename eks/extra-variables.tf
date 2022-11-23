@@ -1,4 +1,4 @@
-variable "log_storage" {
+variable "logs_storage" {
   description = "AWS S3 bucket configuration values for the bucket where the logs will be stored."
   type = object({
     bucket_id    = string

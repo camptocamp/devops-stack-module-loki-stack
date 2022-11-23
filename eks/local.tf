@@ -19,7 +19,7 @@ locals {
           }
           storage_config = {
             aws = {
-              s3 = "s3://${var.log_storage.region}/${var.log_storage.bucket_id}"
+              s3 = "s3://${var.logs_storage.region}/${var.logs_storage.bucket_id}"
             }
             boltdb_shipper = {
               active_index_directory = "/data/loki/index"
@@ -30,7 +30,7 @@ locals {
         }
         serviceAccount = {
           annotations = {
-            "eks.amazonaws.com/role-arn" = var.log_storage.iam_role_arn
+            "eks.amazonaws.com/role-arn" = var.logs_storage.iam_role_arn
           }
         }
       }
