@@ -32,17 +32,10 @@ variable "helm_values" {
 }
 
 variable "dependency_ids" {
-  type = map(string)
-
+  type    = map(string)
   default = {}
 }
 
 #######################
 ## Module variables
 #######################
-
-variable "loki" {
-  description = "Most frequently used Loki settings. This variable is merged with the local value `loki_defaults`, which contains some sensible defaults. You can check the default values on the link:./local.tf[`local.tf`] file. If there still is anything other that needs to be customized, you can always pass on configuration values using the variable `helm_values`."
-  type        = any
-  default     = {}
-}

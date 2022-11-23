@@ -19,9 +19,9 @@ locals {
           }
           storage_config = {
             azure = {
-              container_name = "${local.loki.log_storage.container_name}"
-              account_name   = "${local.loki.log_storage.storage_account}"
-              account_key    = "${local.loki.log_storage.storage_account_key}"
+              container_name = "${var.log_storage.container_name}"
+              account_name   = "${var.log_storage.storage_account_name}"
+              account_key    = "${var.log_storage.storage_account_key}"
             }
             boltdb_shipper = {
               active_index_directory = "/data/loki/index"
@@ -33,11 +33,4 @@ locals {
       }
     }
   }]
-
-  loki_defaults = {}
-
-  loki = merge(
-    local.loki_defaults,
-    var.loki,
-  )
 }
