@@ -43,7 +43,7 @@ Description: n/a
 
 Type: `string`
 
-==== [[input_log_storage]] <<input_log_storage,log_storage>>
+==== [[input_logs_storage]] <<input_logs_storage,logs_storage>>
 
 Description: AWS S3 bucket configuration values for the bucket where the logs will be stored.
 
@@ -147,7 +147,7 @@ Description: ID to pass other modules in order to refer to this module as a depe
 |`[]`
 |no
 
-|[[input_log_storage]] <<input_log_storage,log_storage>>
+|[[input_logs_storage]] <<input_logs_storage,logs_storage>>
 |AWS S3 bucket configuration values for the bucket where the logs will be stored.
 |
 
