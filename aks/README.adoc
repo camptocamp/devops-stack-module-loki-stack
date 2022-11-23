@@ -57,6 +57,12 @@ object({
   })
 ----
 
+==== [[input_resource_group_name]] <<input_resource_group_name,resource_group_name>>
+
+Description: The Resource Group where the Managed Kubernetes Cluster should exist.
+
+Type: `string`
+
 === Optional Inputs
 
 The following input variables are optional (have default values):
@@ -168,6 +174,12 @@ object({
 |`string`
 |`"loki-stack"`
 |no
+
+|[[input_resource_group_name]] <<input_resource_group_name,resource_group_name>>
+|The Resource Group where the Managed Kubernetes Cluster should exist.
+|`string`
+|n/a
+|yes
 
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
