@@ -5,5 +5,4 @@ variable "logs_storage" {
     region       = string
     iam_role_arn = string
   })
-  sensitive = true
 }

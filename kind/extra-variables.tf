@@ -6,5 +6,4 @@ variable "logs_storage" {
     access_key        = string
     secret_access_key = string
   })
-  sensitive = true
 }
