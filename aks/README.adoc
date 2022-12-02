@@ -45,7 +45,7 @@ Type: `string`
 
 ==== [[input_logs_storage]] <<input_logs_storage,logs_storage>>
 
-Description: Azure Blob Storage configuration values for the storage container where the logs will be stored.
+Description: Azure Log storage configuration
 
 Type:
 [source,hcl]
@@ -56,12 +56,6 @@ object({
     storage_account_key  = string
   })
 ----
-
-==== [[input_resource_group_name]] <<input_resource_group_name,resource_group_name>>
-
-Description: The Resource Group where the Managed Kubernetes Cluster should exist.
-
-Type: `string`
 
 === Optional Inputs
 
@@ -154,7 +148,7 @@ Description: ID to pass other modules in order to refer to this module as a depe
 |no
 
 |[[input_logs_storage]] <<input_logs_storage,logs_storage>>
-|Azure Blob Storage configuration values for the storage container where the logs will be stored.
+|Azure Log storage configuration
 |
 
 [source]
@@ -174,12 +168,6 @@ object({
 |`string`
 |`"loki-stack"`
 |no
-
-|[[input_resource_group_name]] <<input_resource_group_name,resource_group_name>>
-|The Resource Group where the Managed Kubernetes Cluster should exist.
-|`string`
-|n/a
-|yes
 
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
