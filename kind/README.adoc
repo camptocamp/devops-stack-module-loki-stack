@@ -25,24 +25,6 @@ No resources.
 
 The following input variables are required:
 
-==== [[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
-
-Description: n/a
-
-Type: `string`
-
-==== [[input_base_domain]] <<input_base_domain,base_domain>>
-
-Description: n/a
-
-Type: `string`
-
-==== [[input_cluster_name]] <<input_cluster_name,cluster_name>>
-
-Description: n/a
-
-Type: `string`
-
 ==== [[input_logs_storage]] <<input_logs_storage,logs_storage>>
 
 Description: MinIO S3 bucket configuration values for the bucket where the logs will be stored.
@@ -61,6 +43,30 @@ object({
 === Optional Inputs
 
 The following input variables are optional (have default values):
+
+==== [[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
+
+Description: n/a
+
+Type: `string`
+
+Default: `"argocd"`
+
+==== [[input_base_domain]] <<input_base_domain,base_domain>>
+
+Description: n/a
+
+Type: `string`
+
+Default: `null`
+
+==== [[input_cluster_name]] <<input_cluster_name,cluster_name>>
+
+Description: n/a
+
+Type: `string`
+
+Default: `null`
 
 ==== [[input_dependency_ids]] <<input_dependency_ids,dependency_ids>>
 
@@ -121,20 +127,20 @@ Description: n/a
 |[[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
 |n/a
 |`string`
-|n/a
-|yes
+|`"argocd"`
+|no
 
 |[[input_base_domain]] <<input_base_domain,base_domain>>
 |n/a
 |`string`
-|n/a
-|yes
+|`null`
+|no
 
 |[[input_cluster_name]] <<input_cluster_name,cluster_name>>
 |n/a
 |`string`
-|n/a
-|yes
+|`null`
+|no
 
 |[[input_dependency_ids]] <<input_dependency_ids,dependency_ids>>
 |n/a
