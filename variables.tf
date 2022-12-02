@@ -3,15 +3,18 @@
 #######################
 
 variable "cluster_name" {
-  type = string
+  type    = string
+  default = null
 }
 
 variable "base_domain" {
-  type = string
+  type    = string
+  default = null
 }
 
 variable "argocd_namespace" {
-  type = string
+  type    = string
+  default = "argocd"
 }
 
 variable "target_revision" {
