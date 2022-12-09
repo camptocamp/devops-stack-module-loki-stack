@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-alpha.2](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2022-12-09)
+
+
+### Features
+
+* remove bucket creation from inside the module and refactor k3s/kind variant ([#13](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/13)) ([4661e91](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/4661e918d05b1b0c268e5b3b59cce7804962ae64))
+
 ## 1.0.0-alpha.1 (2022-11-18)
 
 
