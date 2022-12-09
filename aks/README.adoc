@@ -5,11 +5,7 @@ No requirements.
 
 === Providers
 
-The following providers are used by this module:
-
-- [[provider_azurerm]] <<provider_azurerm,azurerm>>
-
-- [[provider_random]] <<provider_random,random>>
+No providers.
 
 === Modules
 
@@ -23,17 +19,29 @@ Version:
 
 === Resources
 
-The following resources are used by this module:
-
-- https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account[azurerm_storage_account.this] (resource)
-- https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_container[azurerm_storage_container.loki] (resource)
-- https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string[random_string.storage_account] (resource)
-- https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group[azurerm_resource_group.this] (data source)
-- https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subscription[azurerm_subscription.primary] (data source)
+No resources.
 
 === Required Inputs
 
 The following input variables are required:
+
+==== [[input_logs_storage]] <<input_logs_storage,logs_storage>>
+
+Description: Azure Log storage configuration
+
+Type:
+[source,hcl]
+----
+object({
+    container_name       = string
+    storage_account_name = string
+    storage_account_key  = string
+  })
+----
+
+=== Optional Inputs
+
+The following input variables are optional (have default values):
 
 ==== [[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
 
@@ -41,11 +49,15 @@ Description: n/a
 
 Type: `string`
 
+Default: `"argocd"`
+
 ==== [[input_base_domain]] <<input_base_domain,base_domain>>
 
 Description: n/a
 
 Type: `string`
+
+Default: `null`
 
 ==== [[input_cluster_name]] <<input_cluster_name,cluster_name>>
 
@@ -53,15 +65,7 @@ Description: n/a
 
 Type: `string`
 
-==== [[input_resource_group_name]] <<input_resource_group_name,resource_group_name>>
-
-Description: The Resource Group where the Managed Kubernetes Cluster should exist.
-
-Type: `string`
-
-=== Optional Inputs
-
-The following input variables are optional (have default values):
+Default: `null`
 
 ==== [[input_dependency_ids]] <<input_dependency_ids,dependency_ids>>
 
@@ -73,7 +77,7 @@ Default: `{}`
 
 ==== [[input_helm_values]] <<input_helm_values,helm_values>>
 
-Description: Helm values, passed as a list of HCL structures.
+Description: Helm chart value overrides. They should be passed as a list of HCL structures.
 
 Type: `any`
 
@@ -87,29 +91,13 @@ Type: `string`
 
 Default: `"loki-stack"`
 
-==== [[input_storage_account_replication_type]] <<input_storage_account_replication_type,storage_account_replication_type>>
-
-Description: Storage account replication type for storing loki logs
-
-Type: `string`
-
-Default: `"LRS"`
-
-==== [[input_storage_account_tier]] <<input_storage_account_tier,storage_account_tier>>
-
-Description: Storage account tier used for storing loki logs
-
-Type: `string`
-
-Default: `"Standard"`
-
 ==== [[input_target_revision]] <<input_target_revision,target_revision>>
 
 Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v1.0.0"`
+Default: `"v1.0.0-alpha.1"`
 
 === Outputs
 
@@ -117,19 +105,10 @@ The following outputs are exported:
 
 ==== [[output_id]] <<output_id,id>>
 
-Description: n/a
+Description: ID to pass other modules in order to refer to this module as a dependency. It takes the ID that comes from the main module and passes it along to the code that called this variant in the first place.
 // END_TF_DOCS
 // BEGIN_TF_TABLES
 
-
-= Providers
-
-[cols="a,a",options="header,autowidth"]
-|===
-|Name |Version
-|[[provider_azurerm]] <<provider_azurerm,azurerm>> |n/a
-|[[provider_random]] <<provider_random,random>> |n/a
-|===
 
 = Modules
 
@@ -137,18 +116,6 @@ Description: n/a
 |===
 |Name |Source |Version
 |[[module_loki-stack]] <<module_loki-stack,loki-stack>> |../ |
-|===
-
-= Resources
-
-[cols="a,a",options="header,autowidth"]
-|===
-|Name |Type
-|https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account[azurerm_storage_account.this] |resource
-|https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_container[azurerm_storage_container.loki] |resource
-|https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string[random_string.storage_account] |resource
-|https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group[azurerm_resource_group.this] |data source
-|https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subscription[azurerm_subscription.primary] |data source
 |===
 
 = Inputs
@@ -159,20 +126,20 @@ Description: n/a
 |[[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
 |n/a
 |`string`
-|n/a
-|yes
+|`"argocd"`
+|no
 
 |[[input_base_domain]] <<input_base_domain,base_domain>>
 |n/a
 |`string`
-|n/a
-|yes
+|`null`
+|no
 
 |[[input_cluster_name]] <<input_cluster_name,cluster_name>>
 |n/a
 |`string`
-|n/a
-|yes
+|`null`
+|no
 
 |[[input_dependency_ids]] <<input_dependency_ids,dependency_ids>>
 |n/a
@@ -181,10 +148,26 @@ Description: n/a
 |no
 
 |[[input_helm_values]] <<input_helm_values,helm_values>>
-|Helm values, passed as a list of HCL structures.
+|Helm chart value overrides. They should be passed as a list of HCL structures.
 |`any`
 |`[]`
 |no
+
+|[[input_logs_storage]] <<input_logs_storage,logs_storage>>
+|Azure Log storage configuration
+|
+
+[source]
+----
+object({
+    container_name       = string
+    storage_account_name = string
+    storage_account_key  = string
+  })
+----
+
+|n/a
+|yes
 
 |[[input_namespace]] <<input_namespace,namespace>>
 |n/a
@@ -192,28 +175,10 @@ Description: n/a
 |`"loki-stack"`
 |no
 
-|[[input_resource_group_name]] <<input_resource_group_name,resource_group_name>>
-|The Resource Group where the Managed Kubernetes Cluster should exist.
-|`string`
-|n/a
-|yes
-
-|[[input_storage_account_replication_type]] <<input_storage_account_replication_type,storage_account_replication_type>>
-|Storage account replication type for storing loki logs
-|`string`
-|`"LRS"`
-|no
-
-|[[input_storage_account_tier]] <<input_storage_account_tier,storage_account_tier>>
-|Storage account tier used for storing loki logs
-|`string`
-|`"Standard"`
-|no
-
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v1.0.0"`
+|`"v1.0.0-alpha.1"`
 |no
 
 |===
@@ -223,6 +188,6 @@ Description: n/a
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Description
-|[[output_id]] <<output_id,id>> |n/a
+|[[output_id]] <<output_id,id>> |ID to pass other modules in order to refer to this module as a dependency. It takes the ID that comes from the main module and passes it along to the code that called this variant in the first place.
 |===
 // END_TF_TABLES

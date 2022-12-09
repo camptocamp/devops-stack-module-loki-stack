@@ -25,11 +25,32 @@ No resources.
 
 The following input variables are required:
 
+==== [[input_logs_storage]] <<input_logs_storage,logs_storage>>
+
+Description: MinIO S3 bucket configuration values for the bucket where the logs will be stored.
+
+Type:
+[source,hcl]
+----
+object({
+    bucket_name       = string
+    endpoint          = string
+    access_key        = string
+    secret_access_key = string
+  })
+----
+
+=== Optional Inputs
+
+The following input variables are optional (have default values):
+
 ==== [[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
 
 Description: n/a
 
 Type: `string`
+
+Default: `"argocd"`
 
 ==== [[input_base_domain]] <<input_base_domain,base_domain>>
 
@@ -37,21 +58,15 @@ Description: n/a
 
 Type: `string`
 
+Default: `null`
+
 ==== [[input_cluster_name]] <<input_cluster_name,cluster_name>>
 
 Description: n/a
 
 Type: `string`
 
-==== [[input_minio]] <<input_minio,minio>>
-
-Description: n/a
-
-Type: `any`
-
-=== Optional Inputs
-
-The following input variables are optional (have default values):
+Default: `null`
 
 ==== [[input_dependency_ids]] <<input_dependency_ids,dependency_ids>>
 
@@ -63,7 +78,7 @@ Default: `{}`
 
 ==== [[input_helm_values]] <<input_helm_values,helm_values>>
 
-Description: Helm values, passed as a list of HCL structures.
+Description: Helm chart value overrides. They should be passed as a list of HCL structures.
 
 Type: `any`
 
@@ -83,7 +98,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v1.0.0"`
+Default: `"v1.0.0-alpha.1"`
 
 === Outputs
 
@@ -112,20 +127,20 @@ Description: n/a
 |[[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
 |n/a
 |`string`
-|n/a
-|yes
+|`"argocd"`
+|no
 
 |[[input_base_domain]] <<input_base_domain,base_domain>>
 |n/a
 |`string`
-|n/a
-|yes
+|`null`
+|no
 
 |[[input_cluster_name]] <<input_cluster_name,cluster_name>>
 |n/a
 |`string`
-|n/a
-|yes
+|`null`
+|no
 
 |[[input_dependency_ids]] <<input_dependency_ids,dependency_ids>>
 |n/a
@@ -134,14 +149,25 @@ Description: n/a
 |no
 
 |[[input_helm_values]] <<input_helm_values,helm_values>>
-|Helm values, passed as a list of HCL structures.
+|Helm chart value overrides. They should be passed as a list of HCL structures.
 |`any`
 |`[]`
 |no
 
-|[[input_minio]] <<input_minio,minio>>
-|n/a
-|`any`
+|[[input_logs_storage]] <<input_logs_storage,logs_storage>>
+|MinIO S3 bucket configuration values for the bucket where the logs will be stored.
+|
+
+[source]
+----
+object({
+    bucket_name       = string
+    endpoint          = string
+    access_key        = string
+    secret_access_key = string
+  })
+----
+
 |n/a
 |yes
 
@@ -154,7 +180,7 @@ Description: n/a
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v1.0.0"`
+|`"v1.0.0-alpha.1"`
 |no
 
 |===

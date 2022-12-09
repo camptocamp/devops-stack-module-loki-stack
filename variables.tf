@@ -3,15 +3,18 @@
 #######################
 
 variable "cluster_name" {
-  type = string
+  type    = string
+  default = null
 }
 
 variable "base_domain" {
-  type = string
+  type    = string
+  default = null
 }
 
 variable "argocd_namespace" {
-  type = string
+  type    = string
+  default = "argocd"
 }
 
 variable "target_revision" {
@@ -26,14 +29,13 @@ variable "namespace" {
 }
 
 variable "helm_values" {
-  description = "Helm values, passed as a list of HCL structures."
+  description = "Helm chart value overrides. They should be passed as a list of HCL structures."
   type        = any
   default     = []
 }
 
 variable "dependency_ids" {
-  type = map(string)
-
+  type    = map(string)
   default = {}
 }
 

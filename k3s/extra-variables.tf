@@ -1,3 +1,0 @@
-variable "minio" {
-  type = any
-}
