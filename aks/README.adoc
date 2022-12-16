@@ -33,9 +33,9 @@ Type:
 [source,hcl]
 ----
 object({
-    container       = string
-    storage_account = string
-    storage_account_key  = string
+    container           = string
+    storage_account     = string
+    storage_account_key = string
   })
 ----
 
@@ -160,9 +160,9 @@ Description: ID to pass other modules in order to refer to this module as a depe
 [source]
 ----
 object({
-    container       = string
-    storage_account = string
-    storage_account_key  = string
+    container           = string
+    storage_account     = string
+    storage_account_key = string
   })
 ----
 
