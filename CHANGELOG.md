@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-alpha.3](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2022-12-16)
+
+
+### Code Refactoring
+
+* rename variables same as kube-prometheus-stack ([#15](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/15)) ([dd0f1c6](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/dd0f1c6ae784bb49617ed7644d84aa6036854e0f))
+
 ## [1.0.0-alpha.2](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2022-12-09)
 
 
