@@ -19,8 +19,8 @@ locals {
           }
           storage_config = {
             azure = {
-              container_name = "${var.logs_storage.container_name}"
-              account_name   = "${var.logs_storage.storage_account_name}"
+              container_name = "${var.logs_storage.container}"
+              account_name   = "${var.logs_storage.storage_account}"
               account_key    = "${var.logs_storage.storage_account_key}"
             }
             boltdb_shipper = {
