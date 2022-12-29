@@ -42,3 +42,9 @@ variable "dependency_ids" {
 #######################
 ## Module variables
 #######################
+
+variable "distributed_mode" {
+  description = "Deploy Loki in distributed mode"
+  type        = bool
+  default     = false
+}

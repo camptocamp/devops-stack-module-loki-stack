@@ -8,5 +8,7 @@ module "loki-stack" {
   namespace        = var.namespace
   dependency_ids   = var.dependency_ids
 
+  distributed_mode = var.distributed_mode
+
   helm_values = concat(local.helm_values, var.helm_values)
 }
