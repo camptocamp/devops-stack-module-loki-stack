@@ -75,6 +75,14 @@ Type: `map(string)`
 
 Default: `{}`
 
+==== [[input_distributed_mode]] <<input_distributed_mode,distributed_mode>>
+
+Description: Deploy Loki in distributed mode
+
+Type: `bool`
+
+Default: `false`
+
 ==== [[input_helm_values]] <<input_helm_values,helm_values>>
 
 Description: Helm chart value overrides. They should be passed as a list of HCL structures.
@@ -97,7 +105,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v1.0.0-alpha.2"`
+Default: `"v1.0.0-alpha.3"`
 
 === Outputs
 
@@ -147,6 +155,12 @@ Description: ID to pass other modules in order to refer to this module as a depe
 |`{}`
 |no
 
+|[[input_distributed_mode]] <<input_distributed_mode,distributed_mode>>
+|Deploy Loki in distributed mode
+|`bool`
+|`false`
+|no
+
 |[[input_helm_values]] <<input_helm_values,helm_values>>
 |Helm chart value overrides. They should be passed as a list of HCL structures.
 |`any`
@@ -178,7 +192,7 @@ object({
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v1.0.0-alpha.2"`
+|`"v1.0.0-alpha.3"`
 |no
 
 |===
