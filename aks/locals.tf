@@ -1,5 +1,5 @@
 locals {
-  helm_values = [var.distributed_mode ? {
+  helm_values = [var.distributed_mode != null ? {
     loki-distributed = {
       loki = {
         schemaConfig  = local.schema_config
@@ -12,7 +12,7 @@ locals {
         }
       }
     }
-    } : null, var.distributed_mode ? null : {
+    } : null, var.distributed_mode != ? null : {
     loki-stack = {
       loki = {
         config = {

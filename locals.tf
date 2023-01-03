@@ -1,7 +1,7 @@
 locals {
   fullnameOverride = "loki"
 
-  helm_values = [var.distributed_mode ? {
+  helm_values = [var.distributed_mode != null ? {
     datasourceURL = "http://${local.fullnameOverride}-query-frontend.${var.namespace}:3100"
     loki-distributed = {
       fullnameOverride = local.fullnameOverride
@@ -135,7 +135,7 @@ locals {
         }]
       }
     }
-    } : null, var.distributed_mode ? null : {
+    } : null, var.distributed_mode != null ? null : {
     loki-stack = {
       loki = {
         serviceName = "loki-stack.loki-stack"

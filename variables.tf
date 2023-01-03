@@ -44,7 +44,16 @@ variable "dependency_ids" {
 #######################
 
 variable "distributed_mode" {
-  description = "Deploy Loki in distributed mode"
-  type        = bool
-  default     = false
+  description = "Deploy Loki in distributed mode."
+
+  type = object({
+    query_capacity = string
+  })
+
+  default = null
+
+  validation {
+    condition     = try(contains(["small", "medium", "large"], var.distributed.query_capacity), true)
+    error_message = "Query capacity must be one of the following values: \"small\", \"medium\" or \"large\""
+  }
 }
