@@ -21,7 +21,7 @@ locals {
       ingester = {
         persistence = {
           enabled = true
-          size = "10Gi"
+          size    = "10Gi"
         }
         replicas = 1
       }
@@ -34,7 +34,7 @@ locals {
                 expiration = "24h"
               }
               memcached_client = {
-                host = "${local.fullnameOverride}-memcached-chunks.${var.namespace}.svc.cluster.local"
+                host    = "${local.fullnameOverride}-memcached-chunks.${var.namespace}.svc.cluster.local"
                 service = "http"
                 timeout = "500ms"
               }
@@ -42,7 +42,7 @@ locals {
           }
           compactor = {
             retention_delete_delay = "1h"
-            retention_enabled = false
+            retention_enabled      = false
           }
           ingester = {
             wal = {
@@ -50,21 +50,21 @@ locals {
             }
           }
           limits_config = {
-            ingestion_rate_mb = 10
-            max_chunks_per_query = 0
+            ingestion_rate_mb           = 10
+            max_chunks_per_query        = 0
             max_entries_limit_per_query = 0
-            max_query_length = "9000h"
-            max_query_parallelism = 6
-            per_stream_rate_limit = "10MB"
-            retention_period = "9000h"
+            max_query_length            = "9000h"
+            max_query_parallelism       = 6
+            per_stream_rate_limit       = "10MB"
+            retention_period            = "9000h"
           }
           querier = {
             max_concurrent = 2
-            query_timeout = "5m"
+            query_timeout  = "5m"
           }
           query_range = {
-            cache_results = true
-            max_retries = 50
+            cache_results                 = true
+            max_retries                   = 50
             parallelise_shardable_queries = false
             results_cache = {
               cache = {
@@ -73,7 +73,7 @@ locals {
                   expiration = "24h"
                 }
                 memcached_client = {
-                  host = "${local.fullnameOverride}-memcached-frontend.${var.namespace}.svc.cluster.local"
+                  host    = "${local.fullnameOverride}-memcached-frontend.${var.namespace}.svc.cluster.local"
                   service = "http"
                   timeout = "500ms"
                 }
@@ -83,8 +83,8 @@ locals {
           server = {
             grpc_server_max_recv_msg_size = 33554432
             grpc_server_max_send_msg_size = 33554432
-            http_server_read_timeout = "180s"
-            http_server_write_timeout = "180s"
+            http_server_read_timeout      = "180s"
+            http_server_write_timeout     = "180s"
           }
           storage_config = {
             boltdb_shipper = {
@@ -98,7 +98,7 @@ locals {
                 expiration = "24h"
               }
               memcached_client = {
-                host = "${local.fullnameOverride}-memcached-index-queries.${var.namespace}.svc.cluster.local"
+                host    = "${local.fullnameOverride}-memcached-index-queries.${var.namespace}.svc.cluster.local"
                 service = "http"
                 timeout = "500ms"
               }
@@ -121,7 +121,7 @@ locals {
       }
       ruler = {
         directories = {}
-        enabled = false
+        enabled     = false
         # TODO fix: KPS url is variable
         alertmanager_url = "http://kube-prometheus-stack-alertmanager.kube-prometheus-stack:9093"
       }
