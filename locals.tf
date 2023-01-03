@@ -1,8 +1,10 @@
 locals {
+  fullnameOverride = "loki"
+  
   helm_values = [var.distributed_mode ? {
     datasourceURL = "http://${local.fullnameOverride}-query-frontend.${var.namespace}:3100"
     loki-distributed = {
-      fullnameOverride = "loki"
+      fullnameOverride = local.fullnameOverride
       compactor = {
         enabled = true
         persistence = {
