@@ -127,7 +127,7 @@ locals {
             "rules.txt" = var.alerting.alert_groups
           }
         }
-        enabled     = true
+        enabled          = true
         alertmanager_url = var.alerting.alertmanager_url
       } : null
     }
