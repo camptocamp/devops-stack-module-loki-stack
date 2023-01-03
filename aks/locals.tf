@@ -12,7 +12,7 @@ locals {
         }
       }
     }
-    } : null, var.distributed_mode != ? null : {
+    } : null, var.distributed_mode != null ? null : {
     loki-stack = {
       loki = {
         config = {
