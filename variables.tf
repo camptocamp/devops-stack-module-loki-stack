@@ -44,7 +44,16 @@ variable "dependency_ids" {
 #######################
 
 variable "distributed_mode" {
-  description = "Deploy Loki in distributed mode"
+  description = "Deploy Loki in distributed mode."
   type        = bool
   default     = false
+}
+
+variable "alerting" {
+  description = "Loki alerts configuration."
+  type = object({
+    alertmanager_url = string
+    alert_groups     = string
+  })
+  default = null
 }

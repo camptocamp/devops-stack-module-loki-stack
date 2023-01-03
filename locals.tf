@@ -121,12 +121,15 @@ locals {
         affinity = ""
         replicas = 4
       }
-      ruler = {
-        directories = {}
-        enabled     = false
-        # TODO fix: KPS url is variable
-        alertmanager_url = "http://kube-prometheus-stack-alertmanager.kube-prometheus-stack:9093"
-      }
+      ruler = var.alerting != null ? {
+        directories = {
+          alerts = {
+            "rules.txt" = var.alerting.alert_groups
+          }
+        }
+        enabled     = true
+        alertmanager_url = var.alerting.alertmanager_url
+      } : null
     }
     promtail = {
       config = {
@@ -147,7 +150,6 @@ locals {
         serviceMonitor = {
           enabled = true
         }
-        # TODO check next block's indentation
         filebeat = {
           extraContainers = <<-EOT
           - name: filebeat-prometheus-exporter

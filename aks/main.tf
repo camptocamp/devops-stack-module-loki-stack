@@ -9,6 +9,7 @@ module "loki-stack" {
   dependency_ids   = var.dependency_ids
 
   distributed_mode = var.distributed_mode
+  alerting         = var.alerting
 
   helm_values = concat(local.helm_values, var.helm_values)
 }
