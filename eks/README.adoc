@@ -99,6 +99,14 @@ Type: `map(string)`
 
 Default: `{}`
 
+==== [[input_distributed_mode]] <<input_distributed_mode,distributed_mode>>
+
+Description: Deploy Loki in distributed mode
+
+Type: `bool`
+
+Default: `false`
+
 ==== [[input_helm_values]] <<input_helm_values,helm_values>>
 
 Description: Helm chart value overrides. They should be passed as a list of HCL structures.
@@ -195,6 +203,12 @@ object({
 |n/a
 |`map(string)`
 |`{}`
+|no
+
+|[[input_distributed_mode]] <<input_distributed_mode,distributed_mode>>
+|Deploy Loki in distributed mode
+|`bool`
+|`false`
 |no
 
 |[[input_helm_values]] <<input_helm_values,helm_values>>
