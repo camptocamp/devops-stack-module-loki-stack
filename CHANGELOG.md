@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-alpha.4](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2023-01-30)
+
+
+### Features
+
+* add variable to configure sync on the application resource ([#17](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/17)) ([1ddf02b](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/1ddf02b9a0f492cc9f66d23567c3cfeebf7546d4))
+
 ## [1.0.0-alpha.3](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2022-12-16)
 
 
