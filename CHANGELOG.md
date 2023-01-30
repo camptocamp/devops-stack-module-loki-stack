@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-alpha.5](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2023-01-30)
+
+
+### Features
+
+* **Azure:** support Loki microservices setup ([#18](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/18)) ([9e17998](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/9e179988ee61eb15bcad6e5f92012438b779a4b5))
+
 ## [1.0.0-alpha.4](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2023-01-30)
 
 
