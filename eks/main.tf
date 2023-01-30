@@ -9,5 +9,7 @@ module "loki-stack" {
   app_autosync     = var.app_autosync
   dependency_ids   = var.dependency_ids
 
+  distributed_mode = false
+
   helm_values = concat(local.helm_values, var.helm_values)
 }
