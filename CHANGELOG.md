@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-alpha.6](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2023-01-31)
+
+
+### Features
+
+* **helm:** download all used charts ([#21](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/21)) ([aa015fe](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/aa015fe7f6f1985be986eed22b82095ada65e994))
+
 ## [1.0.0-alpha.5](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2023-01-30)
 
 
