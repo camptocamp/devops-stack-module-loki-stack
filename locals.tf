@@ -29,6 +29,9 @@ locals {
       }
       loki = {
         structuredConfig = {
+          ruler = {
+            alertmanager_url = "http://kube-prometheus-stack-alertmanager.kube-prometheus-stack:9093"
+          }
           chunk_store_config = {
             chunk_cache_config = {
               enable_fifocache = false
@@ -124,8 +127,6 @@ locals {
       ruler = {
         directories = {}
         enabled     = false
-        # TODO fix: KPS url is variable
-        alertmanager_url = "http://kube-prometheus-stack-alertmanager.kube-prometheus-stack:9093"
       }
     }
     promtail = {
