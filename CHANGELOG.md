@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-alpha.7](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2023-02-01)
+
+
+### Bug Fixes
+
+* **ruler:** move value block ([#23](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/23)) ([3ef695f](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/3ef695f49751ea71cb8d6e24fa4b94d3a00a38d5))
+
 ## [1.0.0-alpha.6](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2023-01-31)
 
 
