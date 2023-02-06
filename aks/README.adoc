@@ -115,6 +115,22 @@ Type: `any`
 
 Default: `[]`
 
+==== [[input_ingress]] <<input_ingress,ingress>>
+
+Description: Loki frontend ingress configuration
+
+Type:
+[source,hcl]
+----
+object({
+    hosts          = list(string)
+    cluster_issuer = string
+    allowed_ips    = optional(list(string), [])
+  })
+----
+
+Default: `null`
+
 ==== [[input_namespace]] <<input_namespace,namespace>>
 
 Description: n/a
@@ -129,7 +145,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v1.0.0-alpha.6"`
+Default: `"v1.0.0-alpha.7"`
 
 === Outputs
 
@@ -138,6 +154,10 @@ The following outputs are exported:
 ==== [[output_id]] <<output_id,id>>
 
 Description: ID to pass other modules in order to refer to this module as a dependency. It takes the ID that comes from the main module and passes it along to the code that called this variant in the first place.
+
+==== [[output_loki_credentials]] <<output_loki_credentials,loki_credentials>>
+
+Description: n/a
 // END_TF_DOCS
 // BEGIN_TF_TABLES
 
@@ -217,6 +237,22 @@ object({
 |`[]`
 |no
 
+|[[input_ingress]] <<input_ingress,ingress>>
+|Loki frontend ingress configuration
+|
+
+[source]
+----
+object({
+    hosts          = list(string)
+    cluster_issuer = string
+    allowed_ips    = optional(list(string), [])
+  })
+----
+
+|`null`
+|no
+
 |[[input_logs_storage]] <<input_logs_storage,logs_storage>>
 |Azure Log storage configuration
 |
@@ -242,7 +278,7 @@ object({
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v1.0.0-alpha.6"`
+|`"v1.0.0-alpha.7"`
 |no
 
 |===
@@ -253,5 +289,6 @@ object({
 |===
 |Name |Description
 |[[output_id]] <<output_id,id>> |ID to pass other modules in order to refer to this module as a dependency. It takes the ID that comes from the main module and passes it along to the code that called this variant in the first place.
+|[[output_loki_credentials]] <<output_loki_credentials,loki_credentials>> |n/a
 |===
 // END_TF_TABLES
