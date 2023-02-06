@@ -2,6 +2,16 @@ resource "null_resource" "dependencies" {
   triggers = var.dependency_ids
 }
 
+resource "random_password" "loki_password" {
+  count  = var.ingress != null ? 1 : 0
+  length = 30
+}
+
+resource "htpasswd_password" "loki_password_hash" {
+  count    = var.ingress != null ? 1 : 0
+  password = random_password.loki_password.0.result
+}
+
 resource "argocd_project" "this" {
   metadata {
     name      = "loki-stack"
