@@ -11,7 +11,7 @@ locals {
         serviceName     = "${local.fullnameOverride}-query-frontend"
       } : null
     },
-    var.distributed_mode ? {
+    var.distributed_mode ? merge({
       datasourceURL = "http://${local.fullnameOverride}-query-frontend.${var.namespace}:3100"
       loki-distributed = {
         fullnameOverride = local.fullnameOverride
@@ -146,7 +146,19 @@ locals {
           }]
         }
       }
-    } : null,
+      }, {
+      filebeat = {
+        enabled         = var.enable_filebeat
+        extraContainers = <<-EOT
+        - name: filebeat-prometheus-exporter
+          image: "trustpilot/beat-exporter:0.4.0"
+          ports:
+            - containerPort: 9479
+              protocol: TCP
+              name: metrics
+        EOT
+      }
+    }) : null,
     var.distributed_mode ? null : {
       loki-stack = {
         loki = {
@@ -160,6 +172,7 @@ locals {
             enabled = true
           }
           # TODO check next block's indentation
+          # TODO check possible factorization of the following block, also added to Loki µsvcy
           filebeat = {
             extraContainers = <<-EOT
           - name: filebeat-prometheus-exporter
