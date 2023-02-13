@@ -116,6 +116,22 @@ Type: `any`
 
 Default: `[]`
 
+==== [[input_ingress]] <<input_ingress,ingress>>
+
+Description: Loki frontend ingress configuration
+
+Type:
+[source,hcl]
+----
+object({
+    hosts          = list(string)
+    cluster_issuer = string
+    allowed_ips    = optional(list(string), [])
+  })
+----
+
+Default: `null`
+
 ==== [[input_namespace]] <<input_namespace,namespace>>
 
 Description: n/a
@@ -130,13 +146,17 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v1.0.0-alpha.6"`
+Default: `"v1.0.0-alpha.7"`
 
 === Outputs
 
 The following outputs are exported:
 
 ==== [[output_id]] <<output_id,id>>
+
+Description: n/a
+
+==== [[output_loki_credentials]] <<output_loki_credentials,loki_credentials>>
 
 Description: n/a
 // END_TF_DOCS
@@ -218,6 +238,22 @@ object({
 |`[]`
 |no
 
+|[[input_ingress]] <<input_ingress,ingress>>
+|Loki frontend ingress configuration
+|
+
+[source]
+----
+object({
+    hosts          = list(string)
+    cluster_issuer = string
+    allowed_ips    = optional(list(string), [])
+  })
+----
+
+|`null`
+|no
+
 |[[input_logs_storage]] <<input_logs_storage,logs_storage>>
 |MinIO S3 bucket configuration values for the bucket where the logs will be stored.
 |
@@ -244,7 +280,7 @@ object({
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v1.0.0-alpha.6"`
+|`"v1.0.0-alpha.7"`
 |no
 
 |===
@@ -255,5 +291,6 @@ object({
 |===
 |Name |Description
 |[[output_id]] <<output_id,id>> |n/a
+|[[output_loki_credentials]] <<output_loki_credentials,loki_credentials>> |n/a
 |===
 // END_TF_TABLES

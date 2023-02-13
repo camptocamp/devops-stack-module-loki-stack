@@ -9,7 +9,11 @@ The following providers are used by this module:
 
 - [[provider_argocd]] <<provider_argocd,argocd>>
 
+- [[provider_htpasswd]] <<provider_htpasswd,htpasswd>>
+
 - [[provider_null]] <<provider_null,null>>
+
+- [[provider_random]] <<provider_random,random>>
 
 - [[provider_utils]] <<provider_utils,utils>>
 
@@ -23,8 +27,10 @@ The following resources are used by this module:
 
 - https://registry.terraform.io/providers/oboukili/argocd/latest/docs/resources/application[argocd_application.this] (resource)
 - https://registry.terraform.io/providers/oboukili/argocd/latest/docs/resources/project[argocd_project.this] (resource)
+- https://registry.terraform.io/providers/loafoe/htpasswd/latest/docs/resources/password[htpasswd_password.loki_password_hash] (resource)
 - https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.dependencies] (resource)
 - https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.this] (resource)
+- https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password[random_password.loki_password] (resource)
 - https://registry.terraform.io/providers/cloudposse/utils/latest/docs/data-sources/deep_merge_yaml[utils_deep_merge_yaml.values] (data source)
 
 === Required Inputs
@@ -106,6 +112,22 @@ Type: `any`
 
 Default: `[]`
 
+==== [[input_ingress]] <<input_ingress,ingress>>
+
+Description: Loki frontend ingress configuration
+
+Type:
+[source,hcl]
+----
+object({
+    hosts          = list(string)
+    cluster_issuer = string
+    allowed_ips    = optional(list(string), [])
+  })
+----
+
+Default: `null`
+
 ==== [[input_namespace]] <<input_namespace,namespace>>
 
 Description: n/a
@@ -120,7 +142,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v1.0.0-alpha.6"`
+Default: `"v1.0.0-alpha.7"`
 
 === Outputs
 
@@ -129,6 +151,10 @@ The following outputs are exported:
 ==== [[output_id]] <<output_id,id>>
 
 Description: ID to pass other modules in order to refer to this module as a dependency.
+
+==== [[output_loki_credentials]] <<output_loki_credentials,loki_credentials>>
+
+Description: n/a
 // END_TF_DOCS
 // BEGIN_TF_TABLES
 
@@ -139,7 +165,9 @@ Description: ID to pass other modules in order to refer to this module as a depe
 |===
 |Name |Version
 |[[provider_argocd]] <<provider_argocd,argocd>> |n/a
+|[[provider_htpasswd]] <<provider_htpasswd,htpasswd>> |n/a
 |[[provider_null]] <<provider_null,null>> |n/a
+|[[provider_random]] <<provider_random,random>> |n/a
 |[[provider_utils]] <<provider_utils,utils>> |n/a
 |===
 
@@ -150,8 +178,10 @@ Description: ID to pass other modules in order to refer to this module as a depe
 |Name |Type
 |https://registry.terraform.io/providers/oboukili/argocd/latest/docs/resources/application[argocd_application.this] |resource
 |https://registry.terraform.io/providers/oboukili/argocd/latest/docs/resources/project[argocd_project.this] |resource
+|https://registry.terraform.io/providers/loafoe/htpasswd/latest/docs/resources/password[htpasswd_password.loki_password_hash] |resource
 |https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.dependencies] |resource
 |https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.this] |resource
+|https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password[random_password.loki_password] |resource
 |https://registry.terraform.io/providers/cloudposse/utils/latest/docs/data-sources/deep_merge_yaml[utils_deep_merge_yaml.values] |data source
 |===
 
@@ -222,6 +252,22 @@ object({
 |`[]`
 |no
 
+|[[input_ingress]] <<input_ingress,ingress>>
+|Loki frontend ingress configuration
+|
+
+[source]
+----
+object({
+    hosts          = list(string)
+    cluster_issuer = string
+    allowed_ips    = optional(list(string), [])
+  })
+----
+
+|`null`
+|no
+
 |[[input_namespace]] <<input_namespace,namespace>>
 |n/a
 |`string`
@@ -231,7 +277,7 @@ object({
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v1.0.0-alpha.6"`
+|`"v1.0.0-alpha.7"`
 |no
 
 |===
@@ -242,5 +288,6 @@ object({
 |===
 |Name |Description
 |[[output_id]] <<output_id,id>> |ID to pass other modules in order to refer to this module as a dependency.
+|[[output_loki_credentials]] <<output_loki_credentials,loki_credentials>> |n/a
 |===
 // END_TF_TABLES

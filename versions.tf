@@ -6,5 +6,8 @@ terraform {
     utils = {
       source = "cloudposse/utils"
     }
+    htpasswd = {
+      source = "loafoe/htpasswd"
+    }
   }
 }

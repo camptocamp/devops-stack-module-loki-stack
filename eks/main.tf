@@ -10,6 +10,7 @@ module "loki-stack" {
   dependency_ids   = var.dependency_ids
 
   distributed_mode = false
+  ingress          = var.ingress
 
   helm_values = concat(local.helm_values, var.helm_values)
 }

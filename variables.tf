@@ -62,3 +62,13 @@ variable "distributed_mode" {
   type        = bool
   default     = false
 }
+
+variable "ingress" {
+  description = "Loki frontend ingress configuration"
+  type = object({
+    hosts          = list(string)
+    cluster_issuer = string
+    allowed_ips    = optional(list(string), [])
+  })
+  default = null
+}
