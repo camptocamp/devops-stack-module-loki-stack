@@ -72,3 +72,8 @@ variable "ingress" {
   })
   default = null
 }
+
+variable "enable_filebeat" {
+  type    = bool
+  default = false
+}
