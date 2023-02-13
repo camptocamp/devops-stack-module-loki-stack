@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-alpha.8](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2023-02-13)
+
+
+### Features
+
+* **loki-microservices:** add frontend ingress ([#25](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/25)) ([b98a4bd](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/b98a4bd07c1b8c483f6ff968d09320e49b324aa8))
+
 ## [1.0.0-alpha.7](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2023-02-01)
 
 
