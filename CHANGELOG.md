@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-alpha.8](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0-alpha.8...v1.0.0-alpha.8) (2023-02-13)
+
+
+### Features
+
+* **loki-microservices:** optional filebeat ([#26](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/26)) ([dbb9110](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/dbb911089343c123bbfa6c048e005e3b01ee7868))
+
 ## [1.0.0-alpha.8](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2023-02-13)
 
 
