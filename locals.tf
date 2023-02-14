@@ -62,6 +62,7 @@ locals {
             ingester = {
               wal = {
                 replay_memory_ceiling = "500MB"
+                flush_on_shutdown     = true
               }
             }
             limits_config = {
