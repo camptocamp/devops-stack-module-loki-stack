@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-alpha.10](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) (2023-02-22)
+
+
+### Features
+
+* **Kind:** add Loki microservices ([#32](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/32)) ([6dc0ef9](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/6dc0ef9e1135763446df854380bad1a20d8f6081))
+
 ## [1.0.0-alpha.9](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) (2023-02-13)
 
 
