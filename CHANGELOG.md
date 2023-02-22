@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-alpha.11](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0-alpha.10...v1.0.0-alpha.11) (2023-02-22)
+
+
+### Features
+
+* **loki-microservices:** flush ingester chunks on shutdown ([#31](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/31)) ([b48aa69](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/b48aa6999b1fce4779f9e4376efd84420ac24cc3))
+
 ## [1.0.0-alpha.10](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) (2023-02-22)
 
 
