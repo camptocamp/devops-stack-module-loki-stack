@@ -7,8 +7,8 @@ locals {
         structuredConfig = {
           compactor = local.compactor
         }
-        serviceAccount = local.service_account
       }
+      serviceAccount = local.service_account
     }
     } : null, var.distributed_mode ? null : {
     loki-stack = {
@@ -54,9 +54,7 @@ locals {
       s3 = "s3://${var.logs_storage.region}/${var.logs_storage.bucket_id}"
     }
     boltdb_shipper = {
-      active_index_directory = "/data/loki/index"
-      shared_store           = "s3"
-      cache_location         = "/data/loki/boltdb-cache"
+      shared_store = "s3"
     }
   }
 
