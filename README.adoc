@@ -1,21 +1,27 @@
 // BEGIN_TF_DOCS
 === Requirements
 
-No requirements.
+The following requirements are needed by this module:
+
+- [[requirement_argocd]] <<requirement_argocd,argocd>> (>= 4)
+
+- [[requirement_htpasswd]] <<requirement_htpasswd,htpasswd>> (>= 1)
+
+- [[requirement_utils]] <<requirement_utils,utils>> (>= 1)
 
 === Providers
 
 The following providers are used by this module:
 
-- [[provider_argocd]] <<provider_argocd,argocd>>
+- [[provider_argocd]] <<provider_argocd,argocd>> (>= 4)
 
-- [[provider_htpasswd]] <<provider_htpasswd,htpasswd>>
+- [[provider_htpasswd]] <<provider_htpasswd,htpasswd>> (>= 1)
 
 - [[provider_null]] <<provider_null,null>>
 
 - [[provider_random]] <<provider_random,random>>
 
-- [[provider_utils]] <<provider_utils,utils>>
+- [[provider_utils]] <<provider_utils,utils>> (>= 1)
 
 === Modules
 
@@ -165,18 +171,26 @@ Description: ID to pass other modules in order to refer to this module as a depe
 Description: n/a
 // END_TF_DOCS
 // BEGIN_TF_TABLES
+= Requirements
 
+[cols="a,a",options="header,autowidth"]
+|===
+|Name |Version
+|[[requirement_argocd]] <<requirement_argocd,argocd>> |>= 4
+|[[requirement_htpasswd]] <<requirement_htpasswd,htpasswd>> |>= 1
+|[[requirement_utils]] <<requirement_utils,utils>> |>= 1
+|===
 
 = Providers
 
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Version
-|[[provider_argocd]] <<provider_argocd,argocd>> |n/a
-|[[provider_htpasswd]] <<provider_htpasswd,htpasswd>> |n/a
+|[[provider_argocd]] <<provider_argocd,argocd>> |>= 4
+|[[provider_htpasswd]] <<provider_htpasswd,htpasswd>> |>= 1
 |[[provider_null]] <<provider_null,null>> |n/a
 |[[provider_random]] <<provider_random,random>> |n/a
-|[[provider_utils]] <<provider_utils,utils>> |n/a
+|[[provider_utils]] <<provider_utils,utils>> |>= 1
 |===
 
 = Resources

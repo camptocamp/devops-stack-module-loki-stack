@@ -1,7 +1,13 @@
 // BEGIN_TF_DOCS
 === Requirements
 
-No requirements.
+The following requirements are needed by this module:
+
+- [[requirement_argocd]] <<requirement_argocd,argocd>> (>= 4)
+
+- [[requirement_htpasswd]] <<requirement_htpasswd,htpasswd>> (>= 1)
+
+- [[requirement_utils]] <<requirement_utils,utils>> (>= 1)
 
 === Providers
 
@@ -169,7 +175,15 @@ Description: n/a
 Description: n/a
 // END_TF_DOCS
 // BEGIN_TF_TABLES
+= Requirements
 
+[cols="a,a",options="header,autowidth"]
+|===
+|Name |Version
+|[[requirement_argocd]] <<requirement_argocd,argocd>> |>= 4
+|[[requirement_htpasswd]] <<requirement_htpasswd,htpasswd>> |>= 1
+|[[requirement_utils]] <<requirement_utils,utils>> |>= 1
+|===
 
 = Modules
 
