@@ -12,5 +12,13 @@ terraform {
       source  = "loafoe/htpasswd"
       version = ">= 1"
     }
+    random = {
+      source  = "random"
+      version = ">= 3"
+    }
+    null = {
+      source  = "null"
+      version = ">= 3"
+    }
   }
 }
