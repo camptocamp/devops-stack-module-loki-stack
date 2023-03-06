@@ -7,6 +7,10 @@ The following requirements are needed by this module:
 
 - [[requirement_htpasswd]] <<requirement_htpasswd,htpasswd>> (>= 1)
 
+- [[requirement_null]] <<requirement_null,null>> (>= 3)
+
+- [[requirement_random]] <<requirement_random,random>> (>= 3)
+
 - [[requirement_utils]] <<requirement_utils,utils>> (>= 1)
 
 === Providers
@@ -159,7 +163,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v1.0.0-alpha.11"`
+Default: `"v1.0.0-alpha.12"`
 
 === Outputs
 
@@ -181,6 +185,8 @@ Description: n/a
 |Name |Version
 |[[requirement_argocd]] <<requirement_argocd,argocd>> |>= 4
 |[[requirement_htpasswd]] <<requirement_htpasswd,htpasswd>> |>= 1
+|[[requirement_null]] <<requirement_null,null>> |>= 3
+|[[requirement_random]] <<requirement_random,random>> |>= 3
 |[[requirement_utils]] <<requirement_utils,utils>> |>= 1
 |===
 
@@ -306,7 +312,7 @@ object({
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v1.0.0-alpha.11"`
+|`"v1.0.0-alpha.12"`
 |no
 
 |===
