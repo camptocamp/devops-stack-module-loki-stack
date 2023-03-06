@@ -3,18 +3,21 @@
 #######################
 
 variable "cluster_name" {
-  type    = string
-  default = null
+  description = "Name given to the cluster. Value used for the ingress' URL of the application."
+  type        = string
+  default     = null
 }
 
 variable "base_domain" {
-  type    = string
-  default = null
+  description = "Base domain of the cluster. Value used for the ingress' URL of the application."
+  type        = string
+  default     = null
 }
 
 variable "argocd_namespace" {
-  type    = string
-  default = "argocd"
+  description = "Namespace used by Argo CD where the Application and AppProject resources should be created."
+  type        = string
+  default     = "argocd"
 }
 
 variable "target_revision" {
@@ -24,8 +27,9 @@ variable "target_revision" {
 }
 
 variable "namespace" {
-  type    = string
-  default = "loki-stack"
+  description = "Namespace where the applications's Kubernetes resources should be created. Namespace will be created in case it doesn't exist."
+  type        = string
+  default     = "loki-stack"
 }
 
 variable "helm_values" {
@@ -49,8 +53,9 @@ variable "app_autosync" {
 }
 
 variable "dependency_ids" {
-  type    = map(string)
-  default = {}
+  description = "IDs of the other modules on which this module depends on."
+  type        = map(string)
+  default     = {}
 }
 
 #######################
@@ -58,13 +63,13 @@ variable "dependency_ids" {
 #######################
 
 variable "distributed_mode" {
-  description = "Deploy Loki in distributed mode"
+  description = "Boolean to activate Loki in distributed mode."
   type        = bool
   default     = false
 }
 
 variable "ingress" {
-  description = "Loki frontend ingress configuration"
+  description = "Loki frontend ingress configuration."
   type = object({
     hosts          = list(string)
     cluster_issuer = string
