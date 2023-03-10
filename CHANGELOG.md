@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-alpha.13](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0-alpha.12...v1.0.0-alpha.13) (2023-03-10)
+
+
+### Bug Fixes
+
+* **terraform:** add remaining version requirements ([#37](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/37)) ([f794967](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/f794967b6577c4c3481a4bfdf08acf12f25314d4))
+
 ## [1.0.0-alpha.12](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0-alpha.11...v1.0.0-alpha.12) (2023-03-06)
 
 
