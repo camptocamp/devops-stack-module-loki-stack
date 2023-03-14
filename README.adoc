@@ -27,10 +27,6 @@ The following providers are used by this module:
 
 - [[provider_utils]] <<provider_utils,utils>> (>= 1)
 
-=== Modules
-
-No modules.
-
 === Resources
 
 The following resources are used by this module:
@@ -43,9 +39,6 @@ The following resources are used by this module:
 - https://registry.terraform.io/providers/random/latest/docs/resources/password[random_password.loki_password] (resource)
 - https://registry.terraform.io/providers/cloudposse/utils/latest/docs/data-sources/deep_merge_yaml[utils_deep_merge_yaml.values] (data source)
 
-=== Required Inputs
-
-No required inputs.
 === Optional Inputs
 
 The following input variables are optional (have default values):
@@ -154,13 +147,21 @@ Type: `string`
 
 Default: `"loki-stack"`
 
+==== [[input_sensitive_values]] <<input_sensitive_values,sensitive_values>>
+
+Description: n/a
+
+Type: `map(string)`
+
+Default: `{}`
+
 ==== [[input_target_revision]] <<input_target_revision,target_revision>>
 
 Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v1.0.0-alpha.12"`
+Default: `"v1.0.0-alpha.13"`
 
 === Outputs
 
@@ -308,10 +309,16 @@ object({
 |`"loki-stack"`
 |no
 
+|[[input_sensitive_values]] <<input_sensitive_values,sensitive_values>>
+|n/a
+|`map(string)`
+|`{}`
+|no
+
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v1.0.0-alpha.12"`
+|`"v1.0.0-alpha.13"`
 |no
 
 |===
