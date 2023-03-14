@@ -13,5 +13,7 @@ module "loki-stack" {
   ingress          = var.ingress
   enable_filebeat  = var.enable_filebeat
 
+  sensitive_values = merge({}, var.sensitive_values)
+
   helm_values = concat(local.helm_values, var.helm_values)
 }

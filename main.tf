@@ -66,6 +66,13 @@ resource "argocd_application" "this" {
       path            = format("charts/%s", var.distributed_mode ? "loki-microservice" : "loki-stack")
       target_revision = var.target_revision
       helm {
+        dynamic "parameter" {
+          for_each = var.sensitive_values
+          content {
+            name  = parameter.key
+            value = sensitive(parameter.value)
+          }
+        }
         values = data.utils_deep_merge_yaml.values.output
       }
     }

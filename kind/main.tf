@@ -13,5 +13,11 @@ module "loki-stack" {
   ingress          = var.ingress
   enable_filebeat  = var.enable_filebeat
 
+  sensitive_values = merge(var.distributed_mode ? {
+    "loki-distributed.loki.storageConfig.aws.secret_access_key" = var.logs_storage.secret_access_key
+    } : {
+    "loki-stack.loki.config.storage_config.aws.secret_access_key" = var.logs_storage.secret_access_key
+  }, var.sensitive_values)
+
   helm_values = concat(local.helm_values, var.helm_values)
 }

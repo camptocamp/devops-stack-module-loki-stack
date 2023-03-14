@@ -42,7 +42,6 @@ locals {
     azure = {
       container_name  = var.logs_storage.container
       account_name    = var.logs_storage.storage_account
-      account_key     = var.logs_storage.storage_account_key
       request_timeout = "180s"
       max_retries     = 50
       min_retry_delay = "1s"

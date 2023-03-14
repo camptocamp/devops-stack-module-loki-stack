@@ -82,3 +82,8 @@ variable "enable_filebeat" {
   type    = bool
   default = false
 }
+
+variable "sensitive_values" {
+  type    = map(string)
+  default = {}
+}

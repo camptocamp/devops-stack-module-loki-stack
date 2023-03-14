@@ -5,5 +5,4 @@ variable "logs_storage" {
     storage_account     = string
     storage_account_key = string
   })
-  sensitive = true
 }
