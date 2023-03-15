@@ -149,7 +149,7 @@ Type: `string`
 
 Default: `"loki-stack"`
 
-==== [[input_sensitive_values]] <<input_sensitive_values,sensitive_values>>
+==== [[input_sensitive_helm_values]] <<input_sensitive_helm_values,sensitive_helm_values>>
 
 Description: n/a
 
@@ -309,7 +309,7 @@ object({
 |`"loki-stack"`
 |no
 
-|[[input_sensitive_values]] <<input_sensitive_values,sensitive_values>>
+|[[input_sensitive_helm_values]] <<input_sensitive_helm_values,sensitive_helm_values>>
 |n/a
 |`map(string)`
 |`{}`
