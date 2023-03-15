@@ -13,11 +13,11 @@ module "loki-stack" {
   ingress          = var.ingress
   enable_filebeat  = var.enable_filebeat
 
-  sensitive_values = merge(var.distributed_mode ? {
+  sensitive_helm_values = merge(var.distributed_mode ? {
     "loki-distributed.loki.storageConfig.azure.account_key" = var.logs_storage.storage_account_key
     } : {
     "loki-stack.loki.config.storage_config.azure.account_key" = var.logs_storage.storage_account_key
-  }, var.sensitive_values)
+  }, var.sensitive_helm_values)
 
   helm_values = concat(local.helm_values, var.helm_values)
 }

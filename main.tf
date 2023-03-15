@@ -67,7 +67,7 @@ resource "argocd_application" "this" {
       target_revision = var.target_revision
       helm {
         dynamic "parameter" {
-          for_each = var.sensitive_values
+          for_each = var.sensitive_helm_values
           content {
             name  = parameter.key
             value = sensitive(parameter.value)

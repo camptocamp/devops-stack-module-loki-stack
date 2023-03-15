@@ -83,7 +83,7 @@ variable "enable_filebeat" {
   default = false
 }
 
-variable "sensitive_values" {
+variable "sensitive_helm_values" {
   type    = map(string)
   default = {}
 }
