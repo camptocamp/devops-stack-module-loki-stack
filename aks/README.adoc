@@ -13,10 +13,6 @@ The following requirements are needed by this module:
 
 - [[requirement_utils]] <<requirement_utils,utils>> (>= 1)
 
-=== Providers
-
-No providers.
-
 === Modules
 
 The following Modules are called:
@@ -26,10 +22,6 @@ The following Modules are called:
 Source: ../
 
 Version:
-
-=== Resources
-
-No resources.
 
 === Required Inputs
 
@@ -163,7 +155,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v1.0.0-alpha.12"`
+Default: `"v1.0.0-alpha.13"`
 
 === Outputs
 
@@ -312,7 +304,7 @@ object({
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v1.0.0-alpha.12"`
+|`"v1.0.0-alpha.13"`
 |no
 
 |===
