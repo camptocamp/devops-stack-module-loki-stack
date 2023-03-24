@@ -2,6 +2,6 @@
 * Module Variants
 ** xref:ROOT:aks/README.adoc[AKS]
 ** xref:ROOT:eks/README.adoc[EKS]
-** xref:ROOT:find/README.adoc[KinD]
+** xref:ROOT:kind/README.adoc[KinD]
 * https://github.com/camptocamp/devops-stack-module-loki-stack[Repository,window=_blank]
 * xref:ROOT:ROOT:index.adoc[_Return to DevOps Stack docs_]
