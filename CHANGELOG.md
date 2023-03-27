@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0-alpha.13...v1.0.0) (2023-03-27)
+
+
+### Miscellaneous Chores
+
+* release v1.0.0 ([#42](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/42)) ([72a80d1](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/72a80d11b0fce13c6acfab76c103888e5c3d733a))
+
 ## [1.0.0-alpha.13](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0-alpha.12...v1.0.0-alpha.13) (2023-03-10)
 
 
