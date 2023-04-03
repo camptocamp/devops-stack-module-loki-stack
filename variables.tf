@@ -2,6 +2,7 @@
 ## Standard variables
 #######################
 
+# Useless cluster_name & base_domain variables ? TODO remove if it's the case.
 variable "cluster_name" {
   description = "Name given to the cluster. Value used for the ingress' URL of the application."
   type        = string

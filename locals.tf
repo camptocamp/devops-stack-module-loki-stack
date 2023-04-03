@@ -3,6 +3,13 @@ locals {
 
   helm_values = [
     {
+      eventHandler = {
+        namespace = var.namespace
+        lokiURL   = var.distributed_mode ? "http://${local.fullnameOverride}-distributor.${var.namespace}:3100/loki/api/v1/push" : "http://loki-stack.${var.namespace}:3100/loki/api/v1/push"
+        labels = {}
+      }
+    },
+    {
       frontendIngress = var.ingress != null ? {
         lokiCredentials = base64encode("loki:${htpasswd_password.loki_password_hash.0.bcrypt}")
         hosts           = var.ingress.hosts
@@ -163,12 +170,14 @@ locals {
     var.distributed_mode ? null : {
       loki-stack = {
         loki = {
-          serviceName = "loki-stack.loki-stack"
+          serviceName = "loki-stack.${var.namespace}"
+          # TODO serviceMonitor is a KPS CRD, manage this circular dependency
           serviceMonitor = {
             enabled = true
           }
         }
         promtail = {
+          # Same previous comment
           serviceMonitor = {
             enabled = true
           }
