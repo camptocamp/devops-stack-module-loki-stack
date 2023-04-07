@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0...v1.1.0) (2023-04-07)
+
+
+### Features
+
+* ship k8s events to Loki ([#44](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/44)) ([1c55c1b](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/1c55c1b7d39cde0ecaaeb0d7df5a576284e1cf62))
+
 ## [1.0.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0-alpha.13...v1.0.0) (2023-03-27)
 
 
