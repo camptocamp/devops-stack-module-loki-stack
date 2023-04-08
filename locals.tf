@@ -6,7 +6,7 @@ locals {
       eventHandler = {
         namespace = var.namespace
         lokiURL   = var.distributed_mode ? "http://${local.fullnameOverride}-distributor.${var.namespace}:3100/loki/api/v1/push" : "http://loki-stack.${var.namespace}:3100/loki/api/v1/push"
-        labels = {}
+        labels    = {}
       }
     },
     {
@@ -37,27 +37,28 @@ locals {
             enabled = true
           }
         }
+        # TODO ingester HA
         ingester = {
           persistence = {
             enabled = true
-            size    = "10Gi"
           }
           replicas = 1
         }
         loki = {
           structuredConfig = {
+            common = {
+              compactor_address = "http://${local.fullnameOverride}-compactor:3100"
+            }
             ruler = {
               alertmanager_url = "http://kube-prometheus-stack-alertmanager.kube-prometheus-stack:9093"
             }
             chunk_store_config = {
               chunk_cache_config = {
-                enable_fifocache = false
                 memcached = {
                   expiration = "24h"
                 }
                 memcached_client = {
-                  host    = "${local.fullnameOverride}-memcached-chunks.${var.namespace}.svc.cluster.local"
-                  service = "http"
+                  service = "memcached-client"
                   timeout = "500ms"
                 }
               }
@@ -91,13 +92,11 @@ locals {
               parallelise_shardable_queries = false
               results_cache = {
                 cache = {
-                  enable_fifocache = false
                   memcached = {
                     expiration = "24h"
                   }
                   memcached_client = {
-                    host    = "${local.fullnameOverride}-memcached-frontend.${var.namespace}.svc.cluster.local"
-                    service = "http"
+                    service = "memcached-client"
                     timeout = "500ms"
                   }
                 }
@@ -116,13 +115,11 @@ locals {
                 }
               }
               index_queries_cache_config = {
-                enable_fifocache = false
                 memcached = {
                   expiration = "24h"
                 }
                 memcached_client = {
-                  host    = "${local.fullnameOverride}-memcached-index-queries.${var.namespace}.svc.cluster.local"
-                  service = "http"
+                  service = "memcached-client"
                   timeout = "500ms"
                 }
               }
@@ -138,9 +135,14 @@ locals {
         memcachedIndexQueries = {
           enabled = true
         }
-        querier = {
+        queryScheduler = {
+          enabled  = true
           affinity = ""
-          replicas = 4
+        }
+        querier = {
+          affinity       = ""
+          replicas       = 4
+          maxUnavailable = 2
         }
         ruler = {
           directories = {}
