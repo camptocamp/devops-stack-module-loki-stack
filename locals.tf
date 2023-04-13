@@ -5,7 +5,7 @@ locals {
     {
       eventHandler = {
         namespace = var.namespace
-        lokiURL   = var.distributed_mode ? "http://${local.fullnameOverride}-distributor.${var.namespace}:3100/loki/api/v1/push" : "http://loki-stack.${var.namespace}:3100/loki/api/v1/push"
+        lokiURL   = var.distributed_mode ? "http://${local.fullnameOverride}-distributor.${var.namespace}:3100/loki/api/v1/push" : "http://${local.fullnameOverride}.${var.namespace}:3100/loki/api/v1/push"
         labels    = {}
       }
     },
@@ -172,13 +172,21 @@ locals {
     var.distributed_mode ? null : {
       loki-stack = {
         loki = {
-          serviceName = "loki-stack.${var.namespace}"
+          fullnameOverride = local.fullnameOverride
+          serviceName      = "${local.fullnameOverride}.${var.namespace}"
           # TODO serviceMonitor is a KPS CRD, manage this circular dependency
           serviceMonitor = {
             enabled = true
           }
         }
         promtail = {
+          config = {
+            clients = [
+              {
+                url = "http://${local.fullnameOverride}:3100/loki/api/v1/push"
+              }
+            ]
+          }
           # Same previous comment
           serviceMonitor = {
             enabled = true
