@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.1.0...v2.0.0) (2023-04-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* **azure:** use managed identity to access object storage ([#40](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/40))
+
+### Features
+
+* **azure:** use managed identity to access object storage ([#40](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/40)) ([6e7cfa2](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/6e7cfa20f64f4781c7d44fedf6d7e2d09078e90d))
+
 ## [1.1.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.0.0...v1.1.0) (2023-04-07)
 
 
