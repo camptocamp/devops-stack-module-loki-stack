@@ -178,6 +178,7 @@ locals {
           serviceMonitor = {
             enabled = true
           }
+          isDefault = false
         }
         promtail = {
           config = {
