@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v2.0.0...v2.0.1) (2023-04-17)
+
+
+### Bug Fixes
+
+* **loki-stack:** set Loki datasource isDefault to false ([#49](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/49)) ([b0a8758](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/b0a875808a94464f145a6ab940d1d71939119bf1))
+
 ## [2.0.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v1.1.0...v2.0.0) (2023-04-13)
 
 
