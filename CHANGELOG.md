@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v2.0.1...v2.0.2) (2023-04-26)
+
+
+### Bug Fixes
+
+* grafana agent static tag ([#52](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/52)) ([710ea82](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/710ea823b9446b21f5ec5a19ea59f231cc159164))
+
 ## [2.0.1](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v2.0.0...v2.0.1) (2023-04-17)
 
 
