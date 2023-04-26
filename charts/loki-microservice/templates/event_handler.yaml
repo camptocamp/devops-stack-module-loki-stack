@@ -84,7 +84,7 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
       - name: agent
-        image: grafana/agent:main
+        image: grafana/agent:{{ .grafanaAgentTag }}
         imagePullPolicy: IfNotPresent
         args:
         - -config.file=/etc/agent/agent.yaml
