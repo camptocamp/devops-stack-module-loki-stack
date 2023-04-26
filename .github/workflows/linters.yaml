@@ -6,4 +6,4 @@ on:
 
 jobs:
   linters:
-    uses: camptocamp/devops-stack/.github/workflows/modules-linters.yaml@master
+    uses: camptocamp/devops-stack/.github/workflows/modules-linters.yaml@main
