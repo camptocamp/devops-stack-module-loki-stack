@@ -63,6 +63,54 @@ object({
 
 The following input variables are optional (have default values):
 
+==== [[input_cluster_name]] <<input_cluster_name,cluster_name>>
+
+Description: Name given to the cluster. Value used for the ingress' URL of the application.
+
+Type: `string`
+
+Default: `null`
+
+==== [[input_base_domain]] <<input_base_domain,base_domain>>
+
+Description: Base domain of the cluster. Value used for the ingress' URL of the application.
+
+Type: `string`
+
+Default: `null`
+
+==== [[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
+
+Description: Namespace used by Argo CD where the Application and AppProject resources should be created.
+
+Type: `string`
+
+Default: `"argocd"`
+
+==== [[input_target_revision]] <<input_target_revision,target_revision>>
+
+Description: Override of target revision of the application chart.
+
+Type: `string`
+
+Default: `"v2.0.1"`
+
+==== [[input_namespace]] <<input_namespace,namespace>>
+
+Description: Namespace where the applications's Kubernetes resources should be created. Namespace will be created in case it doesn't exist.
+
+Type: `string`
+
+Default: `"loki-stack"`
+
+==== [[input_helm_values]] <<input_helm_values,helm_values>>
+
+Description: Helm chart value overrides. They should be passed as a list of HCL structures.
+
+Type: `any`
+
+Default: `[]`
+
 ==== [[input_app_autosync]] <<input_app_autosync,app_autosync>>
 
 Description: Automated sync options for the Argo CD Application resource.
@@ -87,30 +135,6 @@ Default:
 }
 ----
 
-==== [[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
-
-Description: Namespace used by Argo CD where the Application and AppProject resources should be created.
-
-Type: `string`
-
-Default: `"argocd"`
-
-==== [[input_base_domain]] <<input_base_domain,base_domain>>
-
-Description: Base domain of the cluster. Value used for the ingress' URL of the application.
-
-Type: `string`
-
-Default: `null`
-
-==== [[input_cluster_name]] <<input_cluster_name,cluster_name>>
-
-Description: Name given to the cluster. Value used for the ingress' URL of the application.
-
-Type: `string`
-
-Default: `null`
-
 ==== [[input_dependency_ids]] <<input_dependency_ids,dependency_ids>>
 
 Description: IDs of the other modules on which this module depends on.
@@ -126,22 +150,6 @@ Description: Boolean to activate Loki in distributed mode.
 Type: `bool`
 
 Default: `false`
-
-==== [[input_enable_filebeat]] <<input_enable_filebeat,enable_filebeat>>
-
-Description: n/a
-
-Type: `bool`
-
-Default: `false`
-
-==== [[input_helm_values]] <<input_helm_values,helm_values>>
-
-Description: Helm chart value overrides. They should be passed as a list of HCL structures.
-
-Type: `any`
-
-Default: `[]`
 
 ==== [[input_ingress]] <<input_ingress,ingress>>
 
@@ -159,21 +167,13 @@ object({
 
 Default: `null`
 
-==== [[input_namespace]] <<input_namespace,namespace>>
+==== [[input_enable_filebeat]] <<input_enable_filebeat,enable_filebeat>>
 
-Description: Namespace where the applications's Kubernetes resources should be created. Namespace will be created in case it doesn't exist.
+Description: n/a
 
-Type: `string`
+Type: `bool`
 
-Default: `"loki-stack"`
-
-==== [[input_target_revision]] <<input_target_revision,target_revision>>
-
-Description: Override of target revision of the application chart.
-
-Type: `string`
-
-Default: `"v2.0.0"`
+Default: `false`
 
 === Outputs
 
@@ -233,6 +233,60 @@ Description: n/a
 [cols="a,a,a,a,a",options="header,autowidth"]
 |===
 |Name |Description |Type |Default |Required
+|[[input_logs_storage]] <<input_logs_storage,logs_storage>>
+|Azure Blob Storage configuration for logs persistence.
+|
+
+[source]
+----
+object({
+    container                        = string
+    storage_account                  = string
+    managed_identity_node_rg_name    = optional(string, null)
+    managed_identity_oidc_issuer_url = optional(string, null)
+    storage_account_key              = optional(string, null)
+  })
+----
+
+|n/a
+|yes
+
+|[[input_cluster_name]] <<input_cluster_name,cluster_name>>
+|Name given to the cluster. Value used for the ingress' URL of the application.
+|`string`
+|`null`
+|no
+
+|[[input_base_domain]] <<input_base_domain,base_domain>>
+|Base domain of the cluster. Value used for the ingress' URL of the application.
+|`string`
+|`null`
+|no
+
+|[[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
+|Namespace used by Argo CD where the Application and AppProject resources should be created.
+|`string`
+|`"argocd"`
+|no
+
+|[[input_target_revision]] <<input_target_revision,target_revision>>
+|Override of target revision of the application chart.
+|`string`
+|`"v2.0.1"`
+|no
+
+|[[input_namespace]] <<input_namespace,namespace>>
+|Namespace where the applications's Kubernetes resources should be created. Namespace will be created in case it doesn't exist.
+|`string`
+|`"loki-stack"`
+|no
+
+|[[input_helm_values]] <<input_helm_values,helm_values>>
+|Helm chart value overrides. They should be passed as a list of HCL structures.
+|`any`
+|`[]`
+|no
+
 |[[input_app_autosync]] <<input_app_autosync,app_autosync>>
 |Automated sync options for the Argo CD Application resource.
 |
@@ -259,24 +313,6 @@ object({
 
 |no
 
-|[[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
-|Namespace used by Argo CD where the Application and AppProject resources should be created.
-|`string`
-|`"argocd"`
-|no
-
-|[[input_base_domain]] <<input_base_domain,base_domain>>
-|Base domain of the cluster. Value used for the ingress' URL of the application.
-|`string`
-|`null`
-|no
-
-|[[input_cluster_name]] <<input_cluster_name,cluster_name>>
-|Name given to the cluster. Value used for the ingress' URL of the application.
-|`string`
-|`null`
-|no
-
 |[[input_dependency_ids]] <<input_dependency_ids,dependency_ids>>
 |IDs of the other modules on which this module depends on.
 |`map(string)`
@@ -287,18 +323,6 @@ object({
 |Boolean to activate Loki in distributed mode.
 |`bool`
 |`false`
-|no
-
-|[[input_enable_filebeat]] <<input_enable_filebeat,enable_filebeat>>
-|n/a
-|`bool`
-|`false`
-|no
-
-|[[input_helm_values]] <<input_helm_values,helm_values>>
-|Helm chart value overrides. They should be passed as a list of HCL structures.
-|`any`
-|`[]`
 |no
 
 |[[input_ingress]] <<input_ingress,ingress>>
@@ -317,34 +341,10 @@ object({
 |`null`
 |no
 
-|[[input_logs_storage]] <<input_logs_storage,logs_storage>>
-|Azure Blob Storage configuration for logs persistence.
-|
-
-[source]
-----
-object({
-    container                        = string
-    storage_account                  = string
-    managed_identity_node_rg_name    = optional(string, null)
-    managed_identity_oidc_issuer_url = optional(string, null)
-    storage_account_key              = optional(string, null)
-  })
-----
-
+|[[input_enable_filebeat]] <<input_enable_filebeat,enable_filebeat>>
 |n/a
-|yes
-
-|[[input_namespace]] <<input_namespace,namespace>>
-|Namespace where the applications's Kubernetes resources should be created. Namespace will be created in case it doesn't exist.
-|`string`
-|`"loki-stack"`
-|no
-
-|[[input_target_revision]] <<input_target_revision,target_revision>>
-|Override of target revision of the application chart.
-|`string`
-|`"v2.0.0"`
+|`bool`
+|`false`
 |no
 
 |===
