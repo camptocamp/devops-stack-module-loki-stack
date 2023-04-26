@@ -4,9 +4,9 @@ locals {
   helm_values = [
     {
       eventHandler = {
-        namespace = var.namespace
-        lokiURL   = var.distributed_mode ? "http://${local.fullnameOverride}-distributor.${var.namespace}:3100/loki/api/v1/push" : "http://${local.fullnameOverride}.${var.namespace}:3100/loki/api/v1/push"
-        labels    = {}
+        namespace       = var.namespace
+        lokiURL         = var.distributed_mode ? "http://${local.fullnameOverride}-distributor.${var.namespace}:3100/loki/api/v1/push" : "http://${local.fullnameOverride}.${var.namespace}:3100/loki/api/v1/push"
+        labels          = {}
         grafanaAgentTag = "main-4f86002"
       }
     },
