@@ -23,9 +23,9 @@ The following providers are used by this module:
 
 - [[provider_htpasswd]] <<provider_htpasswd,htpasswd>> (>= 1)
 
-- [[provider_argocd]] <<provider_argocd,argocd>> (>= 4)
-
 - [[provider_utils]] <<provider_utils,utils>> (>= 1)
+
+- [[provider_argocd]] <<provider_argocd,argocd>> (>= 4)
 
 === Resources
 
@@ -185,11 +185,11 @@ Description: n/a
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Version
-|[[provider_null]] <<provider_null,null>> |>= 3
 |[[provider_random]] <<provider_random,random>> |>= 3
 |[[provider_htpasswd]] <<provider_htpasswd,htpasswd>> |>= 1
 |[[provider_utils]] <<provider_utils,utils>> |>= 1
 |[[provider_argocd]] <<provider_argocd,argocd>> |>= 4
+|[[provider_null]] <<provider_null,null>> |>= 3
 |===
 
 = Resources
