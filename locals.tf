@@ -43,7 +43,7 @@ locals {
           persistence = {
             enabled = true
           }
-          replicas = 1
+          replicas = 3
         }
         loki = {
           structuredConfig = {
