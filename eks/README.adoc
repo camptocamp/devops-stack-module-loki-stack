@@ -157,6 +157,28 @@ Type: `bool`
 
 Default: `false`
 
+==== [[input_ingester_config]] <<input_ingester_config,ingester_config>>
+
+Description: Configuration of ingester to have more replicas
+
+Type:
+[source,hcl]
+----
+object({
+    replicas       = number
+    maxUnavailable = number
+  })
+----
+
+Default:
+[source,json]
+----
+{
+  "maxUnavailable": null,
+  "replicas": 1
+}
+----
+
 === Outputs
 
 The following outputs are exported:
@@ -305,6 +327,30 @@ object({
 |n/a
 |`bool`
 |`false`
+|no
+
+|[[input_ingester_config]] <<input_ingester_config,ingester_config>>
+|Configuration of ingester to have more replicas
+|
+
+[source]
+----
+object({
+    replicas       = number
+    maxUnavailable = number
+  })
+----
+
+|
+
+[source]
+----
+{
+  "maxUnavailable": null,
+  "replicas": 1
+}
+----
+
 |no
 
 |===
