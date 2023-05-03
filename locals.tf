@@ -43,7 +43,8 @@ locals {
           persistence = {
             enabled = true
           }
-          replicas = 3
+          replicas       = "${var.ingester_config.replicas}"
+          maxUnavailable = "${var.ingester_config.maxUnavailable}"
         }
         loki = {
           structuredConfig = {
