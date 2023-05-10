@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.1.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v2.0.2...v2.1.0) (2023-05-10)
+
+
+### Features
+
+* add var for ingester replicas ([#57](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/57)) ([f8a4b9f](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/f8a4b9f64d4ae97d193d1c841aac215637fa14a8))
+
+
+### Bug Fixes
+
+* **azure:** storage account key support ([#48](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/48)) ([6aa151b](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/6aa151b1134f02e3630e67b63bd6a886c87b6513))
+* **loki-stack:** set static Grafana agent tag ([#54](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/54)) ([2a571f0](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/2a571f030738ed5fedc35feb50c832210921588c))
+
 ## [2.0.2](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v2.0.1...v2.0.2) (2023-04-26)
 
 
