@@ -73,14 +73,16 @@ locals {
   storage_config = {
     azure = merge(local.use_managed_identity ? null : {
       account_key = var.logs_storage.storage_account_key
-      }, {
-      use_federated_token = local.use_managed_identity
-      container_name      = var.logs_storage.container
-      account_name        = var.logs_storage.storage_account
-      request_timeout     = "180s"
-      max_retries         = 50
-      min_retry_delay     = "1s"
-      max_retry_delay     = "5s"
+      }, local.use_managed_identity ? {
+      use_federated_token = true
+      } : null,
+      {
+        container_name  = var.logs_storage.container
+        account_name    = var.logs_storage.storage_account
+        request_timeout = "180s"
+        max_retries     = 50
+        min_retry_delay = "1s"
+        max_retry_delay = "5s"
     })
     boltdb_shipper = {
       shared_store = "azure"
