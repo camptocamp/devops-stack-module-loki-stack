@@ -45,7 +45,7 @@ locals {
           }
           replicas       = "3"
           maxUnavailable = "1"
-          affinity = {}
+          affinity       = {}
         }
         loki = {
           structuredConfig = {
