@@ -83,16 +83,3 @@ variable "enable_filebeat" {
   type    = bool
   default = false
 }
-
-variable "ingester_config" {
-  description = "Configuration of ingester to have more replicas"
-  type = object({
-    replicas       = number
-    maxUnavailable = number
-  })
-  default = {
-    replicas       = 1
-    maxUnavailable = null
-  }
-}
-
