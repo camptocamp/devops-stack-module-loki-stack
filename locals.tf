@@ -43,9 +43,9 @@ locals {
           persistence = {
             enabled = true
           }
-          replicas       = "3"
-          maxUnavailable = "1"
-          affinity       = {}
+          replicas       = 3
+          maxUnavailable = 1
+          affinity       = ""
         }
         loki = {
           structuredConfig = {
