@@ -83,3 +83,24 @@ variable "enable_filebeat" {
   type    = bool
   default = false
 }
+
+variable "compactor_retention" {
+  description = "This variable allows to enable the retention of compactor for Loki"
+  type = object({
+    compactor = object({
+      retention_enabled = bool
+    })
+    limits_config = object({
+      retention_period = string
+    })
+  })
+
+  default = {
+    compactor = {
+      retention_enabled = "true"
+    }
+    limits_config = {
+      retention_period = "720h"
+    }
+  }
+}
