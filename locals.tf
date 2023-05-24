@@ -43,8 +43,9 @@ locals {
           persistence = {
             enabled = true
           }
-          replicas       = "${var.ingester_config.replicas}"
-          maxUnavailable = "${var.ingester_config.maxUnavailable}"
+          replicas       = 3
+          maxUnavailable = 1
+          affinity       = ""
         }
         loki = {
           structuredConfig = {
@@ -70,6 +71,11 @@ locals {
               retention_enabled      = false
             }
             ingester = {
+              lifecycler = {
+                ring = {
+                  replication_factor = 3
+                }
+              }
               wal = {
                 replay_memory_ceiling = "500MB"
                 flush_on_shutdown     = true

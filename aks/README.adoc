@@ -93,7 +93,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v2.0.2"`
+Default: `"v2.1.0"`
 
 ==== [[input_namespace]] <<input_namespace,namespace>>
 
@@ -174,28 +174,6 @@ Description: n/a
 Type: `bool`
 
 Default: `false`
-
-==== [[input_ingester_config]] <<input_ingester_config,ingester_config>>
-
-Description: Configuration of ingester to have more replicas
-
-Type:
-[source,hcl]
-----
-object({
-    replicas       = number
-    maxUnavailable = number
-  })
-----
-
-Default:
-[source,json]
-----
-{
-  "maxUnavailable": null,
-  "replicas": 1
-}
-----
 
 === Outputs
 
@@ -294,7 +272,7 @@ object({
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v2.0.2"`
+|`"v2.1.0"`
 |no
 
 |[[input_namespace]] <<input_namespace,namespace>>
@@ -367,30 +345,6 @@ object({
 |n/a
 |`bool`
 |`false`
-|no
-
-|[[input_ingester_config]] <<input_ingester_config,ingester_config>>
-|Configuration of ingester to have more replicas
-|
-
-[source]
-----
-object({
-    replicas       = number
-    maxUnavailable = number
-  })
-----
-
-|
-
-[source]
-----
-{
-  "maxUnavailable": null,
-  "replicas": 1
-}
-----
-
 |no
 
 |===
