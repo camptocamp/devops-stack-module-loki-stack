@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v2.1.0...v2.2.0) (2023-05-24)
+
+
+### Features
+
+* configure ingester replication factor ([#59](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/59)) ([8d00917](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/8d00917d7c315d70dd2d1b5852c19f40578e0590))
+
 ## [2.1.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v2.0.2...v2.1.0) (2023-05-10)
 
 
