@@ -17,6 +17,8 @@ The following requirements are needed by this module:
 
 The following providers are used by this module:
 
+- [[provider_null]] <<provider_null,null>> (>= 3)
+
 - [[provider_random]] <<provider_random,random>> (>= 3)
 
 - [[provider_htpasswd]] <<provider_htpasswd,htpasswd>> (>= 1)
@@ -25,8 +27,6 @@ The following providers are used by this module:
 
 - [[provider_argocd]] <<provider_argocd,argocd>> (>= 4)
 
-- [[provider_null]] <<provider_null,null>> (>= 3)
-
 === Resources
 
 The following resources are used by this module:
@@ -34,30 +34,14 @@ The following resources are used by this module:
 - https://registry.terraform.io/providers/oboukili/argocd/latest/docs/resources/application[argocd_application.this] (resource)
 - https://registry.terraform.io/providers/oboukili/argocd/latest/docs/resources/project[argocd_project.this] (resource)
 - https://registry.terraform.io/providers/loafoe/htpasswd/latest/docs/resources/password[htpasswd_password.loki_password_hash] (resource)
-- https://registry.terraform.io/providers/null/latest/docs/resources/resource[null_resource.dependencies] (resource)
-- https://registry.terraform.io/providers/null/latest/docs/resources/resource[null_resource.this] (resource)
-- https://registry.terraform.io/providers/random/latest/docs/resources/password[random_password.loki_password] (resource)
+- https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.dependencies] (resource)
+- https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.this] (resource)
+- https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password[random_password.loki_password] (resource)
 - https://registry.terraform.io/providers/cloudposse/utils/latest/docs/data-sources/deep_merge_yaml[utils_deep_merge_yaml.values] (data source)
 
 === Optional Inputs
 
 The following input variables are optional (have default values):
-
-==== [[input_cluster_name]] <<input_cluster_name,cluster_name>>
-
-Description: Name given to the cluster. Value used for the ingress' URL of the application.
-
-Type: `string`
-
-Default: `null`
-
-==== [[input_base_domain]] <<input_base_domain,base_domain>>
-
-Description: Base domain of the cluster. Value used for the ingress' URL of the application.
-
-Type: `string`
-
-Default: `null`
 
 ==== [[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
 
@@ -73,7 +57,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v2.1.0"`
+Default: `"v2.2.0"`
 
 ==== [[input_namespace]] <<input_namespace,namespace>>
 
@@ -185,11 +169,11 @@ Description: n/a
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Version
+|[[provider_null]] <<provider_null,null>> |>= 3
 |[[provider_random]] <<provider_random,random>> |>= 3
 |[[provider_htpasswd]] <<provider_htpasswd,htpasswd>> |>= 1
-|[[provider_utils]] <<provider_utils,utils>> |>= 1
 |[[provider_argocd]] <<provider_argocd,argocd>> |>= 4
-|[[provider_null]] <<provider_null,null>> |>= 3
+|[[provider_utils]] <<provider_utils,utils>> |>= 1
 |===
 
 = Resources
@@ -200,9 +184,9 @@ Description: n/a
 |https://registry.terraform.io/providers/oboukili/argocd/latest/docs/resources/application[argocd_application.this] |resource
 |https://registry.terraform.io/providers/oboukili/argocd/latest/docs/resources/project[argocd_project.this] |resource
 |https://registry.terraform.io/providers/loafoe/htpasswd/latest/docs/resources/password[htpasswd_password.loki_password_hash] |resource
-|https://registry.terraform.io/providers/null/latest/docs/resources/resource[null_resource.dependencies] |resource
-|https://registry.terraform.io/providers/null/latest/docs/resources/resource[null_resource.this] |resource
-|https://registry.terraform.io/providers/random/latest/docs/resources/password[random_password.loki_password] |resource
+|https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.dependencies] |resource
+|https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.this] |resource
+|https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password[random_password.loki_password] |resource
 |https://registry.terraform.io/providers/cloudposse/utils/latest/docs/data-sources/deep_merge_yaml[utils_deep_merge_yaml.values] |data source
 |===
 
@@ -211,18 +195,6 @@ Description: n/a
 [cols="a,a,a,a,a",options="header,autowidth"]
 |===
 |Name |Description |Type |Default |Required
-|[[input_cluster_name]] <<input_cluster_name,cluster_name>>
-|Name given to the cluster. Value used for the ingress' URL of the application.
-|`string`
-|`null`
-|no
-
-|[[input_base_domain]] <<input_base_domain,base_domain>>
-|Base domain of the cluster. Value used for the ingress' URL of the application.
-|`string`
-|`null`
-|no
-
 |[[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
 |Namespace used by Argo CD where the Application and AppProject resources should be created.
 |`string`
@@ -232,7 +204,7 @@ Description: n/a
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v2.1.0"`
+|`"v2.2.0"`
 |no
 
 |[[input_namespace]] <<input_namespace,namespace>>

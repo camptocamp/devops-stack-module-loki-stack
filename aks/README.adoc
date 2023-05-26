@@ -63,22 +63,6 @@ object({
 
 The following input variables are optional (have default values):
 
-==== [[input_cluster_name]] <<input_cluster_name,cluster_name>>
-
-Description: Name given to the cluster. Value used for the ingress' URL of the application.
-
-Type: `string`
-
-Default: `null`
-
-==== [[input_base_domain]] <<input_base_domain,base_domain>>
-
-Description: Base domain of the cluster. Value used for the ingress' URL of the application.
-
-Type: `string`
-
-Default: `null`
-
 ==== [[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
 
 Description: Namespace used by Argo CD where the Application and AppProject resources should be created.
@@ -93,7 +77,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v2.1.0"`
+Default: `"v2.2.0"`
 
 ==== [[input_namespace]] <<input_namespace,namespace>>
 
@@ -251,18 +235,6 @@ object({
 |n/a
 |yes
 
-|[[input_cluster_name]] <<input_cluster_name,cluster_name>>
-|Name given to the cluster. Value used for the ingress' URL of the application.
-|`string`
-|`null`
-|no
-
-|[[input_base_domain]] <<input_base_domain,base_domain>>
-|Base domain of the cluster. Value used for the ingress' URL of the application.
-|`string`
-|`null`
-|no
-
 |[[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
 |Namespace used by Argo CD where the Application and AppProject resources should be created.
 |`string`
@@ -272,7 +244,7 @@ object({
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v2.1.0"`
+|`"v2.2.0"`
 |no
 
 |[[input_namespace]] <<input_namespace,namespace>>
