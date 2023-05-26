@@ -2,19 +2,6 @@
 ## Standard variables
 #######################
 
-# Useless cluster_name & base_domain variables ? TODO remove if it's the case.
-variable "cluster_name" {
-  description = "Name given to the cluster. Value used for the ingress' URL of the application."
-  type        = string
-  default     = null
-}
-
-variable "base_domain" {
-  description = "Base domain of the cluster. Value used for the ingress' URL of the application."
-  type        = string
-  default     = null
-}
-
 variable "argocd_namespace" {
   description = "Namespace used by Argo CD where the Application and AppProject resources should be created."
   type        = string
@@ -80,6 +67,7 @@ variable "ingress" {
 }
 
 variable "enable_filebeat" {
-  type    = bool
-  default = false
+  description = "" # TODO
+  type        = bool
+  default     = false
 }
