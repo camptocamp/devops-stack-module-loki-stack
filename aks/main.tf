@@ -41,8 +41,6 @@ resource "azurerm_federated_identity_credential" "loki" {
 module "loki-stack" {
   source = "../"
 
-  cluster_name     = var.cluster_name
-  base_domain      = var.base_domain
   argocd_namespace = var.argocd_namespace
   target_revision  = var.target_revision
   namespace        = var.namespace

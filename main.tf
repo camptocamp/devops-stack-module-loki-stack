@@ -22,7 +22,7 @@ resource "argocd_project" "this" {
   }
 
   spec {
-    description  = "loki-stack application project"
+    description  = "Loki application project"
     source_repos = ["https://github.com/camptocamp/devops-stack-module-loki-stack.git"]
 
     destination {
