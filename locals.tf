@@ -67,8 +67,7 @@ locals {
               }
             }
             compactor = {
-              retention_delete_delay = "1h"
-              retention_enabled      = false
+              retention_enabled = "${var.compactor_retention.compactor.retention_enabled}"
             }
             ingester = {
               lifecycler = {
@@ -88,7 +87,7 @@ locals {
               max_query_length            = "9000h"
               max_query_parallelism       = 6
               per_stream_rate_limit       = "10MB"
-              retention_period            = "9000h"
+              retention_period            = "${var.compactor_retention.limits_config.retention_period}"
             }
             querier = {
               max_concurrent = 2
