@@ -139,6 +139,36 @@ Type: `bool`
 
 Default: `false`
 
+==== [[input_compactor_retention]] <<input_compactor_retention,compactor_retention>>
+
+Description: This variable allows to enable the retention of compactor for Loki
+
+Type:
+[source,hcl]
+----
+object({
+    compactor = object({
+      retention_enabled = bool
+    })
+    limits_config = object({
+      retention_period = string
+    })
+  })
+----
+
+Default:
+[source,json]
+----
+{
+  "compactor": {
+    "retention_enabled": "true"
+  },
+  "limits_config": {
+    "retention_period": "720h"
+  }
+}
+----
+
 === Outputs
 
 The following outputs are exported:
@@ -172,8 +202,8 @@ Description: n/a
 |[[provider_null]] <<provider_null,null>> |>= 3
 |[[provider_random]] <<provider_random,random>> |>= 3
 |[[provider_htpasswd]] <<provider_htpasswd,htpasswd>> |>= 1
-|[[provider_argocd]] <<provider_argocd,argocd>> |>= 4
 |[[provider_utils]] <<provider_utils,utils>> |>= 1
+|[[provider_argocd]] <<provider_argocd,argocd>> |>= 4
 |===
 
 = Resources
@@ -277,6 +307,38 @@ object({
 |n/a
 |`bool`
 |`false`
+|no
+
+|[[input_compactor_retention]] <<input_compactor_retention,compactor_retention>>
+|This variable allows to enable the retention of compactor for Loki
+|
+
+[source]
+----
+object({
+    compactor = object({
+      retention_enabled = bool
+    })
+    limits_config = object({
+      retention_period = string
+    })
+  })
+----
+
+|
+
+[source]
+----
+{
+  "compactor": {
+    "retention_enabled": "true"
+  },
+  "limits_config": {
+    "retention_period": "720h"
+  }
+}
+----
+
 |no
 
 |===
