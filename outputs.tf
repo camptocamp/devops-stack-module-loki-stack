@@ -4,6 +4,7 @@ output "id" {
 }
 
 output "loki_credentials" {
+  description = "Credentials to access the Loki ingress, if activated."
   value = var.ingress != null ? {
     username = "loki"
     password = random_password.loki_password.0.result
