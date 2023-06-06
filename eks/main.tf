@@ -7,6 +7,7 @@ module "loki-stack" {
   app_autosync     = var.app_autosync
   dependency_ids   = var.dependency_ids
 
+  retention        = var.retention
   distributed_mode = var.distributed_mode
   ingress          = var.ingress
   enable_filebeat  = var.enable_filebeat
