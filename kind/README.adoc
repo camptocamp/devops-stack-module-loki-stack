@@ -142,35 +142,13 @@ Type: `bool`
 
 Default: `false`
 
-==== [[input_compactor_retention]] <<input_compactor_retention,compactor_retention>>
+==== [[input_retention]] <<input_retention,retention>>
 
-Description: This variable allows to enable the retention of compactor for Loki
+Description: Variable to define retention period. To deactivate retention, pass 0s to the variable.
 
-Type:
-[source,hcl]
-----
-object({
-    compactor = object({
-      retention_enabled = bool
-    })
-    limits_config = object({
-      retention_period = string
-    })
-  })
-----
+Type: `string`
 
-Default:
-[source,json]
-----
-{
-  "compactor": {
-    "retention_enabled": "true"
-  },
-  "limits_config": {
-    "retention_period": "720h"
-  }
-}
-----
+Default: `"720h"`
 
 === Outputs
 
@@ -311,36 +289,10 @@ object({
 |`false`
 |no
 
-|[[input_compactor_retention]] <<input_compactor_retention,compactor_retention>>
-|This variable allows to enable the retention of compactor for Loki
-|
-
-[source]
-----
-object({
-    compactor = object({
-      retention_enabled = bool
-    })
-    limits_config = object({
-      retention_period = string
-    })
-  })
-----
-
-|
-
-[source]
-----
-{
-  "compactor": {
-    "retention_enabled": "true"
-  },
-  "limits_config": {
-    "retention_period": "720h"
-  }
-}
-----
-
+|[[input_retention]] <<input_retention,retention>>
+|Variable to define retention period. To deactivate retention, pass 0s to the variable.
+|`string`
+|`"720h"`
 |no
 
 |===
