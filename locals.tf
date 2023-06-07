@@ -84,7 +84,7 @@ locals {
               ingestion_rate_mb           = 10
               max_chunks_per_query        = 0
               max_entries_limit_per_query = 0
-              max_query_length            = "9000h"
+              max_query_length            = var.retention
               max_query_parallelism       = 6
               per_stream_rate_limit       = "10MB"
               retention_period            = var.retention

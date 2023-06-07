@@ -73,9 +73,9 @@ variable "enable_filebeat" {
 }
 
 variable "retention" {
-  description = "Variable to define retention period. To deactivate retention, pass 0s to the variable."
+  description = "Logs retention period.To deactivate retention, pass 0s."
   type        = string
-  default     = "720h"
+  default     = "30d"
 
   validation {
     condition     = var.retention != null
