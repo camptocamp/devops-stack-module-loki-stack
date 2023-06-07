@@ -67,7 +67,7 @@ locals {
               }
             }
             compactor = {
-              retention_enabled = var.retention != "0s"
+              retention_enabled = true
             }
             ingester = {
               lifecycler = {
