@@ -144,11 +144,11 @@ Default: `false`
 
 ==== [[input_retention]] <<input_retention,retention>>
 
-Description: Variable to define retention period. To deactivate retention, pass 0s to the variable.
+Description: Logs retention period.To deactivate retention, pass 0s.
 
 Type: `string`
 
-Default: `"720h"`
+Default: `"30d"`
 
 === Outputs
 
@@ -290,9 +290,9 @@ object({
 |no
 
 |[[input_retention]] <<input_retention,retention>>
-|Variable to define retention period. To deactivate retention, pass 0s to the variable.
+|Logs retention period.To deactivate retention, pass 0s.
 |`string`
-|`"720h"`
+|`"30d"`
 |no
 
 |===

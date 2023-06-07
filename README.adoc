@@ -17,6 +17,8 @@ The following requirements are needed by this module:
 
 The following providers are used by this module:
 
+- [[provider_null]] <<provider_null,null>> (>= 3)
+
 - [[provider_random]] <<provider_random,random>> (>= 3)
 
 - [[provider_htpasswd]] <<provider_htpasswd,htpasswd>> (>= 1)
@@ -24,8 +26,6 @@ The following providers are used by this module:
 - [[provider_utils]] <<provider_utils,utils>> (>= 1)
 
 - [[provider_argocd]] <<provider_argocd,argocd>> (>= 4)
-
-- [[provider_null]] <<provider_null,null>> (>= 3)
 
 === Resources
 
@@ -141,11 +141,11 @@ Default: `false`
 
 ==== [[input_retention]] <<input_retention,retention>>
 
-Description: Variable to define retention period. To deactivate retention, pass 0s to the variable.
+Description: Logs retention period.To deactivate retention, pass 0s.
 
 Type: `string`
 
-Default: `"720h"`
+Default: `"30d"`
 
 === Outputs
 
@@ -288,9 +288,9 @@ object({
 |no
 
 |[[input_retention]] <<input_retention,retention>>
-|Variable to define retention period. To deactivate retention, pass 0s to the variable.
+|Logs retention period.To deactivate retention, pass 0s.
 |`string`
-|`"720h"`
+|`"30d"`
 |no
 
 |===
