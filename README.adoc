@@ -139,6 +139,14 @@ Type: `bool`
 
 Default: `false`
 
+==== [[input_retention]] <<input_retention,retention>>
+
+Description: Logs retention period.To deactivate retention, pass 0s.
+
+Type: `string`
+
+Default: `"30d"`
+
 === Outputs
 
 The following outputs are exported:
@@ -172,8 +180,8 @@ Description: n/a
 |[[provider_null]] <<provider_null,null>> |>= 3
 |[[provider_random]] <<provider_random,random>> |>= 3
 |[[provider_htpasswd]] <<provider_htpasswd,htpasswd>> |>= 1
-|[[provider_argocd]] <<provider_argocd,argocd>> |>= 4
 |[[provider_utils]] <<provider_utils,utils>> |>= 1
+|[[provider_argocd]] <<provider_argocd,argocd>> |>= 4
 |===
 
 = Resources
@@ -277,6 +285,12 @@ object({
 |n/a
 |`bool`
 |`false`
+|no
+
+|[[input_retention]] <<input_retention,retention>>
+|Logs retention period.To deactivate retention, pass 0s.
+|`string`
+|`"30d"`
 |no
 
 |===
