@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v2.2.0...v2.3.0) (2023-06-09)
+
+
+### Features
+
+* add var that enables compactor retention ([#62](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/62)) ([88617bd](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/88617bdf6f1710afdfe4447b63bd43ca2babecfb))
+
 ## [2.2.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v2.1.0...v2.2.0) (2023-05-24)
 
 
