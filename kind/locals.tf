@@ -52,9 +52,9 @@ locals {
       bucketnames       = "${var.logs_storage.bucket_name}"
       endpoint          = "${var.logs_storage.endpoint}"
       access_key_id     = "${var.logs_storage.access_key}"
-      secret_access_key = "${var.logs_storage.secret_access_key}"
+      secret_access_key = "${var.logs_storage.secret_key}"
       s3forcepathstyle  = true
-      insecure          = true
+      insecure          = var.logs_storage.insecure
     }
     boltdb_shipper = {
       shared_store = "aws"

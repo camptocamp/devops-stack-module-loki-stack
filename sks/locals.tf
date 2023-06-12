@@ -56,10 +56,10 @@ locals {
   storage_config = {
     aws = {
       bucketnames       = "${var.logs_storage.bucket_name}"
-      region            = "${var.logs_storage.bucket_region}"
-      endpoint          = "sos-${var.logs_storage.bucket_region}.exo.io"
+      region            = "${var.logs_storage.region}"
+      endpoint          = "sos-${var.logs_storage.region}.exo.io"
       access_key_id     = "${var.logs_storage.access_key}"
-      secret_access_key = "${var.logs_storage.secret_access_key}"
+      secret_access_key = "${var.logs_storage.secret_key}"
       s3forcepathstyle  = true
     }
     boltdb_shipper = {
