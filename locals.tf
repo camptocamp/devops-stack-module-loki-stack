@@ -142,6 +142,9 @@ locals {
         memcachedIndexQueries = {
           enabled = true
         }
+        memcachedIndexWrites = {
+          enabled = true
+        }
         queryScheduler = {
           enabled  = true
           affinity = ""
