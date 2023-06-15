@@ -65,8 +65,12 @@ resource "argocd_application" "this" {
       repo_url        = "https://github.com/camptocamp/devops-stack-module-loki-stack.git"
       path            = format("charts/%s", var.distributed_mode ? "loki-microservice" : "loki-stack")
       target_revision = var.target_revision
-      helm {
-        values = data.utils_deep_merge_yaml.values.output
+      plugin {
+        name = "avp-helm"
+        env {
+          name  = "HELM_VALUES"
+          value = data.utils_deep_merge_yaml.values.output
+        }
       }
     }
 
