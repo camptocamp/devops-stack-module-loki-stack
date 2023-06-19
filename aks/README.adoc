@@ -77,7 +77,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v2.2.0"`
+Default: `"v2.3.0"`
 
 ==== [[input_namespace]] <<input_namespace,namespace>>
 
@@ -173,11 +173,11 @@ The following outputs are exported:
 
 ==== [[output_id]] <<output_id,id>>
 
-Description: ID to pass other modules in order to refer to this module as a dependency. It takes the ID that comes from the main module and passes it along to the code that called this variant in the first place.
+Description: ID to pass other modules in order to refer to this module as a dependency.
 
 ==== [[output_loki_credentials]] <<output_loki_credentials,loki_credentials>>
 
-Description: n/a
+Description: Credentials to access the Loki ingress, if activated.
 // END_TF_DOCS
 // BEGIN_TF_TABLES
 = Requirements
@@ -252,7 +252,7 @@ object({
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v2.2.0"`
+|`"v2.3.0"`
 |no
 
 |[[input_namespace]] <<input_namespace,namespace>>
@@ -340,7 +340,7 @@ object({
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Description
-|[[output_id]] <<output_id,id>> |ID to pass other modules in order to refer to this module as a dependency. It takes the ID that comes from the main module and passes it along to the code that called this variant in the first place.
-|[[output_loki_credentials]] <<output_loki_credentials,loki_credentials>> |n/a
+|[[output_id]] <<output_id,id>> |ID to pass other modules in order to refer to this module as a dependency.
+|[[output_loki_credentials]] <<output_loki_credentials,loki_credentials>> |Credentials to access the Loki ingress, if activated.
 |===
 // END_TF_TABLES
