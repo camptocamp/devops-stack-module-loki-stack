@@ -34,6 +34,54 @@ IMPORTANT: You are in charge of creating a S3 bucket for Loki to store the archi
 
 TIP: Check the xref:ROOT:ROOT:tutorials/deploy_sks.adoc[SKS deployment example] to see how to create the S3 bucket and to better understand the values passed on the example above.
 
+If there is a need to configure something besides the common settings that we have provided, you can customize the chart's `values.yaml` by adding an Helm configuration as an HCL structure:
+
+[source,terraform]
+----
+module "loki-stack" {
+  source = "git::https://github.com/camptocamp/devops-stack-module-loki-stack//sks?ref=<RELEASE>"
+
+  cluster_id       = module.sks.cluster_id
+  argocd_namespace = module.argocd_bootstrap.argocd_namespace
+
+  distributed_mode = true
+
+  logs_storage = {
+    bucket_name = resource.aws_s3_bucket.this["loki"].id
+    region      = resource.aws_s3_bucket.this["loki"].region
+    access_key  = resource.exoscale_iam_access_key.s3_iam_key["loki"].key
+    secret_key  = resource.exoscale_iam_access_key.s3_iam_key["loki"].secret
+  }
+
+  helm_values = [{ # Note the curly brackets here
+    loki-distributed = {
+      map = {
+        string = "string"
+        bool   = true
+      }
+      sequence = [
+        {
+          key1 = "value1"
+          key2 = "value2"
+        },
+        {
+          key1 = "value1"
+          key2 = "value2"
+        },
+      ]
+      sequence2 = [
+        "string1",
+        "string2"
+      ]
+    }
+  }]
+
+  dependency_ids = {
+    argocd   = module.argocd_bootstrap.id
+    longhorn = module.longhorn.id
+  }
+----
+
 == Technical Reference
 
 === Dependencies
