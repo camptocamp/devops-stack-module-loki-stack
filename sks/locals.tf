@@ -72,6 +72,8 @@ locals {
     shared_store      = "s3"
   }
 
+  # These tolerations allow the pods to be scheduled on the router nodepool, otherwise we wouldn't be able to collect 
+  # the Traefik logs, since that nodepool is tainted and exclusively used for those pods.
   promtail_tolerations = [
     {
       key      = "nodepool"
