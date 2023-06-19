@@ -57,7 +57,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v2.2.0"`
+Default: `"v2.3.0"`
 
 ==== [[input_namespace]] <<input_namespace,namespace>>
 
@@ -157,7 +157,7 @@ Description: ID to pass other modules in order to refer to this module as a depe
 
 ==== [[output_loki_credentials]] <<output_loki_credentials,loki_credentials>>
 
-Description: n/a
+Description: Credentials to access the Loki ingress, if activated.
 // END_TF_DOCS
 // BEGIN_TF_TABLES
 = Requirements
@@ -177,11 +177,11 @@ Description: n/a
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Version
-|[[provider_null]] <<provider_null,null>> |>= 3
 |[[provider_random]] <<provider_random,random>> |>= 3
 |[[provider_htpasswd]] <<provider_htpasswd,htpasswd>> |>= 1
 |[[provider_utils]] <<provider_utils,utils>> |>= 1
 |[[provider_argocd]] <<provider_argocd,argocd>> |>= 4
+|[[provider_null]] <<provider_null,null>> |>= 3
 |===
 
 = Resources
@@ -212,7 +212,7 @@ Description: n/a
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v2.2.0"`
+|`"v2.3.0"`
 |no
 
 |[[input_namespace]] <<input_namespace,namespace>>
@@ -301,6 +301,6 @@ object({
 |===
 |Name |Description
 |[[output_id]] <<output_id,id>> |ID to pass other modules in order to refer to this module as a dependency.
-|[[output_loki_credentials]] <<output_loki_credentials,loki_credentials>> |n/a
+|[[output_loki_credentials]] <<output_loki_credentials,loki_credentials>> |Credentials to access the Loki ingress, if activated.
 |===
 // END_TF_TABLES

@@ -35,10 +35,11 @@ Type:
 [source,hcl]
 ----
 object({
-    bucket_name       = string
-    endpoint          = string
-    access_key        = string
-    secret_access_key = string
+    bucket_name = string
+    endpoint    = string
+    access_key  = string
+    secret_key  = string
+    insecure    = optional(bool, true)
   })
 ----
 
@@ -60,7 +61,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v2.2.0"`
+Default: `"v2.3.0"`
 
 ==== [[input_namespace]] <<input_namespace,namespace>>
 
@@ -156,11 +157,11 @@ The following outputs are exported:
 
 ==== [[output_id]] <<output_id,id>>
 
-Description: n/a
+Description: ID to pass other modules in order to refer to this module as a dependency.
 
 ==== [[output_loki_credentials]] <<output_loki_credentials,loki_credentials>>
 
-Description: n/a
+Description: Credentials to access the Loki ingress, if activated.
 // END_TF_DOCS
 // BEGIN_TF_TABLES
 = Requirements
@@ -195,10 +196,11 @@ Description: n/a
 [source]
 ----
 object({
-    bucket_name       = string
-    endpoint          = string
-    access_key        = string
-    secret_access_key = string
+    bucket_name = string
+    endpoint    = string
+    access_key  = string
+    secret_key  = string
+    insecure    = optional(bool, true)
   })
 ----
 
@@ -214,7 +216,7 @@ object({
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v2.2.0"`
+|`"v2.3.0"`
 |no
 
 |[[input_namespace]] <<input_namespace,namespace>>
@@ -302,7 +304,7 @@ object({
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Description
-|[[output_id]] <<output_id,id>> |n/a
-|[[output_loki_credentials]] <<output_loki_credentials,loki_credentials>> |n/a
+|[[output_id]] <<output_id,id>> |ID to pass other modules in order to refer to this module as a dependency.
+|[[output_loki_credentials]] <<output_loki_credentials,loki_credentials>> |Credentials to access the Loki ingress, if activated.
 |===
 // END_TF_TABLES
