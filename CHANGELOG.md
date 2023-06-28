@@ -1,5 +1,22 @@
 # Changelog
 
+## [3.0.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v2.3.0...v3.0.0) (2023-06-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* standardize variables like other modules
+
+### Features
+
+* add SKS variant with needed configuration to use SOS ([145e08b](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/145e08bd1214ccc3635d04719d3ccd0a29c67ce0))
+
+
+### Bug Fixes
+
+* activate insecure mode by default for kind ([b4f1441](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/b4f1441753ba5af2b5828eca39f9b1cff31e0a5a))
+* standardize variables like other modules ([ba86258](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/ba862583ea09272415cd9f5b2896a5e8e1849927))
+
 ## [2.3.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v2.2.0...v2.3.0) (2023-06-09)
 
 
