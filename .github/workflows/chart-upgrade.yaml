@@ -1,0 +1,48 @@
+---
+name: "chart-upgrade"
+
+on:
+  schedule:
+  - cron: "0 7 * * 1-5"
+  
+  workflow_dispatch:
+    inputs:
+      upgrade-strategy:
+        description: "Upgrade strategy to use. Valid values are 'major', 'minor' or 'patch'."
+        type: choice
+        options:
+        - "major"
+        - "minor"
+        - "patch"
+        required: true
+      excluded-dependencies:
+        description: "Comma-separated list of dependencies to exclude from upgrade (i.e. 'dependency1,dependency2,dependency3')."
+        type: string
+        required: false
+        default: ""
+      dry-run:
+        description: "Whether to run the upgrade in dry-run mode or not."
+        type: boolean
+        required: false
+        default: true
+
+jobs:
+
+  chart-upgrade-schedule:
+    if: github.event_name == 'schedule'
+    strategy:
+      matrix:
+        upgrade-strategy: ["major", "minor"]
+    uses: camptocamp/devops-stack/.github/workflows/modules-chart-upgrade.yaml@main
+    with:
+      upgrade-strategy: ${{ matrix.upgrade-strategy }}
+      excluded-dependencies: ${{ inputs.excluded-dependencies }}
+      dry-run: ${{ inputs.dry-run }}
+
+  chart-upgrade-manual:
+    if: github.event_name == 'workflow_dispatch'
+    uses: camptocamp/devops-stack/.github/workflows/modules-chart-upgrade.yaml@main
+    with:
+      upgrade-strategy: ${{ inputs.upgrade-strategy }}
+      excluded-dependencies: ${{ inputs.excluded-dependencies }}
+      dry-run: ${{ inputs.dry-run }}
