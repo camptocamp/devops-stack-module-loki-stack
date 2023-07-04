@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v3.0.0...v3.0.1) (2023-07-04)
+
+
+### Documentation
+
+* add missing symlink to SKS docs and link to sidebar ([#68](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/68)) ([4d60340](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/4d60340b65c803b3b217cf208297d9d80425b4f1))
+
 ## [3.0.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v2.3.0...v3.0.0) (2023-06-28)
 
 
