@@ -3,7 +3,7 @@
 
 The following requirements are needed by this module:
 
-- [[requirement_argocd]] <<requirement_argocd,argocd>> (>= 4)
+- [[requirement_argocd]] <<requirement_argocd,argocd>> (>= 5)
 
 - [[requirement_htpasswd]] <<requirement_htpasswd,htpasswd>> (>= 1)
 
@@ -59,7 +59,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v3.0.0"`
+Default: `"v3.0.1"`
 
 ==== [[input_namespace]] <<input_namespace,namespace>>
 
@@ -167,7 +167,7 @@ Description: Credentials to access the Loki ingress, if activated.
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Version
-|[[requirement_argocd]] <<requirement_argocd,argocd>> |>= 4
+|[[requirement_argocd]] <<requirement_argocd,argocd>> |>= 5
 |[[requirement_htpasswd]] <<requirement_htpasswd,htpasswd>> |>= 1
 |[[requirement_null]] <<requirement_null,null>> |>= 3
 |[[requirement_random]] <<requirement_random,random>> |>= 3
@@ -212,7 +212,7 @@ object({
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v3.0.0"`
+|`"v3.0.1"`
 |no
 
 |[[input_namespace]] <<input_namespace,namespace>>
