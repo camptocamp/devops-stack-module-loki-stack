@@ -27,6 +27,8 @@ The following providers are used by this module:
 
 - [[provider_null]] <<provider_null,null>> (>= 3)
 
+- [[provider_null]] <<provider_null,null>> (>= 3)
+
 === Resources
 
 The following resources are used by this module:
