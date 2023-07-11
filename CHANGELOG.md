@@ -1,5 +1,16 @@
 # Changelog
 
+## [4.0.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v3.0.1...v4.0.0) (2023-07-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* add support to oboukili/argocd v5 ([#75](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/75))
+
+### Features
+
+* add support to oboukili/argocd v5 ([#75](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/75)) ([d6bcc0c](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/d6bcc0cca2ca696bbd752a0b67589c5b245b0e94))
+
 ## [3.0.1](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v3.0.0...v3.0.1) (2023-07-04)
 
 
