@@ -36,8 +36,6 @@ jobs:
     uses: camptocamp/devops-stack/.github/workflows/modules-chart-update.yaml@main
     with:
       update-strategy: ${{ matrix.update-strategy }}
-    secrets:
-      PROJECT_APP_PRIVATE_KEY: ${{ secrets.PROJECT_APP_PRIVATE_KEY }}
   
   chart-update-manual:
     if: ${{ github.event_name == 'workflow_dispatch' }}
@@ -46,5 +44,3 @@ jobs:
       update-strategy: ${{ inputs.update-strategy }}
       excluded-dependencies: ${{ inputs.excluded-dependencies }}
       dry-run: ${{ inputs.dry-run }}
-    secrets:
-      PROJECT_APP_PRIVATE_KEY: ${{ secrets.PROJECT_APP_PRIVATE_KEY }}
