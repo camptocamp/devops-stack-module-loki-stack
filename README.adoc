@@ -1,4 +1,4 @@
-:loki-stack-chart-version: 2.8.9
+:loki-stack-chart-version: 2.9.10
 :loki-distributed-chart-version: 0.69.0
 :promtail-chart-version: 6.2.1
 :filebeat-distributed-chart-version: 7.17.3
