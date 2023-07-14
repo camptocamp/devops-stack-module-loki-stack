@@ -9,3 +9,5 @@ on:
 jobs:
   release:
     uses: camptocamp/devops-stack/.github/workflows/modules-release-please.yaml@main
+    secrets:
+      PROJECT_APP_PRIVATE_KEY: ${{ secrets.PROJECT_APP_PRIVATE_KEY }}
