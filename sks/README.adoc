@@ -162,7 +162,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v3.0.1"`
+Default: `"v4.0.0"`
 
 ==== [[input_namespace]] <<input_namespace,namespace>>
 
@@ -328,7 +328,7 @@ object({
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v3.0.1"`
+|`"v4.0.0"`
 |no
 
 |[[input_namespace]] <<input_namespace,namespace>>
