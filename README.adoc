@@ -1,7 +1,7 @@
 :loki-stack-chart-version: 2.8.9
-:loki-distributed-chart-version: 0.69.0
-:promtail-chart-version: 6.2.1
-:filebeat-chart-version: 7.17.3
+:loki-distributed-chart-version: 0.69.16
+:promtail-chart-version: 6.11.6
+:filebeat-chart-version: 8.5.1
 
 // BEGIN_TF_DOCS
 === Requirements
