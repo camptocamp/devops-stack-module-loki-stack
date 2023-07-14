@@ -1,5 +1,5 @@
 ---
-name: "chart-upgrade"
+name: "chart-update"
 
 on:
   schedule:
@@ -7,8 +7,8 @@ on:
   
   workflow_dispatch:
     inputs:
-      upgrade-strategy:
-        description: "Upgrade strategy to use. Valid values are 'major', 'minor' or 'patch'"
+      update-strategy:
+        description: "update strategy to use. Valid values are 'major', 'minor' or 'patch'"
         type: choice
         options:
         - "major"
@@ -16,7 +16,7 @@ on:
         - "patch"
         required: true
       excluded-dependencies:
-        description: "Comma-separated list of dependencies to exclude from upgrade (i.e. 'dependency1,dependency2,dependency3')"
+        description: "Comma-separated list of dependencies to exclude from the update (i.e. 'dependency1,dependency2,dependency3')"
         type: string
         required: false
         default: ""
@@ -28,22 +28,22 @@ on:
 
 jobs:
 
-  chart-upgrade-schedule:
+  chart-update-schedule:
     if: ${{ github.event_name == 'schedule' }}
     strategy:
       matrix:
-        upgrade-strategy: ["major", "minor"]
-    uses: camptocamp/devops-stack/.github/workflows/modules-chart-upgrade.yaml@main
+        update-strategy: ["major", "minor"]
+    uses: camptocamp/devops-stack/.github/workflows/modules-chart-update.yaml@main
     with:
-      upgrade-strategy: ${{ matrix.upgrade-strategy }}
+      update-strategy: ${{ matrix.update-strategy }}
     secrets:
       PROJECT_APP_PRIVATE_KEY: ${{ secrets.PROJECT_APP_PRIVATE_KEY }}
   
-  chart-upgrade-manual:
+  chart-update-manual:
     if: ${{ github.event_name == 'workflow_dispatch' }}
-    uses: camptocamp/devops-stack/.github/workflows/modules-chart-upgrade.yaml@main
+    uses: camptocamp/devops-stack/.github/workflows/modules-chart-update.yaml@main
     with:
-      upgrade-strategy: ${{ inputs.upgrade-strategy }}
+      update-strategy: ${{ inputs.update-strategy }}
       excluded-dependencies: ${{ inputs.excluded-dependencies }}
       dry-run: ${{ inputs.dry-run }}
     secrets:
