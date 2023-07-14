@@ -8,12 +8,12 @@ on:
   workflow_dispatch:
     inputs:
       update-strategy:
-        description: "update strategy to use. Valid values are 'major', 'minor' or 'patch'"
+        description: "update strategy to use. Valid values are 'patch', 'minor' or 'major'"
         type: choice
         options:
-        - "major"
-        - "minor"
         - "patch"
+        - "minor"
+        - "major"
         required: true
       excluded-dependencies:
         description: "Comma-separated list of dependencies to exclude from the update (i.e. 'dependency1,dependency2,dependency3')"
