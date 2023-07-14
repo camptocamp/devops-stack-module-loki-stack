@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       upgrade-strategy:
-        description: "Upgrade strategy to use. Valid values are 'major', 'minor' or 'patch'."
+        description: "Upgrade strategy to use. Valid values are 'major', 'minor' or 'patch'"
         type: choice
         options:
         - "major"
@@ -16,12 +16,12 @@ on:
         - "patch"
         required: true
       excluded-dependencies:
-        description: "Comma-separated list of dependencies to exclude from upgrade (i.e. 'dependency1,dependency2,dependency3')."
+        description: "Comma-separated list of dependencies to exclude from upgrade (i.e. 'dependency1,dependency2,dependency3')"
         type: string
         required: false
         default: ""
       dry-run:
-        description: "Activate dry-run mode."
+        description: "Activate dry-run mode"
         type: boolean
         required: false
         default: true
@@ -36,7 +36,9 @@ jobs:
     uses: camptocamp/devops-stack/.github/workflows/modules-chart-upgrade.yaml@main
     with:
       upgrade-strategy: ${{ matrix.upgrade-strategy }}
-
+    secrets:
+      PROJECT_APP_PRIVATE_KEY: ${{ secrets.PROJECT_APP_PRIVATE_KEY }}
+  
   chart-upgrade-manual:
     if: ${{ github.event_name == 'workflow_dispatch' }}
     uses: camptocamp/devops-stack/.github/workflows/modules-chart-upgrade.yaml@main
@@ -44,3 +46,5 @@ jobs:
       upgrade-strategy: ${{ inputs.upgrade-strategy }}
       excluded-dependencies: ${{ inputs.excluded-dependencies }}
       dry-run: ${{ inputs.dry-run }}
+    secrets:
+      PROJECT_APP_PRIVATE_KEY: ${{ secrets.PROJECT_APP_PRIVATE_KEY }}
