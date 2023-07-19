@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.1](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v4.0.0...v4.0.1) (2023-07-19)
+
+
+### Bug Fixes
+
+* use more generic tolerations for promtail ([#90](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/90)) ([e48c76e](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/e48c76ec756de3682dc3bfdb35f439ff0ca8da11))
+
 ## [4.0.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v3.0.1...v4.0.0) (2023-07-11)
 
 
