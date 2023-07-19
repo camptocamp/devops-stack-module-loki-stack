@@ -157,6 +157,12 @@ locals {
         }
       }
       promtail = {
+        tolerations = [
+          {
+            operator = "Exists"
+            effect   = "NoSchedule"
+          }
+        ]
         config = {
           clients = [{
             url = "http://${local.fullnameOverride}-distributor.${var.namespace}:3100/loki/api/v1/push"
