@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       update-strategy:
-        description: "update strategy to use. Valid values are 'patch', 'minor' or 'major'"
+        description: "Update strategy to use. Valid values are 'patch', 'minor' or 'major'"
         type: choice
         options:
         - "patch"
