@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.2](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v4.0.1...v4.0.2) (2023-08-09)
+
+
+### Bug Fixes
+
+* readd support to deactivate auto-sync which was broken by [#75](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/75) ([b059201](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/b0592015f053a3aec60b0c745f462eb4f4bdc659))
+
 ## [4.0.1](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v4.0.0...v4.0.1) (2023-07-19)
 
 
