@@ -7,6 +7,10 @@
 
 * **loki-stack:** deprecate and remove the loki-stack chart ([#95](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/95))
 
+The variable `distributed_mode` is no longer needed.
+
+**For existing clusters that already use Loki in distributed mode, you just need to remove the line `distributed_mode = true` and run a `terraform apply`. Terrafom should say that no changes need to be applied.**
+
 ### Features
 
 * **loki-stack:** deprecate and remove the loki-stack chart ([#95](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/95)) ([fd4a0f4](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/fd4a0f44a30b8b4b60e96757fc2a37e5d288931f))
