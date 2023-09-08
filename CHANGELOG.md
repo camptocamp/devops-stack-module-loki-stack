@@ -1,5 +1,16 @@
 # Changelog
 
+## [5.0.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v4.0.2...v5.0.0) (2023-09-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* **loki-stack:** deprecate and remove the loki-stack chart ([#95](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/95))
+
+### Features
+
+* **loki-stack:** deprecate and remove the loki-stack chart ([#95](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/95)) ([fd4a0f4](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/fd4a0f44a30b8b4b60e96757fc2a37e5d288931f))
+
 ## [4.0.2](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v4.0.1...v4.0.2) (2023-08-09)
 
 
