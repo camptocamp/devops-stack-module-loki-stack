@@ -63,7 +63,7 @@ resource "argocd_application" "this" {
 
     source {
       repo_url        = "https://github.com/camptocamp/devops-stack-module-loki-stack.git"
-      path            = format("charts/%s", var.distributed_mode ? "loki-microservice" : "loki-stack")
+      path            = "charts/loki-microservice"
       target_revision = var.target_revision
       helm {
         values = data.utils_deep_merge_yaml.values.output

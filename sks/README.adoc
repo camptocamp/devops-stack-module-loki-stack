@@ -162,7 +162,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v4.0.1"`
+Default: `"v4.0.2"`
 
 ==== [[input_namespace]] <<input_namespace,namespace>>
 
@@ -212,14 +212,6 @@ Type: `map(string)`
 
 Default: `{}`
 
-==== [[input_distributed_mode]] <<input_distributed_mode,distributed_mode>>
-
-Description: Boolean to activate Loki in distributed mode.
-
-Type: `bool`
-
-Default: `false`
-
 ==== [[input_ingress]] <<input_ingress,ingress>>
 
 Description: Loki frontend ingress configuration.
@@ -246,7 +238,7 @@ Default: `false`
 
 ==== [[input_retention]] <<input_retention,retention>>
 
-Description: Logs retention period.To deactivate retention, pass 0s.
+Description: Logs retention period. To deactivate retention, pass 0s.
 
 Type: `string`
 
@@ -328,7 +320,7 @@ object({
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v4.0.1"`
+|`"v4.0.2"`
 |no
 
 |[[input_namespace]] <<input_namespace,namespace>>
@@ -375,12 +367,6 @@ object({
 |`{}`
 |no
 
-|[[input_distributed_mode]] <<input_distributed_mode,distributed_mode>>
-|Boolean to activate Loki in distributed mode.
-|`bool`
-|`false`
-|no
-
 |[[input_ingress]] <<input_ingress,ingress>>
 |Loki frontend ingress configuration.
 |
@@ -404,7 +390,7 @@ object({
 |no
 
 |[[input_retention]] <<input_retention,retention>>
-|Logs retention period.To deactivate retention, pass 0s.
+|Logs retention period. To deactivate retention, pass 0s.
 |`string`
 |`"30d"`
 |no
