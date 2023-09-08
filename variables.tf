@@ -50,12 +50,6 @@ variable "dependency_ids" {
 ## Module variables
 #######################
 
-variable "distributed_mode" {
-  description = "Boolean to activate Loki in distributed mode."
-  type        = bool
-  default     = false
-}
-
 variable "ingress" {
   description = "Loki frontend ingress configuration."
   type = object({
@@ -73,7 +67,7 @@ variable "enable_filebeat" {
 }
 
 variable "retention" {
-  description = "Logs retention period.To deactivate retention, pass 0s."
+  description = "Logs retention period. To deactivate retention, pass 0s."
   type        = string
   default     = "30d"
 

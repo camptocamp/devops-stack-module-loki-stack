@@ -1,72 +1,40 @@
 locals {
-  helm_values = [var.distributed_mode ? {
+  helm_values = [{
     loki-distributed = {
       loki = {
-        schemaConfig  = local.schema_config
-        storageConfig = local.storage_config
+        schemaConfig = {
+          configs = [{
+            from         = "2020-10-24"
+            store        = "boltdb-shipper"
+            object_store = "s3"
+            schema       = "v11"
+            index = {
+              prefix = "index_"
+              period = "24h"
+            }
+          }]
+        }
+        storageConfig = {
+          aws = {
+            s3 = "s3://${var.logs_storage.region}/${var.logs_storage.bucket_id}"
+          }
+          boltdb_shipper = {
+            shared_store = "s3"
+          }
+        }
         structuredConfig = {
-          compactor = local.compactor
+          compactor = {
+            working_directory = "/data/compactor"
+            shared_store      = "s3"
+          }
         }
       }
-      serviceAccount = local.service_account
-    }
-    } : null, var.distributed_mode ? null : {
-    loki-stack = {
-      loki = {
-        config = {
-          ingester = {
-            lifecycler = {
-              ring = {
-                kvstore = {
-                  store = "memberlist"
-                }
-                replication_factor = 1
-              }
-              final_sleep = "0s"
-            }
-            chunk_idle_period   = "5m"
-            chunk_retain_period = "30s"
-          }
-          schema_config  = local.schema_config
-          storage_config = local.storage_config
-          compactor      = local.compactor
+      serviceAccount = {
+        create = true
+        annotations = {
+          "eks.amazonaws.com/role-arn" = var.logs_storage.iam_role_arn
         }
-        serviceAccount = local.service_account
       }
     }
   }]
-
-  schema_config = {
-    configs = [{
-      from         = "2020-10-24"
-      store        = "boltdb-shipper"
-      object_store = "s3"
-      schema       = "v11"
-      index = {
-        prefix = "index_"
-        period = "24h"
-      }
-    }]
-  }
-
-  storage_config = {
-    aws = {
-      s3 = "s3://${var.logs_storage.region}/${var.logs_storage.bucket_id}"
-    }
-    boltdb_shipper = {
-      shared_store = "s3"
-    }
-  }
-
-  compactor = {
-    working_directory = "/data/compactor"
-    shared_store      = "s3"
-  }
-
-  service_account = {
-    create = true
-    annotations = {
-      "eks.amazonaws.com/role-arn" = var.logs_storage.iam_role_arn
-    }
-  }
 }
