@@ -51,6 +51,10 @@ resource "argocd_application" "this" {
   metadata {
     name      = var.destination_cluster != "in-cluster" ? "loki-stack-${var.destination_cluster}" : "loki-stack"
     namespace = var.argocd_namespace
+    labels = merge({
+      "application" = "loki-stack"
+      "cluster"     = var.destination_cluster
+    }, var.argocd_labels)
   }
 
   timeouts {
