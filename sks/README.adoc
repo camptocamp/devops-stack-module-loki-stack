@@ -14,8 +14,6 @@ module "loki-stack" {
   cluster_id       = module.sks.cluster_id
   argocd_namespace = module.argocd_bootstrap.argocd_namespace
 
-  distributed_mode = true
-
   logs_storage = {
     bucket_name = resource.aws_s3_bucket.this["loki"].id
     region      = resource.aws_s3_bucket.this["loki"].region
@@ -43,8 +41,6 @@ module "loki-stack" {
 
   cluster_id       = module.sks.cluster_id
   argocd_namespace = module.argocd_bootstrap.argocd_namespace
-
-  distributed_mode = true
 
   logs_storage = {
     bucket_name = resource.aws_s3_bucket.this["loki"].id
