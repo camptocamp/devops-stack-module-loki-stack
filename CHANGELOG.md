@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.1.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v5.0.0...v5.1.0) (2023-10-19)
+
+
+### Features
+
+* add standard variables and variable to add labels to Argo CD app ([9e2ddb8](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/9e2ddb85e345f9b7f8fddcfe8e1e5b25c7f74e1c))
+* add variables to set AppProject and destination cluster ([43632fc](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/43632fc11d4e3648004c4fa68d1579981d948691))
+
 ## [5.0.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v4.0.2...v5.0.0) (2023-09-08)
 
 
