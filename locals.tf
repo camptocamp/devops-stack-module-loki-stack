@@ -164,16 +164,5 @@ locals {
         }]
       }
     }
-    filebeat = {
-      enabled         = var.enable_filebeat
-      extraContainers = <<-EOT
-        - name: filebeat-prometheus-exporter
-          image: "trustpilot/beat-exporter:0.4.0"
-          ports:
-            - containerPort: 9479
-              protocol: TCP
-              name: metrics
-        EOT
-    }
   }]
 }

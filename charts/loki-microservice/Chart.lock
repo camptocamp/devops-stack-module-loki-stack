@@ -5,8 +5,5 @@ dependencies:
 - name: promtail
   repository: https://grafana.github.io/helm-charts
   version: 6.15.3
-- name: filebeat
-  repository: https://helm.elastic.co
-  version: 7.17.3
-digest: sha256:02ff38d56014866298b0d3aa46b64df45c2c0f5d1b85368f2deb5ac16df9f76d
-generated: "2023-11-03T07:01:54.656363242Z"
+digest: sha256:9be75b5f113d376b166deba73b98639c502dfb0f80b0dcec677cf2f3f62bcd0f
+generated: "2023-11-03T13:55:19.507104539+01:00"
