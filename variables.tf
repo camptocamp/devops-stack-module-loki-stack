@@ -78,12 +78,6 @@ variable "ingress" {
   default = null
 }
 
-variable "enable_filebeat" {
-  description = "" # TODO
-  type        = bool
-  default     = false
-}
-
 variable "retention" {
   description = "Logs retention period. To deactivate retention, pass 0s."
   type        = string
