@@ -1,12 +1,12 @@
 dependencies:
 - name: loki-distributed
   repository: https://grafana.github.io/helm-charts
-  version: 0.69.10
+  version: 0.76.1
 - name: promtail
   repository: https://grafana.github.io/helm-charts
-  version: 6.2.3
+  version: 6.15.3
 - name: filebeat
   repository: https://helm.elastic.co
   version: 7.17.3
-digest: sha256:1cb03cdf8123598490b2bacbf4fc4327c9511cc9a2e281acbbf01ddff545c478
-generated: "2023-04-06T07:31:35.744551497+02:00"
+digest: sha256:02ff38d56014866298b0d3aa46b64df45c2c0f5d1b85368f2deb5ac16df9f76d
+generated: "2023-11-03T07:01:54.656363242Z"
