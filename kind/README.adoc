@@ -85,7 +85,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v5.0.0"`
+Default: `"v5.2.0"`
 
 ==== [[input_namespace]] <<input_namespace,namespace>>
 
@@ -150,14 +150,6 @@ object({
 ----
 
 Default: `null`
-
-==== [[input_enable_filebeat]] <<input_enable_filebeat,enable_filebeat>>
-
-Description: n/a
-
-Type: `bool`
-
-Default: `false`
 
 ==== [[input_retention]] <<input_retention,retention>>
 
@@ -250,7 +242,7 @@ object({
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v5.0.0"`
+|`"v5.2.0"`
 |no
 
 |[[input_namespace]] <<input_namespace,namespace>>
@@ -311,12 +303,6 @@ object({
 ----
 
 |`null`
-|no
-
-|[[input_enable_filebeat]] <<input_enable_filebeat,enable_filebeat>>
-|n/a
-|`bool`
-|`false`
 |no
 
 |[[input_retention]] <<input_retention,retention>>
