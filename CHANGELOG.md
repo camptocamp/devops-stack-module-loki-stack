@@ -1,5 +1,21 @@
 # Changelog
 
+## [6.0.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v5.2.0...v6.0.0) (2023-11-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* **filebeat:** remove filebeat since it is no longer used
+
+### Features
+
+* **filebeat:** remove filebeat since it is no longer used ([4ebb3b1](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/4ebb3b12668aac33af74a168b18951306e9fed02))
+
+
+### Bug Fixes
+
+* change Traefik CRD group to the one introduced in v23 of Traefik ([c1728dc](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/c1728dc1a2a64073f558cae4dad07bd343558440))
+
 ## [5.2.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v5.1.0...v5.2.0) (2023-11-03)
 
 
