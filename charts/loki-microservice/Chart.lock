@@ -7,6 +7,6 @@ dependencies:
   version: 6.15.3
 - name: filebeat
   repository: https://helm.elastic.co
-  version: 7.17.3
-digest: sha256:02ff38d56014866298b0d3aa46b64df45c2c0f5d1b85368f2deb5ac16df9f76d
-generated: "2023-11-03T07:01:54.656363242Z"
+  version: 8.5.1
+digest: sha256:baaec57467cf029672bc2e38d91be6aaa3ee3fcea0fd50da3556aa95ecdee98b
+generated: "2023-11-10T07:01:54.593640011Z"
