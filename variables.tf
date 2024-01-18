@@ -2,12 +2,6 @@
 ## Standard variables
 #######################
 
-variable "argocd_namespace" {
-  description = "Namespace used by Argo CD where the Application and AppProject resources should be created."
-  type        = string
-  default     = "argocd"
-}
-
 variable "argocd_project" {
   description = "Name of the Argo CD AppProject where the Application should be created. If not set, the Application will be created in a new AppProject only for this Application."
   type        = string
