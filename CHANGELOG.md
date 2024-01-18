@@ -1,5 +1,22 @@
 # Changelog
 
+## [7.0.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v6.0.0...v7.0.0) (2024-01-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* hardcode the release name to remove the destination cluster
+* remove the ArgoCD namespace variable
+* remove the namespace variable
+
+### Bug Fixes
+
+* **aks:** improve condition on variable validation and reword message ([4a55c81](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/4a55c8195f57a1a20c60fba91eb9a2c6509ff588))
+* **aks:** remove image tag because chart has been upgraded ([31e74f7](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/31e74f73d57a28c018a2d10cbb0b2b14d24d9655))
+* hardcode the release name to remove the destination cluster ([61f2ea9](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/61f2ea92bed15d01f18267150e3612fa0bc68e60))
+* remove the ArgoCD namespace variable ([47b8551](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/47b8551cb89e33764ae5765d2c6ff5f7e98e7d2c))
+* remove the namespace variable ([cad5e08](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/cad5e08f657c901df3170b2bf591c700edb79403))
+
 ## [6.0.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v5.2.0...v6.0.0) (2023-11-10)
 
 
