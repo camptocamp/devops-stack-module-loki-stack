@@ -34,9 +34,9 @@ Version:
 The following resources are used by this module:
 
 - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/federated_identity_credential[azurerm_federated_identity_credential.loki] (resource)
-- https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment[azurerm_role_assignment.contributor] (resource)
+- https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment[azurerm_role_assignment.storage_contributor] (resource)
 - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/user_assigned_identity[azurerm_user_assigned_identity.loki] (resource)
-- https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group[azurerm_resource_group.node] (data source)
+- https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group[azurerm_resource_group.node_resource_group] (data source)
 - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/storage_container[azurerm_storage_container.container] (data source)
 
 === Required Inputs
@@ -62,14 +62,6 @@ object({
 === Optional Inputs
 
 The following input variables are optional (have default values):
-
-==== [[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
-
-Description: Namespace used by Argo CD where the Application and AppProject resources should be created.
-
-Type: `string`
-
-Default: `"argocd"`
 
 ==== [[input_argocd_project]] <<input_argocd_project,argocd_project>>
 
@@ -101,15 +93,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v5.2.0"`
-
-==== [[input_namespace]] <<input_namespace,namespace>>
-
-Description: Namespace where the applications's Kubernetes resources should be created. Namespace will be created in case it doesn't exist.
-
-Type: `string`
-
-Default: `"loki-stack"`
+Default: `"v6.0.0"`
 
 ==== [[input_helm_values]] <<input_helm_values,helm_values>>
 
@@ -222,9 +206,9 @@ Description: Credentials to access the Loki ingress, if activated.
 |===
 |Name |Type
 |https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/federated_identity_credential[azurerm_federated_identity_credential.loki] |resource
-|https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment[azurerm_role_assignment.contributor] |resource
+|https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment[azurerm_role_assignment.storage_contributor] |resource
 |https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/user_assigned_identity[azurerm_user_assigned_identity.loki] |resource
-|https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group[azurerm_resource_group.node] |data source
+|https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group[azurerm_resource_group.node_resource_group] |data source
 |https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/storage_container[azurerm_storage_container.container] |data source
 |===
 
@@ -251,12 +235,6 @@ object({
 |n/a
 |yes
 
-|[[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
-|Namespace used by Argo CD where the Application and AppProject resources should be created.
-|`string`
-|`"argocd"`
-|no
-
 |[[input_argocd_project]] <<input_argocd_project,argocd_project>>
 |Name of the Argo CD AppProject where the Application should be created. If not set, the Application will be created in a new AppProject only for this Application.
 |`string`
@@ -278,13 +256,7 @@ object({
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v5.2.0"`
-|no
-
-|[[input_namespace]] <<input_namespace,namespace>>
-|Namespace where the applications's Kubernetes resources should be created. Namespace will be created in case it doesn't exist.
-|`string`
-|`"loki-stack"`
+|`"v6.0.0"`
 |no
 
 |[[input_helm_values]] <<input_helm_values,helm_values>>
