@@ -35,7 +35,7 @@ resource "azurerm_federated_identity_credential" "loki" {
   audience            = ["api://AzureADTokenExchange"]
   issuer              = var.logs_storage.managed_identity_oidc_issuer_url
   parent_id           = azurerm_user_assigned_identity.loki[0].id
-  subject             = "system:serviceaccount:${var.namespace}:loki" # "loki" is the fullnameOverride value
+  subject             = "system:serviceaccount:loki-stack:loki" # "loki" is the fullnameOverride value
 }
 
 module "loki-stack" {
@@ -46,7 +46,6 @@ module "loki-stack" {
   argocd_labels       = var.argocd_labels
   destination_cluster = var.destination_cluster
   target_revision     = var.target_revision
-  namespace           = var.namespace
   app_autosync        = var.app_autosync
   dependency_ids      = var.dependency_ids
 
