@@ -10,11 +10,6 @@ locals {
       }
       } : null, {
       loki = merge(local.use_managed_identity ? {
-        # version >= 2.8 is required for workload identity support. Current chart version uses loki 2.7.5.
-        # TODO remove once chart uses a version >= 2.8.
-        image = {
-          tag = "2.8.0"
-        }
         podLabels = {
           "azure.workload.identity/use" = "true"
         }
