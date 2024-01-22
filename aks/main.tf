@@ -1,7 +1,17 @@
+# This null_resource is required otherwise Terraform would try to read the resource group data and/or the storage 
+# account even if they were not created yet. 
+resource "null_resource" "dependencies" {
+  triggers = var.dependency_ids
+}
+
 data "azurerm_resource_group" "node_resource_group" {
   count = local.use_managed_identity ? 1 : 0
 
   name = var.logs_storage.managed_identity_node_rg_name
+
+  depends_on = [
+    resource.null_resource.dependencies
+  ]
 }
 
 data "azurerm_storage_container" "container" {
@@ -9,6 +19,10 @@ data "azurerm_storage_container" "container" {
 
   name                 = var.logs_storage.container
   storage_account_name = var.logs_storage.storage_account
+
+  depends_on = [
+    resource.null_resource.dependencies
+  ]
 }
 
 resource "azurerm_user_assigned_identity" "loki" {
