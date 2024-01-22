@@ -1,5 +1,12 @@
 # Changelog
 
+## [7.0.1](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v7.0.0...v7.0.1) (2024-01-22)
+
+
+### Bug Fixes
+
+* **aks:** add dependencies to fix reading of storage account ([#107](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/107)) ([5500537](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/5500537db6462e58837dd3bf32b143f6b94ff207))
+
 ## [7.0.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v6.0.0...v7.0.0) (2024-01-18)
 
 
