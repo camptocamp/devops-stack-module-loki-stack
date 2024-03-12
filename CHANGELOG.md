@@ -1,5 +1,60 @@
 # Changelog
 
+## [7.0.1](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v7.0.0...v7.0.1) (2024-01-22)
+
+
+### Bug Fixes
+
+* **aks:** add dependencies to fix reading of storage account ([#107](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/107)) ([5500537](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/5500537db6462e58837dd3bf32b143f6b94ff207))
+
+## [7.0.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v6.0.0...v7.0.0) (2024-01-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* hardcode the release name to remove the destination cluster
+* remove the ArgoCD namespace variable
+* remove the namespace variable
+
+### Bug Fixes
+
+* **aks:** improve condition on variable validation and reword message ([4a55c81](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/4a55c8195f57a1a20c60fba91eb9a2c6509ff588))
+* **aks:** remove image tag because chart has been upgraded ([31e74f7](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/31e74f73d57a28c018a2d10cbb0b2b14d24d9655))
+* hardcode the release name to remove the destination cluster ([61f2ea9](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/61f2ea92bed15d01f18267150e3612fa0bc68e60))
+* remove the ArgoCD namespace variable ([47b8551](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/47b8551cb89e33764ae5765d2c6ff5f7e98e7d2c))
+* remove the namespace variable ([cad5e08](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/cad5e08f657c901df3170b2bf591c700edb79403))
+
+## [6.0.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v5.2.0...v6.0.0) (2023-11-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* **filebeat:** remove filebeat since it is no longer used
+
+### Features
+
+* **filebeat:** remove filebeat since it is no longer used ([4ebb3b1](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/4ebb3b12668aac33af74a168b18951306e9fed02))
+
+
+### Bug Fixes
+
+* change Traefik CRD group to the one introduced in v23 of Traefik ([c1728dc](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/c1728dc1a2a64073f558cae4dad07bd343558440))
+
+## [5.2.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v5.1.0...v5.2.0) (2023-11-03)
+
+
+### Features
+
+* **chart:** minor update of dependencies on loki-microservice chart ([#89](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/89)) ([d9bb5f3](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/d9bb5f3cf3659c8b5b586cb2bea259d62490912b))
+
+## [5.1.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v5.0.0...v5.1.0) (2023-10-19)
+
+
+### Features
+
+* add standard variables and variable to add labels to Argo CD app ([9e2ddb8](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/9e2ddb85e345f9b7f8fddcfe8e1e5b25c7f74e1c))
+* add variables to set AppProject and destination cluster ([43632fc](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/43632fc11d4e3648004c4fa68d1579981d948691))
+
 ## [5.0.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v4.0.2...v5.0.0) (2023-09-08)
 
 

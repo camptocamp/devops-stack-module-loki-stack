@@ -9,12 +9,12 @@ variable "logs_storage" {
   })
 
   validation {
-    condition     = (var.logs_storage.managed_identity_node_rg_name == null) != (var.logs_storage.storage_account_key == null)
-    error_message = "You must set one (and only one) of these attributes: managed_identity_node_rg_name, storage_account_key."
+    condition     = (var.logs_storage.managed_identity_node_rg_name == null && var.logs_storage.managed_identity_oidc_issuer_url == null) != (var.logs_storage.storage_account_key == null)
+    error_message = "You can either set the variables for the managed identity or use storage account key, not both at the same time."
   }
 
   validation {
     condition     = (var.logs_storage.managed_identity_node_rg_name == null) == (var.logs_storage.managed_identity_oidc_issuer_url == null)
-    error_message = "managed_identity_node_rg_name & managed_identity_oidc_issuer_url are (un)set together."
+    error_message = "When using the managed identity, both `managed_identity_node_rg_name` and `managed_identity_oidc_issuer_url` are required."
   }
 }

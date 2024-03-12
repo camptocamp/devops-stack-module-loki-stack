@@ -45,13 +45,29 @@ object({
 
 The following input variables are optional (have default values):
 
-==== [[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
+==== [[input_argocd_project]] <<input_argocd_project,argocd_project>>
 
-Description: Namespace used by Argo CD where the Application and AppProject resources should be created.
+Description: Name of the Argo CD AppProject where the Application should be created. If not set, the Application will be created in a new AppProject only for this Application.
 
 Type: `string`
 
-Default: `"argocd"`
+Default: `null`
+
+==== [[input_argocd_labels]] <<input_argocd_labels,argocd_labels>>
+
+Description: Labels to attach to the Argo CD Application resource.
+
+Type: `map(string)`
+
+Default: `{}`
+
+==== [[input_destination_cluster]] <<input_destination_cluster,destination_cluster>>
+
+Description: Destination cluster where the application should be deployed.
+
+Type: `string`
+
+Default: `"in-cluster"`
 
 ==== [[input_target_revision]] <<input_target_revision,target_revision>>
 
@@ -59,15 +75,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v5.0.0"`
-
-==== [[input_namespace]] <<input_namespace,namespace>>
-
-Description: Namespace where the applications's Kubernetes resources should be created. Namespace will be created in case it doesn't exist.
-
-Type: `string`
-
-Default: `"loki-stack"`
+Default: `"v7.0.0"`
 
 ==== [[input_helm_values]] <<input_helm_values,helm_values>>
 
@@ -124,14 +132,6 @@ object({
 ----
 
 Default: `null`
-
-==== [[input_enable_filebeat]] <<input_enable_filebeat,enable_filebeat>>
-
-Description: n/a
-
-Type: `bool`
-
-Default: `false`
 
 ==== [[input_retention]] <<input_retention,retention>>
 
@@ -195,22 +195,29 @@ object({
 |n/a
 |yes
 
-|[[input_argocd_namespace]] <<input_argocd_namespace,argocd_namespace>>
-|Namespace used by Argo CD where the Application and AppProject resources should be created.
+|[[input_argocd_project]] <<input_argocd_project,argocd_project>>
+|Name of the Argo CD AppProject where the Application should be created. If not set, the Application will be created in a new AppProject only for this Application.
 |`string`
-|`"argocd"`
+|`null`
+|no
+
+|[[input_argocd_labels]] <<input_argocd_labels,argocd_labels>>
+|Labels to attach to the Argo CD Application resource.
+|`map(string)`
+|`{}`
+|no
+
+|[[input_destination_cluster]] <<input_destination_cluster,destination_cluster>>
+|Destination cluster where the application should be deployed.
+|`string`
+
+|`"in-cluster"`
 |no
 
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v5.0.0"`
-|no
-
-|[[input_namespace]] <<input_namespace,namespace>>
-|Namespace where the applications's Kubernetes resources should be created. Namespace will be created in case it doesn't exist.
-|`string`
-|`"loki-stack"`
+|`"v7.0.0"`
 |no
 
 |[[input_helm_values]] <<input_helm_values,helm_values>>
@@ -265,12 +272,6 @@ object({
 ----
 
 |`null`
-|no
-
-|[[input_enable_filebeat]] <<input_enable_filebeat,enable_filebeat>>
-|n/a
-|`bool`
-|`false`
 |no
 
 |[[input_retention]] <<input_retention,retention>>

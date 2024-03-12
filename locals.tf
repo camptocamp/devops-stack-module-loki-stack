@@ -3,8 +3,8 @@ locals {
 
   helm_values = [{
     eventHandler = {
-      namespace       = var.namespace
-      lokiURL         = "http://${local.fullnameOverride}-distributor.${var.namespace}:3100/loki/api/v1/push"
+      namespace       = "loki-stack"
+      lokiURL         = "http://${local.fullnameOverride}-distributor.loki-stack:3100/loki/api/v1/push"
       labels          = {}
       grafanaAgentTag = "main-4f86002"
       affinity        = {}
@@ -16,7 +16,7 @@ locals {
       allowedIPs      = var.ingress.allowed_ips
       serviceName     = "${local.fullnameOverride}-query-frontend"
     } : null
-    datasourceURL = "http://${local.fullnameOverride}-query-frontend.${var.namespace}:3100"
+    datasourceURL = "http://${local.fullnameOverride}-query-frontend.loki-stack:3100"
     loki-distributed = {
       fullnameOverride = local.fullnameOverride
       compactor = {
@@ -161,20 +161,9 @@ locals {
       ]
       config = {
         clients = [{
-          url = "http://${local.fullnameOverride}-distributor.${var.namespace}:3100/loki/api/v1/push"
+          url = "http://${local.fullnameOverride}-distributor.loki-stack:3100/loki/api/v1/push"
         }]
       }
-    }
-    filebeat = {
-      enabled         = var.enable_filebeat
-      extraContainers = <<-EOT
-        - name: filebeat-prometheus-exporter
-          image: "trustpilot/beat-exporter:0.4.0"
-          ports:
-            - containerPort: 9479
-              protocol: TCP
-              name: metrics
-        EOT
     }
   }]
 }
