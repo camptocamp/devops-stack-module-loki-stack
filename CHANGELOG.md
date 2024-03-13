@@ -1,5 +1,12 @@
 # Changelog
 
+## [7.1.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v7.0.1...v7.1.0) (2024-03-13)
+
+
+### Features
+
+* **grafana-eventhandler:** add affinity parameter to the Helm template ([#98](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/98)) ([776c5db](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/776c5dbd88ae66f87640cf248fe6c1966d52fcc9))
+
 ## [7.0.1](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v7.0.0...v7.0.1) (2024-01-22)
 
 
