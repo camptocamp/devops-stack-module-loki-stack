@@ -7,6 +7,7 @@ locals {
       lokiURL         = "http://${local.fullnameOverride}-distributor.loki-stack:3100/loki/api/v1/push"
       labels          = {}
       grafanaAgentTag = "main-4f86002"
+      affinity        = {}
     }
     frontendIngress = var.ingress != null ? {
       lokiCredentials = base64encode("loki:${htpasswd_password.loki_password_hash.0.bcrypt}")

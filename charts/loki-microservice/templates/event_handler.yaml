@@ -81,6 +81,8 @@ spec:
       labels:
         name: grafana-agent-eventhandler
     spec:
+      affinity:
+        {{ toYaml .affinity | nindent 8 }}
       terminationGracePeriodSeconds: 10
       containers:
       - name: agent
