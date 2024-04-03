@@ -8,6 +8,7 @@ module "loki-stack" {
   app_autosync        = var.app_autosync
   dependency_ids      = var.dependency_ids
 
+  resources = var.resources
   retention = var.retention
   ingress   = var.ingress
 
