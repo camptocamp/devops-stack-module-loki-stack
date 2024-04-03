@@ -174,6 +174,17 @@ variable "resources" {
       }), {})
     }), {})
 
+    memcached_index_writes = optional(object({
+      requests = optional(object({
+        cpu    = optional(string, "100m")
+        memory = optional(string, "256Mi")
+      }), {})
+      limits = optional(object({
+        cpu    = optional(string)
+        memory = optional(string, "512Mi")
+      }), {})
+    }), {})
+
     promtail = optional(object({
       requests = optional(object({
         cpu    = optional(string, "100m")

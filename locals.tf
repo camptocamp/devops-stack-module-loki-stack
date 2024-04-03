@@ -172,6 +172,13 @@ locals {
           limits   = { for k, v in var.resources.memcached_index_queries.limits : k => v if v != null }
         }
       }
+      memcachedIndexWrites = {
+        enabled = true
+        resources = {
+          requests = { for k, v in var.resources.memcached_index_writes.requests : k => v if v != null }
+          limits   = { for k, v in var.resources.memcached_index_writes.limits : k => v if v != null }
+        }
+      }
       queryScheduler = {
         enabled  = true
         affinity = ""
