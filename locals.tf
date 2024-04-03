@@ -29,6 +29,16 @@ locals {
         persistence = {
           enabled = true
         }
+        resources = {
+          requests = { for k, v in var.resources.compactor.requests : k => v if v != null }
+          limits   = { for k, v in var.resources.compactor.limits : k => v if v != null }
+        }
+      }
+      distributor = {
+        resources = {
+          requests = { for k, v in var.resources.distributor.requests : k => v if v != null }
+          limits   = { for k, v in var.resources.distributor.limits : k => v if v != null }
+        }
       }
       gateway = {
         enabled = false
@@ -38,8 +48,11 @@ locals {
         persistence = {
           enabled = true
         }
+        resources = {
+          requests = { for k, v in var.resources.index_gateway.requests : k => v if v != null }
+          limits   = { for k, v in var.resources.index_gateway.limits : k => v if v != null }
+        }
       }
-      # TODO ingester HA
       ingester = {
         persistence = {
           enabled = true
@@ -47,6 +60,10 @@ locals {
         replicas       = 3
         maxUnavailable = 1
         affinity       = ""
+        resources = {
+          requests = { for k, v in var.resources.ingester.requests : k => v if v != null }
+          limits   = { for k, v in var.resources.ingester.limits : k => v if v != null }
+        }
       }
       loki = {
         structuredConfig = {
@@ -136,21 +153,41 @@ locals {
       }
       memcachedChunks = {
         enabled = true
+        resources = {
+          requests = { for k, v in var.resources.memcached_chunks.requests : k => v if v != null }
+          limits   = { for k, v in var.resources.memcached_chunks.limits : k => v if v != null }
+        }
       }
       memcachedFrontend = {
         enabled = true
+        resources = {
+          requests = { for k, v in var.resources.memcached_frontend.requests : k => v if v != null }
+          limits   = { for k, v in var.resources.memcached_frontend.limits : k => v if v != null }
+        }
       }
       memcachedIndexQueries = {
         enabled = true
+        resources = {
+          requests = { for k, v in var.resources.memcached_index_queries.requests : k => v if v != null }
+          limits   = { for k, v in var.resources.memcached_index_queries.limits : k => v if v != null }
+        }
       }
       queryScheduler = {
         enabled  = true
         affinity = ""
+        resources = {
+          requests = { for k, v in var.resources.query_scheduler.requests : k => v if v != null }
+          limits   = { for k, v in var.resources.query_scheduler.limits : k => v if v != null }
+        }
       }
       querier = {
-        affinity       = ""
         replicas       = 4
         maxUnavailable = 2
+        affinity       = ""
+        resources = {
+          requests = { for k, v in var.resources.querier.requests : k => v if v != null }
+          limits   = { for k, v in var.resources.querier.limits : k => v if v != null }
+        }
       }
       ruler = {
         directories = {}
@@ -159,6 +196,10 @@ locals {
     }
 
     promtail = {
+      resources = {
+        requests = { for k, v in var.resources.promtail.requests : k => v if v != null }
+        limits   = { for k, v in var.resources.promtail.limits : k => v if v != null }
+      }
       tolerations = [
         {
           operator = "Exists"
