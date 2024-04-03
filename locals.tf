@@ -9,6 +9,8 @@ locals {
       grafanaAgentTag = "main-4f86002"
       affinity        = {}
     }
+
+    # TODO Reevaluate the need for having an ingress for Loki, as nobody seems to be using it.
     frontendIngress = var.ingress != null ? {
       lokiCredentials = base64encode("loki:${htpasswd_password.loki_password_hash.0.bcrypt}")
       hosts           = var.ingress.hosts
@@ -16,7 +18,10 @@ locals {
       allowedIPs      = var.ingress.allowed_ips
       serviceName     = "${local.fullnameOverride}-query-frontend"
     } : null
+
+    # Value to configure the Loki datasource in Grafana.
     datasourceURL = "http://${local.fullnameOverride}-query-frontend.loki-stack:3100"
+
     loki-distributed = {
       fullnameOverride = local.fullnameOverride
       compactor = {
@@ -152,6 +157,7 @@ locals {
         enabled     = false
       }
     }
+
     promtail = {
       tolerations = [
         {
