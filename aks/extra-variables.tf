@@ -10,7 +10,7 @@ variable "logs_storage" {
 
   validation {
     condition     = (var.logs_storage.managed_identity_node_rg_name == null && var.logs_storage.managed_identity_oidc_issuer_url == null) != (var.logs_storage.storage_account_key == null)
-    error_message = "You can either set the variables for the managed identity or use storage account key, not both at the same time."
+    error_message = "You can either set the variables for the managed identity or use a storage account key, not both at the same time."
   }
 
   validation {

@@ -1,4 +1,6 @@
 locals {
+  iam_role_arn = var.logs_storage.create_role ? module.iam_assumable_role_loki.iam_role_arn : var.logs_storage.iam_role_arn
+
   helm_values = [{
     loki-distributed = {
       loki = {
@@ -16,7 +18,7 @@ locals {
         }
         storageConfig = {
           aws = {
-            s3 = "s3://${var.logs_storage.region}/${var.logs_storage.bucket_id}"
+            s3 = "s3://${data.aws_s3_bucket.loki.region}/${data.aws_s3_bucket.loki.id}"
           }
           boltdb_shipper = {
             shared_store = "s3"
@@ -32,7 +34,7 @@ locals {
       serviceAccount = {
         create = true
         annotations = {
-          "eks.amazonaws.com/role-arn" = var.logs_storage.iam_role_arn
+          "eks.amazonaws.com/role-arn" = local.iam_role_arn
         }
       }
     }
