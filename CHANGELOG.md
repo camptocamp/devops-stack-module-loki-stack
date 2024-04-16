@@ -1,5 +1,13 @@
 # Changelog
 
+## [7.2.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v7.1.0...v7.2.0) (2024-04-16)
+
+
+### Features
+
+* add variable to set resources with default values ([b736ecb](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/b736ecb94eea7f9338da0309d2e1e895d74e6cba))
+* enable caching for index writes ([5fc2b2c](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/5fc2b2c6956e040d5900a263bddcc14f81fa8d09))
+
 ## [7.1.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v7.0.1...v7.1.0) (2024-03-13)
 
 
