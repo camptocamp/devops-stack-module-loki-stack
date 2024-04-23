@@ -1,5 +1,16 @@
 # Changelog
 
+## [8.0.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v7.2.0...v8.0.0) (2024-04-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* **eks:** add option to create IAM role for the metrics storage
+
+### Features
+
+* **eks:** add option to create IAM role for the metrics storage ([b274598](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/b2745987604970577a5eadfbf19777267a8b725e))
+
 ## [7.2.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v7.1.0...v7.2.0) (2024-04-16)
 
 
