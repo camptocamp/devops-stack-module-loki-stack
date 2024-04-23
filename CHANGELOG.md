@@ -6,6 +6,7 @@
 ### ⚠ BREAKING CHANGES
 
 * **eks:** add option to create IAM role for the metrics storage
+  * This is a breaking change because the attributes of the `logs_storage` variable has changed. Please check the README.adoc to check the differences.
 
 ### Features
 
