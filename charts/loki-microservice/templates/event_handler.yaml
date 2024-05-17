@@ -63,6 +63,9 @@ data:
         - url: {{ .lokiURL }}
           external_labels:
             {{- toYaml .labels | nindent 12 }}
+          {{ if .tenant_id -}}
+          tenant_id: {{ .tenant_id }}
+          {{- end }}
         positions:
           filename: /tmp/positions0.yaml
 ---
