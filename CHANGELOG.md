@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.1.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v8.0.0...v8.1.0) (2024-05-17)
+
+
+### Features
+
+* **grafana-event-handler:** add tenant id for event handler ([#114](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/114)) ([985f8b4](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/985f8b4caf022cdfe734a8d0c5623fd346af704b))
+
 ## [8.0.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v7.2.0...v8.0.0) (2024-04-23)
 
 
