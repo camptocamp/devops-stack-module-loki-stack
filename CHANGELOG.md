@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.2.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v8.1.0...v8.2.0) (2024-07-15)
+
+
+### Features
+
+* **chart:** minor update of dependencies on loki-microservice chart ([778a453](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/778a453431c8c4ba9177e3afe30fb0b24bb11918))
+
 ## [8.1.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v8.0.0...v8.1.0) (2024-05-17)
 
 
