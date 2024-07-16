@@ -1,9 +1,6 @@
 locals {
   helm_values = [{
     loki-distributed = {
-      global = {
-        clusterDomain = "${var.cluster_id}.cluster.local"
-      }
       loki = {
         schemaConfig = {
           configs = [{
