@@ -119,12 +119,6 @@ Version:
 
 The following input variables are required:
 
-==== [[input_cluster_id]] <<input_cluster_id,cluster_id>>
-
-Description: ID of the SKS cluster.
-
-Type: `string`
-
 ==== [[input_logs_storage]] <<input_logs_storage,logs_storage>>
 
 Description: Exoscale SOS bucket configuration values for the bucket where the logs will be stored.
@@ -174,7 +168,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v8.0.0"`
+Default: `"v8.2.0"`
 
 ==== [[input_helm_values]] <<input_helm_values,helm_values>>
 
@@ -443,12 +437,6 @@ Description: Credentials to access the Loki ingress, if activated.
 [cols="a,a,a,a,a",options="header,autowidth"]
 |===
 |Name |Description |Type |Default |Required
-|[[input_cluster_id]] <<input_cluster_id,cluster_id>>
-|ID of the SKS cluster.
-|`string`
-|n/a
-|yes
-
 |[[input_logs_storage]] <<input_logs_storage,logs_storage>>
 |Exoscale SOS bucket configuration values for the bucket where the logs will be stored.
 |
@@ -487,7 +475,7 @@ object({
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v8.0.0"`
+|`"v8.2.0"`
 |no
 
 |[[input_helm_values]] <<input_helm_values,helm_values>>
