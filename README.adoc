@@ -22,15 +22,15 @@ The following requirements are needed by this module:
 
 The following providers are used by this module:
 
-- [[provider_null]] <<provider_null,null>> (>= 3)
-
 - [[provider_random]] <<provider_random,random>> (>= 3)
 
 - [[provider_htpasswd]] <<provider_htpasswd,htpasswd>> (>= 1)
 
+- [[provider_argocd]] <<provider_argocd,argocd>> (>= 5)
+
 - [[provider_utils]] <<provider_utils,utils>> (>= 1)
 
-- [[provider_argocd]] <<provider_argocd,argocd>> (>= 5)
+- [[provider_null]] <<provider_null,null>> (>= 3)
 
 === Resources
 
@@ -78,7 +78,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v8.0.0"`
+Default: `"v8.2.0"`
 
 ==== [[input_helm_values]] <<input_helm_values,helm_values>>
 
@@ -335,8 +335,8 @@ Description: Credentials to access the Loki ingress, if activated.
 |Name |Version
 |[[provider_random]] <<provider_random,random>> |>= 3
 |[[provider_htpasswd]] <<provider_htpasswd,htpasswd>> |>= 1
-|[[provider_utils]] <<provider_utils,utils>> |>= 1
 |[[provider_argocd]] <<provider_argocd,argocd>> |>= 5
+|[[provider_utils]] <<provider_utils,utils>> |>= 1
 |[[provider_null]] <<provider_null,null>> |>= 3
 |===
 
@@ -380,7 +380,7 @@ Description: Credentials to access the Loki ingress, if activated.
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v8.0.0"`
+|`"v8.2.0"`
 |no
 
 |[[input_helm_values]] <<input_helm_values,helm_values>>
