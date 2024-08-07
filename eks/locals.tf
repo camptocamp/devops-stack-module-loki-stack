@@ -26,8 +26,7 @@ locals {
         }
         structuredConfig = {
           compactor = {
-            working_directory = "/data/compactor"
-            shared_store      = "s3"
+            shared_store = "s3"
           }
         }
       }
