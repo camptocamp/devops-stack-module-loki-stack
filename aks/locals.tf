@@ -50,8 +50,7 @@ locals {
         }
         structuredConfig = {
           compactor = {
-            shared_store      = "azure"
-            working_directory = "/var/loki"
+            shared_store = "azure"
           }
         }
       })
