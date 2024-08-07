@@ -30,8 +30,7 @@ locals {
         }
         structuredConfig = {
           compactor = {
-            working_directory = "/data/compactor"
-            shared_store      = "aws"
+            shared_store = "aws"
           }
         }
       }
