@@ -231,3 +231,9 @@ variable "retention" {
     error_message = "Variable must not be null."
   }
 }
+
+variable "enable_service_monitor" {
+  description = "Enable Prometheus ServiceMonitor in the Helm chart."
+  type        = bool
+  default     = true
+}
