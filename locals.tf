@@ -245,5 +245,18 @@ locals {
           }
         }
       }
+      configMap = {
+        create = true
+        content =  {
+          loki.write = {
+            local = {
+              endpoint = {
+              url = "http://loki:3100/loki/api/v1/push"
+              }
+            }
+          }
+        }
+      }
+    }
   }]
 }
