@@ -235,27 +235,15 @@ locals {
       }
       configMap = {
         create = true
-        content =  {
-          loki.write = { 
-            local = {
-              endpoint = {
-              url = "http://loki:3100/loki/api/v1/push"
-              }
-            }
-          }
-        }
-      }
-      configMap = {
-        create = true
-        content =  {
-          loki.write = {
-            local = {
-              endpoint = {
-              url = "http://loki:3100/loki/api/v1/push"
-              }
-            }
-          }
-        }
+        content =  "test"
+//          loki.write = {
+//            local = {
+//              endpoint = {
+//              url = "http://loki:3100/loki/api/v1/push"
+//              }
+//            }
+//          }
+//        }
       }
     }
   }]
