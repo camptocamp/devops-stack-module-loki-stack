@@ -1,7 +1,5 @@
-:loki-stack-chart-version: 2.8.9
 :loki-distributed-chart-version: 0.79.1
 :promtail-chart-version: 6.16.3
-:filebeat-chart-version: 7.17.3
 
 // BEGIN_TF_DOCS
 === Requirements
@@ -333,11 +331,11 @@ Description: Credentials to access the Loki ingress, if activated.
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Version
+|[[provider_null]] <<provider_null,null>> |>= 3
 |[[provider_random]] <<provider_random,random>> |>= 3
 |[[provider_htpasswd]] <<provider_htpasswd,htpasswd>> |>= 1
 |[[provider_argocd]] <<provider_argocd,argocd>> |>= 5
 |[[provider_utils]] <<provider_utils,utils>> |>= 1
-|[[provider_null]] <<provider_null,null>> |>= 3
 |===
 
 = Resources
