@@ -5,11 +5,11 @@
 
 ### ⚠ BREAKING CHANGES
 
-* remove the cluster_id variable
+* **sks:** remove the cluster_id variable
 
 ### Features
 
-* remove the cluster_id variable ([62f869e](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/62f869e29b4ca31d1a56ad8c164b0095efe33e28))
+* **sks:** remove the cluster_id variable ([62f869e](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/62f869e29b4ca31d1a56ad8c164b0095efe33e28))
 
 
 ### Bug Fixes
