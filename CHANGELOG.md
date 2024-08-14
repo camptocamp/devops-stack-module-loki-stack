@@ -1,5 +1,21 @@
 # Changelog
 
+## [9.0.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v8.2.0...v9.0.0) (2024-08-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* **sks:** remove the cluster_id variable
+
+### Features
+
+* **sks:** remove the cluster_id variable ([62f869e](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/62f869e29b4ca31d1a56ad8c164b0095efe33e28))
+
+
+### Bug Fixes
+
+* remove the working_directory attribute in the compactor config ([0638108](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/0638108b870fbf85b5b52eff4eeef229eb7a32c8))
+
 ## [8.2.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v8.1.0...v8.2.0) (2024-07-15)
 
 
