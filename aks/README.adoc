@@ -96,7 +96,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v8.2.0"`
+Default: `"v9.0.0"`
 
 ==== [[input_helm_values]] <<input_helm_values,helm_values>>
 
@@ -420,7 +420,7 @@ object({
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v8.2.0"`
+|`"v9.0.0"`
 |no
 
 |[[input_helm_values]] <<input_helm_values,helm_values>>
