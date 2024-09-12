@@ -2,13 +2,7 @@ locals {
   fullnameOverride = "loki"
 
   helm_values = [{
-    eventHandler = {
-      namespace       = "loki-stack"
-      lokiURL         = "http://${local.fullnameOverride}-distributor.loki-stack:3100/loki/api/v1/push"
-      labels          = {}
-      grafanaAgentTag = "main-4f86002"
-      affinity        = {}
-    }
+    eventHandler = {}
 
     # TODO Reevaluate the need for having an ingress for Loki, as nobody seems to be using it.
     frontendIngress = var.ingress != null ? {
