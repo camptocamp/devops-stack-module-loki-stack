@@ -196,6 +196,17 @@ variable "resources" {
       }), {})
     }), {})
 
+    alloy = optional(object({
+      requests = optional(object({
+        cpu    = optional(string, "100m")
+        memory = optional(string, "256Mi")
+      }), {})
+      limits = optional(object({
+        cpu    = optional(string)
+        memory = optional(string, "512Mi")
+      }), {})
+    }), {})
+
     grafana_eventhandler = optional(object({
       requests = optional(object({
         cpu    = optional(string, "100m")

@@ -2,8 +2,6 @@ locals {
   fullnameOverride = "loki"
 
   helm_values = [{
-    eventHandler = {}
-
     # TODO Reevaluate the need for having an ingress for Loki, as nobody seems to be using it.
     frontendIngress = var.ingress != null ? {
       lokiCredentials = base64encode("loki:${htpasswd_password.loki_password_hash.0.bcrypt}")
@@ -215,9 +213,11 @@ locals {
     }
 
     alloy = {
-      resources = {
-        requests = { for k, v in var.resources.promtail.requests : k => v if v != null }
-        limits   = { for k, v in var.resources.promtail.limits : k => v if v != null }
+      alloy = {
+        resources = {
+          requests = { for k, v in var.resources.alloy.requests : k => v if v != null }
+          limits   = { for k, v in var.resources.alloy.limits : k => v if v != null }
+        }
       }
       controller = {
         tolerations = [
@@ -229,15 +229,6 @@ locals {
       }
       configMap = {
         create = true
-        content =  "test"
-//          loki.write = {
-//            local = {
-//              endpoint = {
-//              url = "http://loki:3100/loki/api/v1/push"
-//              }
-//            }
-//          }
-//        }
       }
     }
   }]
