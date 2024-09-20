@@ -1,0 +1,9 @@
+loki.source.kubernetes_events "events" {
+    forward_to = [loki.write.local.receiver] 
+}
+
+loki.write "local" {
+    endpoint {
+        url = "http://loki-distributor.loki-stack:3100/loki/api/v1/push"
+    }
+}
