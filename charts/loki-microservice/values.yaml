@@ -1,5 +1,1 @@
 ---
-alloy:
-  configMap:
-    create: true
-    file: "config/custom-config.alloy"

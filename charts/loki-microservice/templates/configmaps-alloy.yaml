@@ -1,12 +1,6 @@
-{{- $values := (mustMergeOverwrite .Values.alloy (or .Values.agent dict)) -}}
-{{- if $values.configMap.create }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: {{ include "alloy.fullname" . }}
-  labels:
-    {{- include "alloy.labels" . | nindent 4 }}
-    app.kubernetes.io/component: config
 data:
   config.alloy: |- {{- .Files.Get "config/custom-config.alloy" | trim | nindent 4 }}
-{{- end }}

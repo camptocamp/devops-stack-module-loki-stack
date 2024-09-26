@@ -215,29 +215,10 @@ locals {
     }
 
     alloy = {
-      resources = {
-        requests = { for k, v in var.resources.promtail.requests : k => v if v != null }
-        limits   = { for k, v in var.resources.promtail.limits : k => v if v != null }
-      }
-      controller = {
-        tolerations = [
-          {
-            operator = "Exists"
-            effect   = "NoSchedule"
-          }
-        ]
-      }
-      configMap = {
-        create = true
-        content =  "test"
-//          loki.write = {
-//            local = {
-//              endpoint = {
-//              url = "http://loki:3100/loki/api/v1/push"
-//              }
-//            }
-//          }
-//        }
+      alloy = {
+        configMap = {
+          create = false
+        }
       }
     }
   }]
