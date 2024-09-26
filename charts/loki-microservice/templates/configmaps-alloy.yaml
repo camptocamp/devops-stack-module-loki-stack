@@ -8,11 +8,5 @@ metadata:
     {{- include "alloy.labels" . | nindent 4 }}
     app.kubernetes.io/component: config
 data:
-  {{- if $values.configMap.content }}
-  config.alloy: |- {{- (tpl $values.configMap.content .) | nindent 4 }}
-  {{- else if $values.configMap.file }}
-  config.alloy: |- {{- .Files.Get $values.configMap.file | trim | nindent 4 }}
-  {{- else }}
-  config.alloy: |- {{- .Files.Get "config/example.alloy" | trim | nindent 4 }}
-  {{- end }}
+  config.alloy: |- {{- .Files.Get "config/custom-config.alloy" | trim | nindent 4 }}
 {{- end }}
