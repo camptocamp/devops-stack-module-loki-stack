@@ -1,5 +1,16 @@
 # Changelog
 
+## [10.0.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v9.0.0...v10.0.0) (2024-10-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* point the Argo CD provider to the new repository ([#121](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/121))
+
+### Features
+
+* point the Argo CD provider to the new repository ([#121](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/121)) ([5cd19c8](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/5cd19c806151e44e52e95b0813c09df62e2c2111))
+
 ## [9.0.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v8.2.0...v9.0.0) (2024-08-14)
 
 
