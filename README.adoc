@@ -76,7 +76,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v9.0.0"`
+Default: `"v10.0.0"`
 
 ==== [[input_helm_values]] <<input_helm_values,helm_values>>
 
@@ -333,8 +333,8 @@ Description: Credentials to access the Loki ingress, if activated.
 |Name |Version
 |[[provider_random]] <<provider_random,random>> |>= 3
 |[[provider_htpasswd]] <<provider_htpasswd,htpasswd>> |>= 1
-|[[provider_utils]] <<provider_utils,utils>> |>= 1
 |[[provider_argocd]] <<provider_argocd,argocd>> |>= 6
+|[[provider_utils]] <<provider_utils,utils>> |>= 1
 |[[provider_null]] <<provider_null,null>> |>= 3
 |===
 
@@ -378,7 +378,7 @@ Description: Credentials to access the Loki ingress, if activated.
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v9.0.0"`
+|`"v10.0.0"`
 |no
 
 |[[input_helm_values]] <<input_helm_values,helm_values>>
