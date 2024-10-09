@@ -6,7 +6,7 @@
 
 The following requirements are needed by this module:
 
-- [[requirement_argocd]] <<requirement_argocd,argocd>> (>= 5)
+- [[requirement_argocd]] <<requirement_argocd,argocd>> (>= 6)
 
 - [[requirement_htpasswd]] <<requirement_htpasswd,htpasswd>> (>= 1)
 
@@ -20,22 +20,22 @@ The following requirements are needed by this module:
 
 The following providers are used by this module:
 
+- [[provider_null]] <<provider_null,null>> (>= 3)
+
 - [[provider_random]] <<provider_random,random>> (>= 3)
 
 - [[provider_htpasswd]] <<provider_htpasswd,htpasswd>> (>= 1)
 
-- [[provider_argocd]] <<provider_argocd,argocd>> (>= 5)
+- [[provider_argocd]] <<provider_argocd,argocd>> (>= 6)
 
 - [[provider_utils]] <<provider_utils,utils>> (>= 1)
-
-- [[provider_null]] <<provider_null,null>> (>= 3)
 
 === Resources
 
 The following resources are used by this module:
 
-- https://registry.terraform.io/providers/oboukili/argocd/latest/docs/resources/application[argocd_application.this] (resource)
-- https://registry.terraform.io/providers/oboukili/argocd/latest/docs/resources/project[argocd_project.this] (resource)
+- https://registry.terraform.io/providers/argoproj-labs/argocd/latest/docs/resources/application[argocd_application.this] (resource)
+- https://registry.terraform.io/providers/argoproj-labs/argocd/latest/docs/resources/project[argocd_project.this] (resource)
 - https://registry.terraform.io/providers/loafoe/htpasswd/latest/docs/resources/password[htpasswd_password.loki_password_hash] (resource)
 - https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.dependencies] (resource)
 - https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.this] (resource)
@@ -319,7 +319,7 @@ Description: Credentials to access the Loki ingress, if activated.
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Version
-|[[requirement_argocd]] <<requirement_argocd,argocd>> |>= 5
+|[[requirement_argocd]] <<requirement_argocd,argocd>> |>= 6
 |[[requirement_htpasswd]] <<requirement_htpasswd,htpasswd>> |>= 1
 |[[requirement_null]] <<requirement_null,null>> |>= 3
 |[[requirement_random]] <<requirement_random,random>> |>= 3
@@ -331,11 +331,11 @@ Description: Credentials to access the Loki ingress, if activated.
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Version
-|[[provider_null]] <<provider_null,null>> |>= 3
 |[[provider_random]] <<provider_random,random>> |>= 3
 |[[provider_htpasswd]] <<provider_htpasswd,htpasswd>> |>= 1
-|[[provider_argocd]] <<provider_argocd,argocd>> |>= 5
 |[[provider_utils]] <<provider_utils,utils>> |>= 1
+|[[provider_argocd]] <<provider_argocd,argocd>> |>= 6
+|[[provider_null]] <<provider_null,null>> |>= 3
 |===
 
 = Resources
@@ -343,8 +343,8 @@ Description: Credentials to access the Loki ingress, if activated.
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Type
-|https://registry.terraform.io/providers/oboukili/argocd/latest/docs/resources/application[argocd_application.this] |resource
-|https://registry.terraform.io/providers/oboukili/argocd/latest/docs/resources/project[argocd_project.this] |resource
+|https://registry.terraform.io/providers/argoproj-labs/argocd/latest/docs/resources/application[argocd_application.this] |resource
+|https://registry.terraform.io/providers/argoproj-labs/argocd/latest/docs/resources/project[argocd_project.this] |resource
 |https://registry.terraform.io/providers/loafoe/htpasswd/latest/docs/resources/password[htpasswd_password.loki_password_hash] |resource
 |https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.dependencies] |resource
 |https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.this] |resource

@@ -3,7 +3,7 @@
 
 The following requirements are needed by this module:
 
-- [[requirement_argocd]] <<requirement_argocd,argocd>> (>= 5)
+- [[requirement_argocd]] <<requirement_argocd,argocd>> (>= 6)
 
 - [[requirement_htpasswd]] <<requirement_htpasswd,htpasswd>> (>= 1)
 
@@ -341,7 +341,7 @@ Description: Credentials to access the Loki ingress, if activated.
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Version
-|[[requirement_argocd]] <<requirement_argocd,argocd>> |>= 5
+|[[requirement_argocd]] <<requirement_argocd,argocd>> |>= 6
 |[[requirement_htpasswd]] <<requirement_htpasswd,htpasswd>> |>= 1
 |[[requirement_null]] <<requirement_null,null>> |>= 3
 |[[requirement_random]] <<requirement_random,random>> |>= 3
