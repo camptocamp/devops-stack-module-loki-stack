@@ -201,18 +201,6 @@ variable "resources" {
         memory = optional(string, "512Mi")
       }), {})
     }), {})
-
-    grafana_eventhandler = optional(object({
-      requests = optional(object({
-        cpu    = optional(string, "100m")
-        memory = optional(string, "128Mi")
-      }), {})
-      limits = optional(object({
-        cpu    = optional(string)
-        memory = optional(string, "256Mi")
-      }), {})
-    }), {})
-
   })
   default = {}
 }
