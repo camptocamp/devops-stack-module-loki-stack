@@ -26,6 +26,12 @@ variable "target_revision" {
   default     = "v10.0.0" # x-release-please-version
 }
 
+variable "enable_service_monitor" {
+  description = "Enable Prometheus ServiceMonitor in the Helm chart."
+  type        = bool
+  default     = true
+}
+
 variable "helm_values" {
   description = "Helm chart value overrides. They should be passed as a list of HCL structures."
   type        = any
@@ -230,10 +236,4 @@ variable "retention" {
     condition     = var.retention != null
     error_message = "Variable must not be null."
   }
-}
-
-variable "enable_service_monitor" {
-  description = "Enable Prometheus ServiceMonitor in the Helm chart."
-  type        = bool
-  default     = true
 }
