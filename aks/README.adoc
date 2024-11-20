@@ -98,6 +98,14 @@ Type: `string`
 
 Default: `"v10.0.0"`
 
+==== [[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
+
+Description: Enable Prometheus ServiceMonitor in the Helm chart.
+
+Type: `bool`
+
+Default: `true`
+
 ==== [[input_helm_values]] <<input_helm_values,helm_values>>
 
 Description: Helm chart value overrides. They should be passed as a list of HCL structures.
@@ -321,14 +329,6 @@ Type: `string`
 
 Default: `"30d"`
 
-==== [[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
-
-Description: Enable Prometheus ServiceMonitor in the Helm chart.
-
-Type: `bool`
-
-Default: `true`
-
 === Outputs
 
 The following outputs are exported:
@@ -429,6 +429,12 @@ object({
 |Override of target revision of the application chart.
 |`string`
 |`"v10.0.0"`
+|no
+
+|[[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
+|Enable Prometheus ServiceMonitor in the Helm chart.
+|`bool`
+|`true`
 |no
 
 |[[input_helm_values]] <<input_helm_values,helm_values>>
@@ -649,12 +655,6 @@ object({
 |Logs retention period. To deactivate retention, pass 0s.
 |`string`
 |`"30d"`
-|no
-
-|[[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
-|Enable Prometheus ServiceMonitor in the Helm chart.
-|`bool`
-|`true`
 |no
 
 |===

@@ -78,6 +78,14 @@ Type: `string`
 
 Default: `"v10.0.0"`
 
+==== [[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
+
+Description: Enable Prometheus ServiceMonitor in the Helm chart.
+
+Type: `bool`
+
+Default: `true`
+
 ==== [[input_helm_values]] <<input_helm_values,helm_values>>
 
 Description: Helm chart value overrides. They should be passed as a list of HCL structures.
@@ -301,14 +309,6 @@ Type: `string`
 
 Default: `"30d"`
 
-==== [[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
-
-Description: Enable Prometheus ServiceMonitor in the Helm chart.
-
-Type: `bool`
-
-Default: `true`
-
 === Outputs
 
 The following outputs are exported:
@@ -339,11 +339,11 @@ Description: Credentials to access the Loki ingress, if activated.
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Version
+|[[provider_null]] <<provider_null,null>> |>= 3
 |[[provider_random]] <<provider_random,random>> |>= 3
 |[[provider_htpasswd]] <<provider_htpasswd,htpasswd>> |>= 1
-|[[provider_utils]] <<provider_utils,utils>> |>= 1
 |[[provider_argocd]] <<provider_argocd,argocd>> |>= 6
-|[[provider_null]] <<provider_null,null>> |>= 3
+|[[provider_utils]] <<provider_utils,utils>> |>= 1
 |===
 
 = Resources
@@ -387,6 +387,12 @@ Description: Credentials to access the Loki ingress, if activated.
 |Override of target revision of the application chart.
 |`string`
 |`"v10.0.0"`
+|no
+
+|[[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
+|Enable Prometheus ServiceMonitor in the Helm chart.
+|`bool`
+|`true`
 |no
 
 |[[input_helm_values]] <<input_helm_values,helm_values>>
@@ -607,12 +613,6 @@ object({
 |Logs retention period. To deactivate retention, pass 0s.
 |`string`
 |`"30d"`
-|no
-
-|[[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
-|Enable Prometheus ServiceMonitor in the Helm chart.
-|`bool`
-|`true`
 |no
 
 |===
