@@ -79,6 +79,14 @@ Type: `string`
 
 Default: `"v10.0.0"`
 
+==== [[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
+
+Description: Enable Prometheus ServiceMonitor in the Helm chart.
+
+Type: `bool`
+
+Default: `true`
+
 ==== [[input_helm_values]] <<input_helm_values,helm_values>>
 
 Description: Helm chart value overrides. They should be passed as a list of HCL structures.
@@ -261,18 +269,6 @@ object({
         memory = optional(string, "512Mi")
       }), {})
     }), {})
-
-    grafana_eventhandler = optional(object({
-      requests = optional(object({
-        cpu    = optional(string, "100m")
-        memory = optional(string, "128Mi")
-      }), {})
-      limits = optional(object({
-        cpu    = optional(string)
-        memory = optional(string, "256Mi")
-      }), {})
-    }), {})
-
   })
 ----
 
@@ -380,6 +376,12 @@ object({
 |Override of target revision of the application chart.
 |`string`
 |`"v10.0.0"`
+|no
+
+|[[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
+|Enable Prometheus ServiceMonitor in the Helm chart.
+|`bool`
+|`true`
 |no
 
 |[[input_helm_values]] <<input_helm_values,helm_values>>
@@ -562,18 +564,6 @@ object({
         memory = optional(string, "512Mi")
       }), {})
     }), {})
-
-    grafana_eventhandler = optional(object({
-      requests = optional(object({
-        cpu    = optional(string, "100m")
-        memory = optional(string, "128Mi")
-      }), {})
-      limits = optional(object({
-        cpu    = optional(string)
-        memory = optional(string, "256Mi")
-      }), {})
-    }), {})
-
   })
 ----
 

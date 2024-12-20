@@ -26,6 +26,12 @@ variable "target_revision" {
   default     = "v10.0.0" # x-release-please-version
 }
 
+variable "enable_service_monitor" {
+  description = "Enable Prometheus ServiceMonitor in the Helm chart."
+  type        = bool
+  default     = true
+}
+
 variable "helm_values" {
   description = "Helm chart value overrides. They should be passed as a list of HCL structures."
   type        = any
@@ -195,18 +201,6 @@ variable "resources" {
         memory = optional(string, "512Mi")
       }), {})
     }), {})
-
-    grafana_eventhandler = optional(object({
-      requests = optional(object({
-        cpu    = optional(string, "100m")
-        memory = optional(string, "128Mi")
-      }), {})
-      limits = optional(object({
-        cpu    = optional(string)
-        memory = optional(string, "256Mi")
-      }), {})
-    }), {})
-
   })
   default = {}
 }
