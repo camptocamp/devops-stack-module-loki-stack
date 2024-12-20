@@ -1,5 +1,12 @@
 # Changelog
 
+## [10.1.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v10.0.0...v10.1.0) (2024-12-20)
+
+
+### Features
+
+* replace eventHandler by grafana alloy ([#123](https://github.com/camptocamp/devops-stack-module-loki-stack/issues/123)) ([fb87844](https://github.com/camptocamp/devops-stack-module-loki-stack/commit/fb87844f4d3bd76fe206eb60e87105f34278f903))
+
 ## [10.0.0](https://github.com/camptocamp/devops-stack-module-loki-stack/compare/v9.0.0...v10.0.0) (2024-10-09)
 
 
