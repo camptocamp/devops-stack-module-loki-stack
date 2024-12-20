@@ -1,5 +1,5 @@
-:loki-distributed-chart-version: 0.79.1
-:promtail-chart-version: 6.16.3
+:loki-distributed-chart-version: 0.80.0
+:promtail-chart-version: 6.16.6
 
 // BEGIN_TF_DOCS
 === Requirements
