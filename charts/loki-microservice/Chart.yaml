@@ -6,6 +6,9 @@ dependencies:
 - name: promtail
   repository: https://grafana.github.io/helm-charts
   version: 6.16.3
+- name: alloy
+  repository: https://grafana.github.io/helm-charts
+  version: 0.9.2
 description: |
   This chart installs loki-distributed.
   Loki is a log aggregation system made by Grafana Labs, and inspired by Prometheus.

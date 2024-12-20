@@ -2,14 +2,6 @@ locals {
   fullnameOverride = "loki"
 
   helm_values = [{
-    eventHandler = {
-      namespace       = "loki-stack"
-      lokiURL         = "http://${local.fullnameOverride}-distributor.loki-stack:3100/loki/api/v1/push"
-      labels          = {}
-      grafanaAgentTag = "main-4f86002"
-      affinity        = {}
-    }
-
     # TODO Reevaluate the need for having an ingress for Loki, as nobody seems to be using it.
     frontendIngress = var.ingress != null ? {
       lokiCredentials = base64encode("loki:${htpasswd_password.loki_password_hash.0.bcrypt}")
@@ -217,6 +209,33 @@ locals {
         clients = [{
           url = "http://${local.fullnameOverride}-distributor.loki-stack:3100/loki/api/v1/push"
         }]
+      }
+    }
+
+    alloy = {
+      controller = {
+        type = "deployment"
+      }
+      alloy = {
+        serviceMonitor = {
+          enabled = var.enable_service_monitor
+        }
+        configMap = {
+          create  = true
+          content = <<-EOF
+            loki.source.kubernetes_events "events" {
+              forward_to = [
+                loki.write.local.receiver,
+              ]
+            }
+
+            loki.write "local" {
+              endpoint {
+                url = "http://loki-distributor.loki-stack:3100/loki/api/v1/push"
+              }
+            }
+          EOF
+        }
       }
     }
   }]
