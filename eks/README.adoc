@@ -98,7 +98,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v10.0.0"`
+Default: `"v11.0.0"`
 
 ==== [[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
 
@@ -417,7 +417,7 @@ object({
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v10.0.0"`
+|`"v11.0.0"`
 |no
 
 |[[input_enable_service_monitor]] <<input_enable_service_monitor,enable_service_monitor>>
