@@ -6,7 +6,7 @@ A https://devops-stack.io[DevOps Stack] module to deploy and configure Loki
 
 === Usage Alloy
 
-All kubernetes events are by default pushed to prometheus under the following `{job="loki.source.kubernetes_events"} `
+All kubernetes events are by default pushed to Loki under the following label `{job="loki.source.kubernetes_events"} `
 
 
 // BEGIN_TF_DOCS
