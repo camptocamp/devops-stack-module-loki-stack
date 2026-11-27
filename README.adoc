@@ -1,6 +1,6 @@
 = devops-stack-module-loki-stack
-:loki-distributed-chart-version: 0.79.1
-:promtail-chart-version: 6.16.3
+:loki-distributed-chart-version: 0.80.6
+:promtail-chart-version: 6.17.1
 
 A https://devops-stack.io[DevOps Stack] module to deploy and configure Loki
 
